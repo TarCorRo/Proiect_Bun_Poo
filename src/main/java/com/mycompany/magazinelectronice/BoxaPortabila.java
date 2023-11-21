@@ -1,17 +1,12 @@
 package com.mycompany.magazinelectronice;
 
-public class BoxaPortabila {
+public class BoxaPortabila extends Device{
     
-   String marca;
-   String model;
    String culoare;
    String tipConectivitate;
    String tipBaterie;
-   float pret;
    float variantaBluetooth;
    float raspunsInFrecventa;
-   int cantitate;
-   int anAparitie;
    int impedantaNominala;
    int spl;
    int capacitateBaterie;
@@ -20,16 +15,12 @@ public class BoxaPortabila {
    int adancime;
     
    public BoxaPortabila(){
-     this.marca="Null";
-     this.model="Null";
+     super("NULL","NULL",0,0,0);
      this.culoare="Null";
      this.tipConectivitate="Null";
-     this.tipBaterie="Null";// tip string 
-     this.pret=0.f;
+     this.tipBaterie="Null";
      this.variantaBluetooth=0.f;
-     this.raspunsInFrecventa=0.f;// float
-     this.cantitate=0;
-     this.anAparitie=0;
+     this.raspunsInFrecventa=0.f;
      this.impedantaNominala=0;
      this.spl=0;
      this.capacitateBaterie=0;
@@ -39,16 +30,12 @@ public class BoxaPortabila {
    
    }
    public BoxaPortabila(String marca, String model, String culoare, String tipConectivitate, String tipBaterie, float pret, float variantaBluetooth, float raspunsInFrecventa, int cantitate, int anAparitie, int impedantaNominala, int spl, int capacitateBaterie, int latime, int lungime, int adancime){
-     this.marca=marca;
-     this.model=model;
+     super( marca, model, cantitate, anAparitie, pret);
      this.culoare=culoare;
      this.tipConectivitate=tipConectivitate;
-     this.tipBaterie=tipBaterie;// tip string 
-     this.pret=pret;
+     this.tipBaterie=tipBaterie;
      this.variantaBluetooth=variantaBluetooth;
-     this.raspunsInFrecventa=raspunsInFrecventa;// float
-     this.cantitate=cantitate;
-     this.anAparitie=anAparitie;
+     this.raspunsInFrecventa=raspunsInFrecventa;
      this.impedantaNominala=impedantaNominala;
      this.spl=spl;
      this.capacitateBaterie=capacitateBaterie;
@@ -57,16 +44,12 @@ public class BoxaPortabila {
      this.adancime=adancime;
    }
    public BoxaPortabila(BoxaPortabila boxaoriginala){
-     this.marca=boxaoriginala.marca;
-     this.model=boxaoriginala.model;
+     super( boxaoriginala.marca, boxaoriginala.model, boxaoriginala.cantitate, boxaoriginala.anAparitie, boxaoriginala.pret);
      this.culoare=boxaoriginala.culoare;
      this.tipConectivitate=boxaoriginala.tipConectivitate;
-     this.tipBaterie=boxaoriginala.tipBaterie;// tip string 
-     this.pret=boxaoriginala.pret;
+     this.tipBaterie=boxaoriginala.tipBaterie;
      this.variantaBluetooth=boxaoriginala.variantaBluetooth;
-     this.raspunsInFrecventa=boxaoriginala.raspunsInFrecventa;// float
-     this.cantitate=boxaoriginala.cantitate;
-     this.anAparitie=boxaoriginala.anAparitie;
+     this.raspunsInFrecventa=boxaoriginala.raspunsInFrecventa;
      this.impedantaNominala=boxaoriginala.impedantaNominala;
      this.spl=boxaoriginala.spl;
      this.capacitateBaterie=boxaoriginala.capacitateBaterie;
@@ -93,15 +76,9 @@ public class BoxaPortabila {
         "\nCapacitatea bateriei "+capacitateBaterie+
         "\nLatime "+latime+        
         "\nLungime "+lungime+ 
-        "\nAdancime "+adancime;}
-   
-   
-   public void setMarca(String marca){
-        this.marca=marca;
-   }
-    public void setModel(String model){
-        this.model=model;
-   }
+        "\nAdancime "+adancime;
+    }
+    
     public void setCuloare(String culoare){
         this.culoare=culoare;
    }
@@ -111,23 +88,12 @@ public class BoxaPortabila {
     public void setTipBaterie(String tipBaterie){
         this.tipBaterie=tipBaterie;
    }
-    public void setPret(float pret){
-        this.pret=pret;
-   }
     public void setVariantaBluetooth(float variantaBluetooth){
         this.variantaBluetooth=variantaBluetooth;
    }
     public void setRaspunsInFrecventa(float raspunsInFrecventa){
         this.raspunsInFrecventa=raspunsInFrecventa;
    }
-     public void setCantitate(int cantitate){
-        this.cantitate=cantitate;
-   }
-   
-    public void setAnAparitie(int anAparitie){
-        this.anAparitie=anAparitie;
-   }
-    
    public void setImpedantaNominala(int impedantaNominala){
         this.impedantaNominala=impedantaNominala;
    }
@@ -146,14 +112,7 @@ public class BoxaPortabila {
    }
        public void setAdancime(int adancime){
         this.adancime=adancime;
-   }
-       
-    public String getMarca(){
-     return this.marca;
-    }  
-    public String getModel(){
-     return this.model;
-    }  
+   }  
     public String getCuloare(){
      return this.culoare;
     }  
@@ -163,21 +122,12 @@ public class BoxaPortabila {
     public String getTipBaterie(){
      return this.tipBaterie;
     }  
-    public float getPret(){
-     return this.pret;
-    }  
     public float getVariantaBluetooth(){
      return this.variantaBluetooth;
     }
     public float getRaspunsInFrecventa(){
      return this.raspunsInFrecventa;
-    }  
-    public int getCantitate(){
-     return this.cantitate;
     } 
-    public int getAnAparitie(){
-     return this.anAparitie;
-    }
     public int getImpedantaNominala(){
      return this.impedantaNominala;
     }

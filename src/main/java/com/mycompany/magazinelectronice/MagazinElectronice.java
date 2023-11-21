@@ -33,13 +33,13 @@ public class MagazinElectronice {
         Telefon tel2 = new Telefon("Xiaomi","11T","Mediatek MT6893 Dimensity 1200", "AMOLED", "Space Gray", "4G,5G", "Android 14", "Usb C","NanoSim",38,128,12,2021,4,"108 MP Wide, 8 MP Ultrawide, 5 MP Telephoto macro, 16 MP Front", 5000, 1600, 6.67,"1080 x 2400" );
         Telefon tel3 = new Telefon("Samsung","S23 Ultra","Qualcomm SM8550-AC Snapdragon 8 Gen 2", "Dynamic AMOLED 2x", "Phantom Black", "4G,5G", "Android 14", "Usb C, Wireless, Reverse Wireless","NanoSim",23,512,12,2023,5,"200 MP Wide, 12 MP Ultrawide, 10 MP Telephoto , 10 MP periscope telephoto, 12 MP Front", 5000, 7600, 6.8,"1440 x 3088");
         Telefon tel4 = new Telefon("Apple","14 Pro Max","Apple 16 Bionic", "LTPO Super Retina XDR OLED", "Gold", "4G,5G", "iOS 17", "Lightning","NanoSim",75,512,10,2022,4,"48 MP Wide, 12 MP Ultrawide, 12 MP Telephoto , 12 MP Front", 4323, 5899, 6.7,"1290 x 2796");
-        Telefon tel5 = new Telefon("Nokia","G42","Qualcomm SM4350-AC Snapdragon 480+ 5G", "IPS LCD", "Purple", "4G,5G", "Android 13", "Usb C","NanoSim",239,64,6,2023,4,"50 MP Wide, 2 MP Ultrawide, 2 MP Telephoto macro, 8 MP Front", 5000, 1399.99, 6.56,"720 x 1612");
-        Telefon tel6 = new Telefon("Nokia","C300","Qualcomm SM6115 Snapdragon 662", "IPS LCD", "Blue", "4G,5G", "Android 13", "Usb C","NanoSim",8,128,8,2023,4,"13 MP Wide, 2 MP Ultrawide, 2 MP Telephoto macro, 8 MP Front", 4000, 832.78, 6.52,"720 x 1600");
-        Telefon tel7 = new Telefon("Apple","iPhone 15 Pro Max","Apple A17 Pro", "LTPO Super Retina XDR OLED", "White Titanium", "4G,5G", "iOS 17", "Usb C","NanoSim",2,512,8,2023,4,"48 MP Wide, 12 MP Ultrawide, 12 MP Telephoto macro, 12 MP Front", 4441, 8978.64, 6.7,"1290 x 2796");
-        Telefon tel8 = new Telefon("Apple","iPhone 15 Plus","Apple A16 Bionic", "Super Retina XDR OLED", "Green", "4G,5G", "iOS 17", "Usb C, Wireless","NanoSim",96,256,8,2023,3,"48 MP Wide, 12 MP Ultrawide, 12 MP Front", 4383, 5763.90, 6.7,"1290 x 2796");
-        Telefon tel9 = new Telefon("Xiaomi","14 Pro","Qualcomm SM8650-AB Snapdragon 8 Gen 3", "LTPO AMOLED", "Titanium", "4G,5G", "Android 14, HyperOS", "Usb C, Wireless","NanoSim",1,512,16,2023,4,"50 MP Wide, 50 MP Ultrawide, 50 MP Telephoto macro, 32 MP Front", 4880, 6547.32, 6.73,"1440 x 3200");
-        Telefon tel10 = new Telefon("Samsung","Galaxy A54","Exynos 1380", "Super AMOLED", "Violet", "4G,5G", "Android 13", "Usb C","NanoSim",0,128,8,2023,4,"50 MP Wide, 12 MP Ultrawide,5 MP Telephoto macro, 32 MP Front", 5000, 2599.23, 6.4,"1080 x 2340");
-        Telefon tel11 = new Telefon("Samsung","Galaxy S23 FE","Qualcomm SM8450 Snapdragon 8 Gen 1", "Dynamic AMOLED 2X", "Mint", "4G,5G", "Android 14", "Usb C","NanoSim",92,256,8,2023,4,"50 MP Wide, 8 MP Ultrawide, 12 MP Telephoto macro, 10 MP Front", 4500, 4599.23, 6.4,"1080 x 2340");
+        Telefon tel5 = new Telefon("Nokia","G42","Qualcomm SM4350-AC Snapdragon 480+ 5G", "IPS LCD", "Purple", "4G,5G", "Android 13", "Usb C","NanoSim",239,64,6,2023,4,"50 MP Wide, 2 MP Ultrawide, 2 MP Telephoto macro, 8 MP Front", 5000, 1399.99f, 6.56,"720 x 1612");
+        Telefon tel6 = new Telefon("Nokia","C300","Qualcomm SM6115 Snapdragon 662", "IPS LCD", "Blue", "4G,5G", "Android 13", "Usb C","NanoSim",8,128,8,2023,4,"13 MP Wide, 2 MP Ultrawide, 2 MP Telephoto macro, 8 MP Front", 4000, 832.78f, 6.52,"720 x 1600");
+        Telefon tel7 = new Telefon("Apple","iPhone 15 Pro Max","Apple A17 Pro", "LTPO Super Retina XDR OLED", "White Titanium", "4G,5G", "iOS 17", "Usb C","NanoSim",2,512,8,2023,4,"48 MP Wide, 12 MP Ultrawide, 12 MP Telephoto macro, 12 MP Front", 4441, 8978.64f, 6.7,"1290 x 2796");
+        Telefon tel8 = new Telefon("Apple","iPhone 15 Plus","Apple A16 Bionic", "Super Retina XDR OLED", "Green", "4G,5G", "iOS 17", "Usb C, Wireless","NanoSim",96,256,8,2023,3,"48 MP Wide, 12 MP Ultrawide, 12 MP Front", 4383, 5763.90f, 6.7,"1290 x 2796");
+        Telefon tel9 = new Telefon("Xiaomi","14 Pro","Qualcomm SM8650-AB Snapdragon 8 Gen 3", "LTPO AMOLED", "Titanium", "4G,5G", "Android 14, HyperOS", "Usb C, Wireless","NanoSim",1,512,16,2023,4,"50 MP Wide, 50 MP Ultrawide, 50 MP Telephoto macro, 32 MP Front", 4880, 6547.32f, 6.73,"1440 x 3200");
+        Telefon tel10 = new Telefon("Samsung","Galaxy A54","Exynos 1380", "Super AMOLED", "Violet", "4G,5G", "Android 13", "Usb C","NanoSim",0,128,8,2023,4,"50 MP Wide, 12 MP Ultrawide,5 MP Telephoto macro, 32 MP Front", 5000, 2599.23f, 6.4,"1080 x 2340");
+        Telefon tel11 = new Telefon("Samsung","Galaxy S23 FE","Qualcomm SM8450 Snapdragon 8 Gen 1", "Dynamic AMOLED 2X", "Mint", "4G,5G", "Android 14", "Usb C","NanoSim",92,256,8,2023,4,"50 MP Wide, 8 MP Ultrawide, 12 MP Telephoto macro, 10 MP Front", 4500, 4599.23f, 6.4,"1080 x 2340");
         Telefon tel12 = new Telefon(tel2);
         
         Laptop l1 = new Laptop("Dell", "XPS 13", "1920x1080", "Intel i7", "LED", "Silver", "2666 MHz", "Windows 10", "Integrated", "N/A", "USB-C, Thunderbolt 3", "10 ore", 2021, 50, 16, 1, 8, 5000, 3, 1200.0f, 13.0f, 2.7f);
@@ -68,6 +68,10 @@ public class MagazinElectronice {
         Laptop l10 = new Laptop("Dell", "Inspiron 14", "1366x768", "AMD Ryzen 7", "LED", "Platinum Silver", "2400 MHz",
                 "Windows 10", "Integrated", "N/A", "USB-C, HDMI", "8 ore", 2020, 22,
                 16, 1, 8, 3500, 3, 800.0f, 3.0f, 1.3f);
+        Laptop l11 = new Laptop();
+        Laptop l12 = new Laptop(l1);
+        
+        
         Desktop d1 = new Desktop("HP", "Pavilion", "Intel i5", "Black", "2666 MHz",
                 "Windows 10", "Integrated", "N/A", "USB, HDMI", 2020, 30,
                 8, 4, 900.0f, 7.5f);
@@ -98,6 +102,9 @@ public class MagazinElectronice {
         Desktop d10 = new Desktop("Custom", "Build", "AMD Ryzen 5", "RGB", "3200 MHz",
                 "Windows 10", "N/A", "N/A", "USB, HDMI", 2022, 15,
                 16, 6, 1500.0f, 8.0f);
+        Desktop d11 = new Desktop();
+        Desktop d12 = new Desktop(d1);
+        
 
 
         BoxaPortabila boxa1 = new BoxaPortabila("Sony", "XB20", "Alb", "Bluetooth", "Litiu-ion", 199.99f, 4.0f, 60.0f, 100, 2018, 8, 85, 1200, 10, 15, 5);
@@ -110,7 +117,8 @@ public class MagazinElectronice {
         BoxaPortabila boxa8 = new BoxaPortabila("Sony", "SRS-XB43", "Albastru", "Bluetooth", "Litiu-ion", 299.99f, 5.0f, 40.0f, 100, 2021, 6, 92, 3500, 14, 24, 10);
         BoxaPortabila boxa9 = new BoxaPortabila("JBL", "Charge 4", "Gri", "Bluetooth", "Litiu-polimer", 169.99f, 4.2f, 55.0f, 150, 2018, 8, 85, 2800, 12, 19, 8);
         BoxaPortabila boxa10 = new BoxaPortabila("Bose", "SoundLink Revolve+", "Argintiu", "Bluetooth", "Litiu-ion", 299.99f, 4.2f, 45.0f, 120, 2017, 6, 90, 3200, 13, 21, 9);
-
+        BoxaPortabila boxa11 = new BoxaPortabila();
+        BoxaPortabila boxa12 = new BoxaPortabila(boxa1);
 
         Casti casti1 = new Casti("Sony", "WH-1000XM4", "Negru", "Over-ear", "Anulare de zgomot", "Bluetooth", 349.99f, 1.2f, 5.0f, 30, 32, 100, 2020, 254, 110);
         Casti casti2 = new Casti("Bose", "QuietComfort 35 II", "Argintiu", "Over-ear", "Anulare de zgomot", "Bluetooth", 299.99f, 1.5f, 5.0f, 20, 32, 120, 2018, 240, 105);
@@ -122,7 +130,9 @@ public class MagazinElectronice {
         Casti casti8 = new Casti("Audio-Technica", "ATH-M50x", "Negru", "Over-ear", "Inchis", "Cablu", 149.99f, 3.0f, 15.0f, 0, 38, 150, 2014, 285, 98);
         Casti casti9 = new Casti("Samsung", "Galaxy Buds Pro", "Violet", "In-ear", "Inchis", "Bluetooth", 199.99f, 0.0f, 8.0f, 18, 28, 100, 2021, 138, 105);
         Casti casti10 = new Casti("Jabra", "Elite 75t", "Albastru", "In-ear", "Deschis", "Bluetooth", 179.99f, 0.0f, 10.0f, 28, 16, 120, 2019, 55, 102);
-       
+        Casti casti11 = new Casti();
+        Casti casti12 = new Casti(casti1);
+        
         Smartwatch smartwatch1 = new Smartwatch("Samsung", "Galaxy Watch 4", "Exynos W920", "AMOLED", "Negru", "Wear OS", "GPS, NFC, Bluetooth", "Incarcare wireless", "Nano SIM", "Accelerometru, Giroscop, Senzor de ritm cardiac", "Silicon", "Aluminiu", 349.99f, 1.4f, 42.5f, 100, 360, 16, 2, 2021, 340);
         Smartwatch smartwatch2 = new Smartwatch("Apple", "Watch Series 7", "S7", "Retina", "Albastru", "watchOS", "GPS, Glonass, Galileo, Compass", "MagSafe", "eSIM", "Accelerometru, ECG, SpO2", "Piele", "Aluminiu", 399.99f, 1.78f, 41.3f, 75, 428, 32, 1, 2021, 458);
         Smartwatch smartwatch3 = new Smartwatch("Huawei", "Watch GT 3", "Kirin A1", "AMOLED", "Verde", "Lite OS", "GPS, Glonass, Galileo, Barometru", "Magnetic", "Nano SIM", "Accelerometru, Giroscop, Senzor de ritm cardiac", "Cauciuc", "Otel inoxidabil", 229.99f, 1.43f, 46.2f, 120, 466, 16, 2, 2021, 470);
@@ -133,6 +143,8 @@ public class MagazinElectronice {
         Smartwatch smartwatch8 = new Smartwatch("Fossil", "Gen 6", "Snapdragon Wear 4100+", "AMOLED", "Cafeniu", "Wear OS", "GPS, NFC, Bluetooth", "Incarcare wireless", "Nano SIM", "Accelerometru, Giroscop, Senzor de ritm cardiac", "Piele", "Metal", 299.95f, 1.28f, 42.0f, 120, 416, 8, 1, 2022, 320);
         Smartwatch smartwatch9 = new Smartwatch("OnePlus", "Watch", "STM32", "AMOLED", "Argintiu", "Wear OS", "GPS, NFC, Bluetooth", "Incarcare rapida", "Nu suportă SIM", "Accelerometru, Giroscop, Senzor de ritm cardiac", "Silicon", "Aluminiu", 159.99f, 1.39f, 46.4f, 200, 454, 4, 1, 2021, 402);
         Smartwatch smartwatch10 = new Smartwatch("Casio", "Pro Trek Smart WSD-F30", "N/A", "Dual-layer LCD", "Portocaliu", "Wear OS", "GPS, Glonass, Bluetooth", "Incarcare magnetica", "Nu suportă SIM", "Accelerometru, Giroscop, Barometru", "Rasină", "Metal", 549.99f, 1.2f, 60.5f, 80, 390, 16, 1, 2019, 320);
+        Smartwatch smartwatch11 = new Smartwatch();
+        Smartwatch smartwatch12 = new Smartwatch(smartwatch1);
         
         FitnessBand fitnessBand1 = new FitnessBand("Xiaomi", "Mi Band 6", "N/A", "AMOLED", "Negru", "Proprietary", "Monitorizare ritm cardiac, Monitorizare somn", "Incarcare USB", "Nu suportă SIM", "Accelerometru, Giroscop", "Silicon", "Plastic", 44.99f, 1.56f, 12.4f, 500, 152, 16, 512, 2021, 125);
         FitnessBand fitnessBand2 = new FitnessBand("Fitbit", "Charge 5", "N/A", "AMOLED", "Albastru", "Fitbit OS", "Monitorizare ritm cardiac, Monitorizare somn", "Incarcare magnetica", "Nu suportă SIM", "Accelerometru, Giroscop", "Silicon", "Aluminiu", 179.95f, 1.1f, 25.3f, 300, 126, 8, 512, 2021, 170);
@@ -144,6 +156,8 @@ public class MagazinElectronice {
         FitnessBand fitnessBand8 = new FitnessBand("Amazfit", "Bip U Pro", "N/A", "TFT", "Roz", "Proprietary", "Monitorizare ritm cardiac, Monitorizare somn", "Incarcare magnetica", "Nu suportă SIM", "Accelerometru, Giroscop", "Silicon", "Plastic", 59.99f, 1.43f, 35.3f, 300, 320, 16, 256, 2020, 210);
         FitnessBand fitnessBand9 = new FitnessBand("Fossil", "Sport", "Snapdragon Wear 3100", "AMOLED", "Alb", "Wear OS", "Monitorizare ritm cardiac, Monitorizare somn", "Incarcare magnetică", "Nu suportă SIM", "Accelerometru, Giroscop", "Silicon", "Aluminiu", 249.99f, 1.2f, 41.0f, 100, 390, 8, 512, 2019, 350);
         FitnessBand fitnessBand10 = new FitnessBand("Garmin", "Venu", "N/A", "AMOLED", "Verde", "Garmin OS", "Monitorizare ritm cardiac, Monitorizare oxigen în sânge", "Incarcare USB", "Nu suportă SIM", "Accelerometru, Giroscop", "Cauciuc", "Metal", 349.99f, 1.2f, 43.2f, 200, 390, 16, 512, 2019, 390);
+        FitnessBand fitnessBand11 = new FitnessBand();
+        FitnessBand fitnessBand12 = new FitnessBand(fitnessBand1);
         
         Object[] instances = {
            tel2, tel3, tel4, tel5, tel6, tel7, tel8, tel9, tel10, tel11, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11,
@@ -175,6 +189,55 @@ public class MagazinElectronice {
                 System.out.println(tel4+"\n");
                 System.out.println(tel5+"\n");
                 break;
+                
+            case "Smartwatch":
+                System.out.println(smartwatch1+"\n");
+                System.out.println(smartwatch2+"\n");
+                System.out.println(smartwatch3+"\n");
+                System.out.println(smartwatch11+"\n");
+                System.out.println(smartwatch12+"\n");
+                break;
+                
+            case "FitnessBand":
+                System.out.println(fitnessBand1+"\n");
+                System.out.println(fitnessBand2+"\n");
+                System.out.println(fitnessBand3+"\n");
+                System.out.println(fitnessBand11+"\n");
+                System.out.println(fitnessBand12+"\n");
+                break;
+                    
+            case "Laptop":
+                System.out.println(l1+"\n");
+                System.out.println(l2+"\n");
+                System.out.println(l3+"\n");
+                System.out.println(l11+"\n");
+                System.out.println(l12+"\n");
+                break;
+                        
+            case "Desktop":
+                System.out.println(d1+"\n");
+                System.out.println(d2+"\n");
+                System.out.println(d3+"\n");
+                System.out.println(d11+"\n");
+                System.out.println(d12+"\n");
+                break;
+                            
+            case "Casti":
+                System.out.println(casti1+"\n");
+                System.out.println(casti2+"\n");
+                System.out.println(casti3+"\n");
+                System.out.println(casti11+"\n");
+                System.out.println(casti12+"\n");
+                break;
+                                
+            case "BoxePortabile":
+                System.out.println(boxa1+"\n");
+                System.out.println(boxa2+"\n");
+                System.out.println(boxa3+"\n");
+                System.out.println(boxa11+"\n");
+                System.out.println(boxa12+"\n");
+                break;
+                
             case "TestInstante":
                 test.afisInitiative(instances);
                 break;

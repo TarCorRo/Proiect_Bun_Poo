@@ -1,16 +1,17 @@
 package com.mycompany.magazinelectronice;
 
-public class Laptop {
-    String marca, model, rezEcran, procesor, tipEcran, culoare, frecventaRam, sistemDeOperare, tipPlacaVideo, modelPlacaVideo, tipPorturi, autonomieBat;
-    int anAparitie, cantitate, memorieRam, nrCamere, rezCamere, marimeBat, nrPorturi;
-    float diagonalaEcran, greutate, pret;
+public class Laptop extends Device{
+    String rezEcran, procesor, tipEcran, culoare, frecventaRam, sistemDeOperare, tipPlacaVideo, modelPlacaVideo, tipPorturi, autonomieBat;
+    int memorieRam, nrCamere, rezCamere, marimeBat, nrPorturi;
+    float diagonalaEcran, greutate;
     
-    public Laptop() {
+    public Laptop()  
+    {
+        super("NULL","NULL",0,0,0);
     }
     
     public Laptop(String marca, String model, String rezEcran, String procesor, String tipEcran, String culoare, String frecventaRam, String sistemDeOperare, String tipPlacaVideo, String modelPlacaVideo, String tipPorturi, String autonomieBat, int anAparitie, int cantitate, int memorieRam, int nrCamere, int rezCamere, int marimeBat, int nrPorturi, float pret, float diagonalaEcran, float greutate) {
-        this.marca = marca;
-        this.model = model;
+        super( marca, model, cantitate, anAparitie, pret);
         this.rezEcran = rezEcran;
         this.procesor = procesor;
         this.tipEcran = tipEcran;
@@ -22,22 +23,18 @@ public class Laptop {
         this.tipPorturi = tipPorturi;
         this.autonomieBat = autonomieBat;
         
-        this.anAparitie = anAparitie;
-        this.cantitate = cantitate;
         this.memorieRam = memorieRam;
         this.nrCamere = nrCamere;
         this.rezCamere = rezCamere;
         this.marimeBat = marimeBat;
         this.nrPorturi = nrPorturi;
         
-        this.pret = pret;
         this.diagonalaEcran = diagonalaEcran;
         this.greutate = greutate;
     }
     
     public Laptop(Laptop l) {
-        this.marca = l.marca;
-        this.model = l.model;
+        super( l.marca, l.model, l.cantitate, l.anAparitie, l.pret);
         this.rezEcran = l.rezEcran;
         this.procesor = l.procesor;
         this.tipEcran = l.tipEcran;
@@ -48,37 +45,18 @@ public class Laptop {
         this.modelPlacaVideo = l.modelPlacaVideo;
         this.tipPorturi = l.tipPorturi;
         this.autonomieBat = l.autonomieBat;
-        
-        this.anAparitie = l.anAparitie;
-        this.cantitate = l.cantitate;
+
         this.memorieRam = l.memorieRam;
         this.nrCamere = l.nrCamere;
         this.rezCamere = l.rezCamere;
         this.marimeBat = l.marimeBat;
         this.nrPorturi = l.nrPorturi;
         
-        this.pret = l.pret;
         this.diagonalaEcran = l.diagonalaEcran;
         this.greutate = l.greutate;
     }
     
     // Marca
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    // Model
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
 
     // Rezolutie Ecran
     public String getRezEcran() {
@@ -169,34 +147,7 @@ public class Laptop {
     public void setAutonomieBat(String autonomieBat) {
         this.autonomieBat = autonomieBat;
     }
-
-    // Pret
-    public float getPret() {
-        return pret;
-    }
-
-    public void setPret(int pret) {
-        this.pret = pret;
-    }
-
-    // An Aparitie
-    public int getAnAparitie() {
-        return anAparitie;
-    }
-
-    public void setAnAparitie(int anAparitie) {
-        this.anAparitie = anAparitie;
-    }
-
-    // Cantitate
-    public int getCantitate() {
-        return cantitate;
-    }
-
-    public void setCantitate(int cantitate) {
-        this.cantitate = cantitate;
-    }
-
+   
     // Memorie RAM
     public int getMemorieRam() {
         return memorieRam;

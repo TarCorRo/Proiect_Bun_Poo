@@ -1,16 +1,17 @@
 package com.mycompany.magazinelectronice;
 
-public class Desktop {
-    String marca, model, procesor, culoare, frecventaRam, sistemDeOperare, tipPlacaVideo, modelPlacaVideo, tipPorturi;
-    int anAparitie, cantitate, memorieRam, nrPorturi;
-    float greutate, pret;
+public class Desktop extends Device{
+    String procesor, culoare, frecventaRam, sistemDeOperare, tipPlacaVideo, modelPlacaVideo, tipPorturi;
+    int memorieRam, nrPorturi;
+    float greutate;
     
-    public Desktop() {
+    public Desktop() 
+    {
+        super("NULL","NULL",0,0,0);
     }
     
     public Desktop(String marca, String model, String procesor, String culoare, String frecventaRam, String sistemDeOperare, String tipPlacaVideo, String modelPlacaVideo, String tipPorturi, int anAparitie, int cantitate, int memorieRam, int nrPorturi,  float pret, float greutate) {
-        this.marca = marca;
-        this.model = model;
+        super( marca, model, cantitate, anAparitie, pret);
         this.procesor = procesor;
         this.culoare = culoare;
         this.frecventaRam = frecventaRam;
@@ -18,17 +19,13 @@ public class Desktop {
         this.tipPlacaVideo = tipPlacaVideo;
         this.modelPlacaVideo = modelPlacaVideo;
         this.tipPorturi = tipPorturi;
-        this.pret = pret;
-        this.anAparitie = anAparitie;
-        this.cantitate = cantitate;
         this.memorieRam = memorieRam;
         this.nrPorturi = nrPorturi;
         this.greutate = greutate;
     }
     
     public Desktop(Desktop l) {
-        this.marca = l.marca;
-        this.model = l.model;
+        super( l.marca, l.model, l.cantitate, l.anAparitie, l.pret);
         this.procesor = l.procesor;
         this.culoare = l.culoare;
         this.frecventaRam = l.frecventaRam;
@@ -37,32 +34,11 @@ public class Desktop {
         this.modelPlacaVideo = l.modelPlacaVideo;
         this.tipPorturi = l.tipPorturi;
         
-        this.anAparitie = l.anAparitie;
-        this.cantitate = l.cantitate;
         this.memorieRam = l.memorieRam;
         this.nrPorturi = l.nrPorturi;
         
-        this.pret = l.pret;
         this.greutate = l.greutate;
-    }
-    
-    // Marca
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    // Model
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
+    }  
     
     // Procesor
     public String getProcesor() {
@@ -125,33 +101,6 @@ public class Desktop {
 
     public void setTipPorturi(String tipPorturi) {
         this.tipPorturi = tipPorturi;
-    }
-
-    // Pret
-    public float getPret() {
-        return pret;
-    }
-
-    public void setPret(int pret) {
-        this.pret = pret;
-    }
-
-    // An Aparitie
-    public int getAnAparitie() {
-        return anAparitie;
-    }
-
-    public void setAnAparitie(int anAparitie) {
-        this.anAparitie = anAparitie;
-    }
-
-    // Cantitate
-    public int getCantitate() {
-        return cantitate;
-    }
-
-    public void setCantitate(int cantitate) {
-        this.cantitate = cantitate;
     }
 
     // Memorie RAM

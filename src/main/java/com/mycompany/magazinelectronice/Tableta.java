@@ -2,15 +2,14 @@ package com.mycompany.magazinelectronice;
 
 //@author Razvan
 
-public class Tableta {
+public class Tableta extends Device{
     
-    String marca, model, procesor, tipEcran, culoare, frecventaAntena, sisOpTab, tipIncarcare, tipSim, rezEcran, rezCamere;
-    int cantitate, memorieROM, memorieRAM, anAparitie, nrCamere, marimeBat;
-    double pret, diagonalaEcran;
+    String procesor, tipEcran, culoare, frecventaAntena, sisOpTab, tipIncarcare, tipSim, rezEcran, rezCamere;
+    int  memorieROM, memorieRAM, nrCamere, marimeBat;
+    double diagonalaEcran;
     
     public Tableta(){
-        this.marca="NULL";
-         this.model="NULL";
+        super("NULL","NULL",0,0,0);
          this.procesor="NULL";
          this.tipEcran="NULL";
          this.culoare="NULL";
@@ -18,22 +17,18 @@ public class Tableta {
          this.sisOpTab="NULL";
          this.tipIncarcare="NULL";
          this.tipSim="NULL";
-         this.cantitate=0;
          this.memorieRAM=0;
          this.memorieROM=0;
-         this.anAparitie=0;
          this.nrCamere=0;
          this.rezCamere="NULL";
          this.marimeBat=0;
-         this.pret=0;
          this.diagonalaEcran=0;
          this.rezEcran="NULL";
     }
     
-    public Tableta(String marca, String model, String procesor, String tipEcran, String culoare, String frecventaAntena, String sisOpTab, String tipIncarcare, String tipSim, int cantitate, int memorieROM, int memorieRAM, int anAparitie, int nrCamere,String rezCamere, int marimeBat, double pret, double diagonalaEcran, String rezEcran)
+    public Tableta(String marca, String model, String procesor, String tipEcran, String culoare, String frecventaAntena, String sisOpTab, String tipIncarcare, String tipSim, int cantitate, int memorieROM, int memorieRAM, int anAparitie, int nrCamere,String rezCamere, int marimeBat, float pret, double diagonalaEcran, String rezEcran)
     {
-         this.marca=marca;
-         this.model=model;
+        super( marca, model, cantitate, anAparitie, pret);
          this.procesor=procesor;
          this.tipEcran=tipEcran;
          this.culoare=culoare;
@@ -44,18 +39,15 @@ public class Tableta {
          this.cantitate=cantitate;
          this.memorieRAM=memorieRAM;
          this.memorieROM=memorieROM;
-         this.anAparitie=anAparitie;
          this.nrCamere=nrCamere;
          this.rezCamere=rezCamere;
          this.marimeBat=marimeBat;
-         this.pret=pret;
          this.diagonalaEcran=diagonalaEcran;
          this.rezEcran=rezEcran;
     }
     
     public Tableta(Tableta tabletaOriginala) {
-        this.marca = tabletaOriginala.marca;
-        this.model = tabletaOriginala.model;
+        super( tabletaOriginala.marca, tabletaOriginala.model, tabletaOriginala.cantitate, tabletaOriginala.anAparitie, tabletaOriginala.pret);
         this.procesor = tabletaOriginala.procesor;
         this.tipEcran = tabletaOriginala.tipEcran;
         this.culoare = tabletaOriginala.culoare;
@@ -65,13 +57,10 @@ public class Tableta {
         this.tipSim = tabletaOriginala.tipSim;
         this.rezEcran = tabletaOriginala.rezEcran;
         this.rezCamere = tabletaOriginala.rezCamere;
-        this.cantitate = tabletaOriginala.cantitate;
         this.memorieROM = tabletaOriginala.memorieROM;
         this.memorieRAM = tabletaOriginala.memorieRAM;
-        this.anAparitie = tabletaOriginala.anAparitie;
         this.nrCamere = tabletaOriginala.nrCamere;
         this.marimeBat = tabletaOriginala.marimeBat;
-        this.pret = tabletaOriginala.pret;
         this.diagonalaEcran = tabletaOriginala.diagonalaEcran;
     }
     
@@ -99,28 +88,12 @@ public class Tableta {
                 "\nAnul aparitiei tabletei : "+ anAparitie;
     }
     
-    public double getPret() {
-        return pret;
-    }
-    
-    public void setPret(float pret) {
-        this.pret = pret;
-    }
-    
     public double getDiagonalaEcran() {
         return diagonalaEcran;
     }
     
     public void setDiagonalaEcran(float diagonalaEcran) {
         this.diagonalaEcran = diagonalaEcran;
-    }
-    
-     public int getCantitate() {
-        return cantitate;
-    }
-
-    public void setCantitate(int cantitate) {
-        this.cantitate = cantitate;
     }
 
     public int getMemorieROM() {
@@ -139,14 +112,6 @@ public class Tableta {
         return memorieRAM;
     }
     
-    public void setAnAparitie(int anAparitie){
-        this.anAparitie=anAparitie;
-    }
-    
-    public int getAnAparitie() {
-        return anAparitie;
-    }
-    
     public void setNrCamere(int nrCamere){
         this.nrCamere=nrCamere;
     }
@@ -161,22 +126,6 @@ public class Tableta {
     
     public int getMarimeBat() {
         return marimeBat;
-    }
-    
-     public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
     }
 
     public String getProcesor() {

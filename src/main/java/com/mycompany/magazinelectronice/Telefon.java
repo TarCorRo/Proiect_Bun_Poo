@@ -2,15 +2,14 @@ package com.mycompany.magazinelectronice;
 
 //@author Razvan
 
-public class Telefon {
+public class Telefon extends Device{
     
-    String marca, model, procesor, tipEcran, culoare, frecventaAntena, sisOpTel, tipIncarcare, tipSim, rezEcran, rezCamere;
-    int cantitate, memorieROM, memorieRAM, anAparitie, nrCamere, marimeBat;
-    double pret, diagonalaEcran;
+    String procesor, tipEcran, culoare, frecventaAntena, sisOpTel, tipIncarcare, tipSim, rezEcran, rezCamere;
+    int memorieROM, memorieRAM, nrCamere, marimeBat;
+    double diagonalaEcran;
     
     public Telefon(){
-        this.marca="NULL";
-         this.model="NULL";
+        super("NULL","NULL",0,0,0);
          this.procesor="NULL";
          this.tipEcran="NULL";
          this.culoare="NULL";
@@ -18,22 +17,18 @@ public class Telefon {
          this.sisOpTel="NULL";
          this.tipIncarcare="NULL";
          this.tipSim="NULL";
-         this.cantitate=0;
          this.memorieRAM=0;
          this.memorieROM=0;
-         this.anAparitie=0;
          this.nrCamere=0;
          this.rezCamere="NULL";
          this.marimeBat=0;
-         this.pret=0;
          this.diagonalaEcran=0;
          this.rezEcran="NULL";
     }
     
-    public Telefon(String marca, String model, String procesor, String tipEcran, String culoare, String frecventaAntena, String sisOpTel, String tipIncarcare, String tipSim, int cantitate, int memorieROM, int memorieRAM, int anAparitie, int nrCamere,String rezCamere, int marimeBat, double pret, double diagonalaEcran, String rezEcran)
+    public Telefon(String marca, String model, String procesor, String tipEcran, String culoare, String frecventaAntena, String sisOpTel, String tipIncarcare, String tipSim, int cantitate, int memorieROM, int memorieRAM, int anAparitie, int nrCamere,String rezCamere, int marimeBat, float pret, double diagonalaEcran, String rezEcran)
     {
-         this.marca=marca;
-         this.model=model;
+        super( marca, model, cantitate, anAparitie, pret);
          this.procesor=procesor;
          this.tipEcran=tipEcran;
          this.culoare=culoare;
@@ -41,21 +36,17 @@ public class Telefon {
          this.sisOpTel=sisOpTel;
          this.tipIncarcare=tipIncarcare;
          this.tipSim=tipSim;
-         this.cantitate=cantitate;
          this.memorieRAM=memorieRAM;
          this.memorieROM=memorieROM;
-         this.anAparitie=anAparitie;
          this.nrCamere=nrCamere;
          this.rezCamere=rezCamere;
          this.marimeBat=marimeBat;
-         this.pret=pret;
          this.diagonalaEcran=diagonalaEcran;
          this.rezEcran=rezEcran;
     }
     
     public Telefon(Telefon telefonOriginal) {
-        this.marca = telefonOriginal.marca;
-        this.model = telefonOriginal.model;
+        super( telefonOriginal.marca, telefonOriginal.model, telefonOriginal.cantitate, telefonOriginal.anAparitie, telefonOriginal.pret);
         this.procesor = telefonOriginal.procesor;
         this.tipEcran = telefonOriginal.tipEcran;
         this.culoare = telefonOriginal.culoare;
@@ -65,13 +56,10 @@ public class Telefon {
         this.tipSim = telefonOriginal.tipSim;
         this.rezEcran = telefonOriginal.rezEcran;
         this.rezCamere = telefonOriginal.rezCamere;
-        this.cantitate = telefonOriginal.cantitate;
         this.memorieROM = telefonOriginal.memorieROM;
         this.memorieRAM = telefonOriginal.memorieRAM;
-        this.anAparitie = telefonOriginal.anAparitie;
         this.nrCamere = telefonOriginal.nrCamere;
         this.marimeBat = telefonOriginal.marimeBat;
-        this.pret = telefonOriginal.pret;
         this.diagonalaEcran = telefonOriginal.diagonalaEcran;
     }
     
@@ -99,14 +87,6 @@ public class Telefon {
                 "\nAnul aparitiei telefonului  : "+ anAparitie;
     }
     
-    public double getPret() {
-        return pret;
-    }
-    
-    public void setPret(float pret) {
-        this.pret = pret;
-    }
-    
     public double getDiagonalaEcran() {
         return diagonalaEcran;
     }
@@ -115,14 +95,6 @@ public class Telefon {
         this.diagonalaEcran = diagonalaEcran;
     }
     
-     public int getCantitate() {
-        return cantitate;
-    }
-
-    public void setCantitate(int cantitate) {
-        this.cantitate = cantitate;
-    }
-
     public int getMemorieROM() {
         return memorieROM;
     }
@@ -139,14 +111,6 @@ public class Telefon {
         return memorieRAM;
     }
     
-    public void setAnAparitie(int anAparitie){
-        this.anAparitie=anAparitie;
-    }
-    
-    public int getAnAparitie() {
-        return anAparitie;
-    }
-    
     public void setNrCamere(int nrCamere){
         this.nrCamere=nrCamere;
     }
@@ -161,22 +125,6 @@ public class Telefon {
     
     public int getMarimeBat() {
         return marimeBat;
-    }
-    
-     public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
     }
 
     public String getProcesor() {

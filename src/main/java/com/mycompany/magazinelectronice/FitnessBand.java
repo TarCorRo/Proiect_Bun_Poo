@@ -10,16 +10,15 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
 
-public class FitnessBand {
+public class FitnessBand extends Device {
   
-    public String Marca, Model, Procesor, TipEcran, Culoare, SistemDeOperareSmtWtc, Capabilities, TipIncarcare, TipSim, Senzori, MatCurea, MatCarcasa;
-    public float Pret, DiagonalaEcran, DimCarcasa;
-    public int Cantitate, RezEcran, MemorieROM, MemorieRAM, AnAparitie, MarimeBat;
+    public String Procesor, TipEcran, Culoare, SistemDeOperareSmtWtc, Capabilities, TipIncarcare, TipSim, Senzori, MatCurea, MatCarcasa;
+    public float DiagonalaEcran, DimCarcasa;
+    public int RezEcran, MemorieROM, MemorieRAM, MarimeBat;
     
     //constructor fara parametri
     public FitnessBand(){
-        this.Marca="";
-        this.Model = "";
+        super("NULL","NULL",0,0,0);
         this.Procesor = "";
         this.TipEcran = "";
         this.Culoare = "";
@@ -30,14 +29,11 @@ public class FitnessBand {
         this.Senzori = ""; // Un array gol
         this.MatCurea = "";
         this.MatCarcasa = "";
-        this.Pret = 0.0f;
         this.DiagonalaEcran = 0.0f;
         this.DimCarcasa = 0.0f;
-        this.Cantitate = 0;
         this.RezEcran = 0;
         this.MemorieROM = 0;
         this.MemorieRAM = 0;
-        this.AnAparitie = 0;
         this.MarimeBat = 0;
     }
    
@@ -46,8 +42,7 @@ public class FitnessBand {
             String TipIncarcare, String TipSim, String Senzori, String MatCurea, String MatCarcasa,
             float Pret, float DiagonalaEcran, float DimCarcasa, int Cantitate, int RezEcran, int MemorieROM,
             int MemorieRAM, int AnAparitie, int MarimeBat ){
-        this.Marca=Marca;
-        this.Model=Model;
+        super( Marca, Model, Cantitate, AnAparitie, Pret);
         this.Procesor=Procesor;
         this.TipEcran=TipEcran;
         this.TipIncarcare=TipIncarcare;
@@ -58,21 +53,17 @@ public class FitnessBand {
         this.Senzori= Senzori;
         this.MatCarcasa= MatCarcasa;
         this.MatCurea=MatCurea;
-        this.Pret=Pret;
         this.DiagonalaEcran=DiagonalaEcran;
         this.DimCarcasa=DimCarcasa;
-        this.Cantitate=Cantitate;
         this.RezEcran=RezEcran;
         this.MemorieRAM=MemorieRAM;
         this.MemorieROM=MemorieROM;
-        this.AnAparitie=AnAparitie;
         this.MarimeBat=MarimeBat;
     };
   
     //Constructor de copiere
     public FitnessBand(FitnessBand other){
-        this.Marca = other.Marca;
-        this.Model = other.Model;
+        super(other.marca,other.model,other.cantitate,other.anAparitie,other.pret);
         this.Procesor = other.Procesor;
         this.TipEcran = other.TipEcran;
         this.Culoare = other.Culoare;
@@ -83,31 +74,14 @@ public class FitnessBand {
         this.Senzori = other.Senzori;
         this.MatCurea = other.MatCurea;
         this.MatCarcasa = other.MatCarcasa;
-        this.Pret = other.Pret;
         this.DiagonalaEcran = other.DiagonalaEcran;
         this.DimCarcasa = other.DimCarcasa;
-        this.Cantitate = other.Cantitate;
         this.RezEcran = other.RezEcran;
         this.MemorieROM = other.MemorieROM;
         this.MemorieRAM = other.MemorieRAM;
-        this.AnAparitie = other.AnAparitie;
         this.MarimeBat = other.MarimeBat;
     }
     //Functii get si set
-    public String getMarca(){
-        return Marca;
-    }
-    public void setMarca(String marca){
-     //marca = SmtWtc.nextLine();
-      this.Marca = marca;
-    }
-    public String getModel(){
-        return Model;
-    }
-    public void setModel(String model){
-       // model = SmtWtc.nextLine();
-        this.Model = model;
-    }
     public String getProcesor(){
         return Procesor;
     }
@@ -177,12 +151,6 @@ public class FitnessBand {
         //carcasa=SmtWtc.nextLine();
         this.MatCarcasa=carcasa;
     }
-    public float getPret(){
-        return Pret;
-    }
-    public void setPret(float pret){
-        this.Pret=pret;
-    }
     public float getDiagonalaEcran(){
         return DiagonalaEcran;
     }
@@ -194,12 +162,6 @@ public class FitnessBand {
     }
     public void setDimCarcasa(float carcasa){
         this.DimCarcasa=carcasa;
-    }
-    public int getCantitate(){
-        return Cantitate;
-    }
-    public void setCantitate(int cantitate){
-        this.Cantitate=cantitate;
     }
     public int getRezEcran(){
         return RezEcran;
@@ -218,12 +180,6 @@ public class FitnessBand {
     }
     public void setMemorieRAM(int ram){
         this.MemorieRAM=ram;
-    }
-    public int getAnAparitie(){
-        return AnAparitie;
-    }
-    public void setAnAparitie(int an){
-        this.AnAparitie=an;
     }
     public int getMarimeBat(){
         return MarimeBat;
@@ -252,8 +208,8 @@ public class FitnessBand {
     
     }*/
     public String toString(){
-        return "Marca: " + Marca +
-            "\nModel: " + Model +
+        return "Marca: " + marca +
+            "\nModel: " + model +
             "\nProcesor: " + Procesor +
             "\nTipEcran: " + TipEcran +
             "\nCuloare: " + Culoare +
@@ -264,14 +220,14 @@ public class FitnessBand {
             "\nSenzori: " + Senzori +
             "\nMaterial Curea: " + MatCurea +
             "\nMaterial Carcasa: " + MatCarcasa +
-            "\nPret: " + Pret +
+            "\nPret: " + pret +
             "\nDiagonala Ecran: " + DiagonalaEcran +
             "\nDimensiune Carcasa: " + DimCarcasa +
-            "\nProduse Disponibile: " + Cantitate +
+            "\nProduse Disponibile: " + cantitate +
             "\nRezolutie Ecran: " + RezEcran +
             "\nMemorie ROM: " + MemorieROM +
             "\nMemorie RAM: " + MemorieRAM +
-            "\nAnul Aparitie: " + AnAparitie +
+            "\nAnul Aparitie: " + anAparitie +
             "\nCapacitate Baterie: " + MarimeBat;
     }
 }
