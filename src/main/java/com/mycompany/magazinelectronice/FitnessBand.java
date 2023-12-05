@@ -18,17 +18,17 @@ public class FitnessBand extends Device {
     
     //constructor fara parametri
     public FitnessBand(){
-        super("NULL","NULL",0,0,0);
-        this.Procesor = "";
-        this.TipEcran = "";
-        this.Culoare = "";
-        this.SistemDeOperareSmtWtc = "";
-        this.Capabilities = "";
-        this.TipIncarcare = "";
-        this.TipSim = "";
-        this.Senzori = ""; // Un array gol
-        this.MatCurea = "";
-        this.MatCarcasa = "";
+        super(null,null,0,0,0);
+        this.Procesor = null;
+        this.TipEcran = null;
+        this.Culoare = null;
+        this.SistemDeOperareSmtWtc = null;
+        this.Capabilities = null;
+        this.TipIncarcare = null;
+        this.TipSim = null;
+        this.Senzori = null; // Un array gol
+        this.MatCurea = null;
+        this.MatCarcasa = null;
         this.DiagonalaEcran = 0.0f;
         this.DimCarcasa = 0.0f;
         this.RezEcran = 0;
@@ -208,8 +208,7 @@ public class FitnessBand extends Device {
     
     }*/
     public String toString(){
-        return "Marca: " + marca +
-            "\nModel: " + model +
+        return super.toString() +
             "\nProcesor: " + Procesor +
             "\nTipEcran: " + TipEcran +
             "\nCuloare: " + Culoare +
@@ -220,14 +219,11 @@ public class FitnessBand extends Device {
             "\nSenzori: " + Senzori +
             "\nMaterial Curea: " + MatCurea +
             "\nMaterial Carcasa: " + MatCarcasa +
-            "\nPret: " + pret +
             "\nDiagonala Ecran: " + DiagonalaEcran +
             "\nDimensiune Carcasa: " + DimCarcasa +
-            "\nProduse Disponibile: " + cantitate +
             "\nRezolutie Ecran: " + RezEcran +
             "\nMemorie ROM: " + MemorieROM +
             "\nMemorie RAM: " + MemorieRAM +
-            "\nAnul Aparitie: " + anAparitie +
             "\nCapacitate Baterie: " + MarimeBat;
     }
 }

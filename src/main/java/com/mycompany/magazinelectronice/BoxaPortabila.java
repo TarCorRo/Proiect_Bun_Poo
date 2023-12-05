@@ -15,10 +15,10 @@ public class BoxaPortabila extends Device{
    int adancime;
     
    public BoxaPortabila(){
-     super("NULL","NULL",0,0,0);
-     this.culoare="Null";
-     this.tipConectivitate="Null";
-     this.tipBaterie="Null";
+     super(null,null,0,0,0);
+     this.culoare=null;
+     this.tipConectivitate=null;
+     this.tipBaterie=null;
      this.variantaBluetooth=0.f;
      this.raspunsInFrecventa=0.f;
      this.impedantaNominala=0;
@@ -60,17 +60,12 @@ public class BoxaPortabila extends Device{
    
     @Override
     public String toString(){
-        return" Numele boxei: "+marca+" "+model+
-        "\nMarca boxei de casti: " + marca +
-        "\nModelul: "+model+
+        return super.toString() +
         "\nCuloarea: "+culoare+
         "\nTipul de conectivitate "+tipConectivitate+
         "\nTipul bateriei: "+tipBaterie+
-        "\nPretul: "+pret+
         "\nVarianta de Bluetooth "+ variantaBluetooth+
         "\nRaspunsul in frecventa: "+ raspunsInFrecventa+
-        "\nCantitatea "+cantitate+
-        "\nAnul aparitiei "+anAparitie+
         "\nImpedanta nominala "+impedantaNominala+
         "\nNumarul de decibeli "+spl+
         "\nCapacitatea bateriei "+capacitateBaterie+

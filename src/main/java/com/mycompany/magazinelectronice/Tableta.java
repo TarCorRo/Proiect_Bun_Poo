@@ -9,21 +9,21 @@ public class Tableta extends Device{
     double diagonalaEcran;
     
     public Tableta(){
-        super("NULL","NULL",0,0,0);
-         this.procesor="NULL";
-         this.tipEcran="NULL";
-         this.culoare="NULL";
-         this.frecventaAntena="NULL";
-         this.sisOpTab="NULL";
-         this.tipIncarcare="NULL";
-         this.tipSim="NULL";
+        super(null,null,0,0,0);
+         this.procesor=null;
+         this.tipEcran=null;
+         this.culoare=null;
+         this.frecventaAntena=null;
+         this.sisOpTab=null;
+         this.tipIncarcare=null;
+         this.tipSim=null;
          this.memorieRAM=0;
          this.memorieROM=0;
          this.nrCamere=0;
-         this.rezCamere="NULL";
+         this.rezCamere=null;
          this.marimeBat=0;
          this.diagonalaEcran=0;
-         this.rezEcran="NULL";
+         this.rezEcran=null;
     }
     
     public Tableta(String marca, String model, String procesor, String tipEcran, String culoare, String frecventaAntena, String sisOpTab, String tipIncarcare, String tipSim, int cantitate, int memorieROM, int memorieRAM, int anAparitie, int nrCamere,String rezCamere, int marimeBat, float pret, double diagonalaEcran, String rezEcran)
@@ -66,9 +66,7 @@ public class Tableta extends Device{
     
     public String toString()
     {
-        return "Nume tableta : " + marca + " " + model +
-                "\nMarca tableta : "+ marca +
-                "\nModel tableta : "+ model +
+        return super.toString() +
                 "\nDiagonala ecranului tabletei : "+ diagonalaEcran +
                 "\nProcesor tableta : "+ procesor +
                 "\nTip ecran tableta : "+ tipEcran +
@@ -82,10 +80,7 @@ public class Tableta extends Device{
                 "\nRezolutie camere de pe tableta : "+ rezCamere +
                 "\nMemorie ROM tableta : "+ memorieROM + " GB "+
                 "\nMemorie RAM tableta : "+ memorieRAM + " GB "+
-                "\nMarimea bateriei de pe tableta : "+ marimeBat + " mAh "+
-                "\nPretul tabletei : "+ pret + " Lei "+
-                "\nProduse in stoc : "+ cantitate +
-                "\nAnul aparitiei tabletei : "+ anAparitie;
+                "\nMarimea bateriei de pe tableta : "+ marimeBat + " mAh ";
     }
     
     public double getDiagonalaEcran() {

@@ -7,7 +7,7 @@ public class Laptop extends Device{
     
     public Laptop()  
     {
-        super("NULL","NULL",0,0,0);
+        super(null,null,0,0,0);
     }
     
     public Laptop(String marca, String model, String rezEcran, String procesor, String tipEcran, String culoare, String frecventaRam, String sistemDeOperare, String tipPlacaVideo, String modelPlacaVideo, String tipPorturi, String autonomieBat, int anAparitie, int cantitate, int memorieRam, int nrCamere, int rezCamere, int marimeBat, int nrPorturi, float pret, float diagonalaEcran, float greutate) {
@@ -213,6 +213,6 @@ public class Laptop extends Device{
     
     @Override
     public String toString() {
-        return "Laptop " + marca + " " + model + " cu rezolutia de " + rezEcran + " procesor " + procesor + " tip ecran " + tipEcran + " culoare " + culoare + " frecventaRam " + frecventaRam + " sistemDeOperare " + sistemDeOperare + " tipPlacaVideo " + tipPlacaVideo + " modelPlacaVideo " + modelPlacaVideo + " tipPorturi " + tipPorturi + " autonomieBat " + autonomieBat + " anAparitie " + anAparitie + " cantitate " + cantitate + " memorieRam " + memorieRam + " nrCamere " + nrCamere + " rezCamere " + rezCamere + " marimeBat " + marimeBat + " nrPorturi " + nrPorturi + " diagonalaEcran " + diagonalaEcran + " greutate " + " pret " + pret;
+        return super.toString() + " cu rezolutia de " + rezEcran + " procesor " + procesor + " tip ecran " + tipEcran + " culoare " + culoare + " frecventaRam " + frecventaRam + " sistemDeOperare " + sistemDeOperare + " tipPlacaVideo " + tipPlacaVideo + " modelPlacaVideo " + modelPlacaVideo + " tipPorturi " + tipPorturi + " autonomieBat " + autonomieBat + " memorieRam " + memorieRam + " nrCamere " + nrCamere + " rezCamere " + rezCamere + " marimeBat " + marimeBat + " nrPorturi " + nrPorturi + " diagonalaEcran " + diagonalaEcran + " greutate " ;
     }
 }

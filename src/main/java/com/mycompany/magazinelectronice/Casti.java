@@ -9,17 +9,16 @@ public class Casti extends Device{
     float raspunsInFrecventa;
     int autonomie;
     int impedanta;
-
     int greutate;
     int spl;
     
     //constructor fara parametri
     public Casti(){
-        super("NULL","NULL",0,0,0);
-        this.culoare="Null";
-        this.contactCuUrechea="Null";
-        this.principiuDeFunctionare="Null";
-        this.tipConectivitate="Null";
+        super(null,null,0,0,0);
+        this.culoare=null;
+        this.contactCuUrechea=null;
+        this.principiuDeFunctionare=null;
+        this.tipConectivitate=null;
         this.lungimeCablu=0.f;
         this.raspunsInFrecventa=0.f;
         this.autonomie=0;
@@ -61,20 +60,15 @@ public class Casti extends Device{
     
     @Override
     public String toString(){
-        return" Nume casti: "+marca+" "+model+
-        "\nMarca perechii de casti: " + marca +
-        "\nModelul: "+model+
+        return super.toString() +
         "\nCuloarea: "+culoare+
         "\nContactul cu urechea: "+contactCuUrechea+
         "\nPrincipiul de functionare: "+principiuDeFunctionare+
         "\nTipul de conectare la device: "+tipConectivitate+
-        "\nPretul: "+pret+
         "\nLungimea cablului: "+ lungimeCablu+
         "\nRaspunsul in frecventa: "+ raspunsInFrecventa+
         "\nAutonomia: "+autonomie+
         "\nImpedanta: "+impedanta+
-        "\nCantitatea "+cantitate+
-        "\nAnul aparitiei "+anAparitie+
         "\nGreuatatea "+greutate+
         "\nNumarul de decibeli "+spl;        
          

@@ -9,21 +9,21 @@ public class Telefon extends Device{
     double diagonalaEcran;
     
     public Telefon(){
-        super("NULL","NULL",0,0,0);
-         this.procesor="NULL";
-         this.tipEcran="NULL";
-         this.culoare="NULL";
-         this.frecventaAntena="NULL";
-         this.sisOpTel="NULL";
-         this.tipIncarcare="NULL";
-         this.tipSim="NULL";
+        super(null,null,0,0,0);
+         this.procesor=null;
+         this.tipEcran=null;
+         this.culoare=null;
+         this.frecventaAntena=null;
+         this.sisOpTel=null;
+         this.tipIncarcare=null;
+         this.tipSim=null;
          this.memorieRAM=0;
          this.memorieROM=0;
          this.nrCamere=0;
-         this.rezCamere="NULL";
+         this.rezCamere=null;
          this.marimeBat=0;
          this.diagonalaEcran=0;
-         this.rezEcran="NULL";
+         this.rezEcran=null;
     }
     
     public Telefon(String marca, String model, String procesor, String tipEcran, String culoare, String frecventaAntena, String sisOpTel, String tipIncarcare, String tipSim, int cantitate, int memorieROM, int memorieRAM, int anAparitie, int nrCamere,String rezCamere, int marimeBat, float pret, double diagonalaEcran, String rezEcran)
@@ -65,9 +65,7 @@ public class Telefon extends Device{
     
     public String toString()
     {
-        return "Nume telefon : " + marca + " " + model +
-                "\nMarca telefon : "+ marca +
-                "\nModel telefon : "+ model +
+        return super.toString() +
                 "\nDiagonala ecranului telefon : "+ diagonalaEcran +
                 "\nProcesor telefon : "+ procesor +
                 "\nTip ecran telefon : "+ tipEcran +
@@ -81,10 +79,7 @@ public class Telefon extends Device{
                 "\nRezolutie camere de pe telefon : "+ rezCamere +
                 "\nMemorie ROM telefon : "+ memorieROM + " GB "+
                 "\nMemorie RAM telefon : "+ memorieRAM + " GB "+
-                "\nMarimea bateriei de pe telefon : "+ marimeBat + " mAh "+
-                "\nPretul telefonului : "+ pret + " Lei "+
-                "\nProduse in stoc : "+ cantitate +
-                "\nAnul aparitiei telefonului  : "+ anAparitie;
+                "\nMarimea bateriei de pe telefon : "+ marimeBat + " mAh ";
     }
     
     public double getDiagonalaEcran() {

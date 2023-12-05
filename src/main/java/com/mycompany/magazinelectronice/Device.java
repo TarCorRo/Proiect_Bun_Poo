@@ -6,6 +6,15 @@ public class Device {
     int cantitate, anAparitie;
     float pret;
     
+    public Device()
+    {
+        this.marca = null;
+        this.model = null;
+        this.cantitate = 0;
+        this.anAparitie = 0;
+        this.pret = 0.0f;
+    }
+    
     public Device(String marca, String model, int cantitate, int anAparitie, float pret)
     {
         this.marca=marca;
@@ -13,6 +22,25 @@ public class Device {
         this.cantitate=cantitate;
         this.anAparitie=anAparitie;
         this.pret=pret;
+    }
+    
+    public Device(Device i)
+    {
+        this.marca = i.marca;
+        this.model = i.model;
+        this.cantitate = i.cantitate;
+        this.anAparitie = i.anAparitie;
+        this.pret = i.pret;
+    }
+    
+    public String toString(){
+        return "Nume produs: "+marca+" "+model+
+        "\nMarca produs: " + marca +
+        "\nModelul: "+model+
+        "\nCantitatea "+cantitate+
+        "\nAnul aparitiei "+anAparitie+
+        "\nPretul: "+pret;
+                
     }
     
     public String getMarca() {

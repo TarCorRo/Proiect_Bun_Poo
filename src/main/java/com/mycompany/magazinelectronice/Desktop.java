@@ -7,7 +7,7 @@ public class Desktop extends Device{
     
     public Desktop() 
     {
-        super("NULL","NULL",0,0,0);
+        super(null,null,0,0,0);
     }
     
     public Desktop(String marca, String model, String procesor, String culoare, String frecventaRam, String sistemDeOperare, String tipPlacaVideo, String modelPlacaVideo, String tipPorturi, int anAparitie, int cantitate, int memorieRam, int nrPorturi,  float pret, float greutate) {
@@ -132,6 +132,6 @@ public class Desktop extends Device{
     
     @Override
     public String toString() {
-        return "Desktop " + marca + " " + model + " procesor " + procesor + " culoare " + culoare + " frecventaRam " + frecventaRam + " sistemDeOperare " + sistemDeOperare + " tipPlacaVideo " + tipPlacaVideo + " modelPlacaVideo " + modelPlacaVideo + " tipPorturi " + tipPorturi + " anAparitie " + anAparitie + " cantitate " + cantitate + " memorieRam " + memorieRam + " nrPorturi " + nrPorturi + " greutate " + " pret " + pret;
+        return super.toString() + " procesor " + procesor + " culoare " + culoare + " frecventaRam " + frecventaRam + " sistemDeOperare " + sistemDeOperare + " tipPlacaVideo " + tipPlacaVideo + " modelPlacaVideo " + modelPlacaVideo + " tipPorturi " + tipPorturi + " memorieRam " + memorieRam + " nrPorturi " + nrPorturi + " greutate " ;
     }
 }
