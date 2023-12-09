@@ -1,4 +1,6 @@
-package com.mycompany.magazinelectronice;
+package newpackage;
+
+import com.mycompany.magazinelectronice.*;
 
 public class MagazinElectronice {
     interface Checkable {
@@ -165,6 +167,30 @@ public class MagazinElectronice {
            boxa1, boxa2, boxa3, boxa4, boxa5, boxa6, boxa7, boxa8, boxa9, boxa10, casti1, casti2, casti3, casti4, casti5, casti6, casti7, casti8, casti9, casti10,
            smartwatch1, smartwatch2, smartwatch3, smartwatch4, smartwatch5, smartwatch6, smartwatch7, smartwatch8, smartwatch9, smartwatch10,
            fitnessBand1, fitnessBand2, fitnessBand3, fitnessBand4, fitnessBand5, fitnessBand6, fitnessBand7, fitnessBand8, fitnessBand9, fitnessBand10,
+        };
+        
+      Object[] telefon = { tel2, tel3, tel4, tel5, tel6, tel7, tel8, tel9, tel10, tel11
+        };
+        
+      Object[] tableta = { tel2, tel3, tel4, tel5, tel6, tel7, tel8, tel9, tel10, tel11
+        };
+        
+      Object[] laptop = { l1, l2, l3, l4, l5, l6, l7, l8, l9, l10
+        };
+        
+      Object[] desktop = { d1, d2, d3, d4, d5, d6, d7, d8, d9,  d10,
+        };
+        
+      Object[] boxa = { boxa1, boxa2, boxa3, boxa4, boxa5, boxa6, boxa7, boxa8, boxa9, boxa10
+        };
+        
+      Object[] casti = { casti1, casti2, casti3, casti4, casti5, casti6, casti7, casti8, casti9, casti10
+        };
+        
+      Object[] smartwatch = { smartwatch1, smartwatch2, smartwatch3, smartwatch4, smartwatch5, smartwatch6, smartwatch7, smartwatch8, smartwatch9, smartwatch10
+        };
+        
+      Object[] fitnessband = { fitnessBand1, fitnessBand2, fitnessBand3, fitnessBand4, fitnessBand5, fitnessBand6, fitnessBand7, fitnessBand8, fitnessBand9, fitnessBand10
         };
         
         if(args.length == 0)

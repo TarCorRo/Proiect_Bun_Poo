@@ -1,24 +1,37 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package newpackage;
-
 /**
  *
  * @author Razvan
  */
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import com.mycompany.magazinelectronice.*;
 public class telefoaneint extends javax.swing.JFrame {
 
     /**
      * Creates new form telefoaneint
      */
+     Telefon tel1 = new Telefon();
+        Telefon tel2 = new Telefon("Xiaomi","11T","Mediatek MT6893 Dimensity 1200", "AMOLED", "Space Gray", "4G,5G", "Android 14", "Usb C","NanoSim",38,128,12,2021,4,"108 MP Wide, 8 MP Ultrawide, 5 MP Telephoto macro, 16 MP Front", 5000, 1600, 6.67,"1080 x 2400" );
+        Telefon tel3 = new Telefon("Samsung","S23 Ultra","Qualcomm SM8550-AC Snapdragon 8 Gen 2", "Dynamic AMOLED 2x", "Phantom Black", "4G,5G", "Android 14", "Usb C, Wireless, Reverse Wireless","NanoSim",23,512,12,2023,5,"200 MP Wide, 12 MP Ultrawide, 10 MP Telephoto , 10 MP periscope telephoto, 12 MP Front", 5000, 7600, 6.8,"1440 x 3088");
+        Telefon tel4 = new Telefon("Apple","14 Pro Max","Apple 16 Bionic", "LTPO Super Retina XDR OLED", "Gold", "4G,5G", "iOS 17", "Lightning","NanoSim",75,512,10,2022,4,"48 MP Wide, 12 MP Ultrawide, 12 MP Telephoto , 12 MP Front", 4323, 5899, 6.7,"1290 x 2796");
+        Telefon tel5 = new Telefon("Nokia","G42","Qualcomm SM4350-AC Snapdragon 480+ 5G", "IPS LCD", "Purple", "4G,5G", "Android 13", "Usb C","NanoSim",239,64,6,2023,4,"50 MP Wide, 2 MP Ultrawide, 2 MP Telephoto macro, 8 MP Front", 5000, 1399.99f, 6.56,"720 x 1612");
+        Telefon tel6 = new Telefon("Nokia","C300","Qualcomm SM6115 Snapdragon 662", "IPS LCD", "Blue", "4G,5G", "Android 13", "Usb C","NanoSim",8,128,8,2023,4,"13 MP Wide, 2 MP Ultrawide, 2 MP Telephoto macro, 8 MP Front", 4000, 832.78f, 6.52,"720 x 1600");
+        Telefon tel7 = new Telefon("Apple","iPhone 15 Pro Max","Apple A17 Pro", "LTPO Super Retina XDR OLED", "White Titanium", "4G,5G", "iOS 17", "Usb C","NanoSim",2,512,8,2023,4,"48 MP Wide, 12 MP Ultrawide, 12 MP Telephoto macro, 12 MP Front", 4441, 8978.64f, 6.7,"1290 x 2796");
+        Telefon tel8 = new Telefon("Apple","iPhone 15 Plus","Apple A16 Bionic", "Super Retina XDR OLED", "Green", "4G,5G", "iOS 17", "Usb C, Wireless","NanoSim",96,256,8,2023,3,"48 MP Wide, 12 MP Ultrawide, 12 MP Front", 4383, 5763.90f, 6.7,"1290 x 2796");
+        Telefon tel9 = new Telefon("Xiaomi","14 Pro","Qualcomm SM8650-AB Snapdragon 8 Gen 3", "LTPO AMOLED", "Titanium", "4G,5G", "Android 14, HyperOS", "Usb C, Wireless","NanoSim",1,512,16,2023,4,"50 MP Wide, 50 MP Ultrawide, 50 MP Telephoto macro, 32 MP Front", 4880, 6547.32f, 6.73,"1440 x 3200");
+        Telefon tel10 = new Telefon("Samsung","Galaxy A54","Exynos 1380", "Super AMOLED", "Violet", "4G,5G", "Android 13", "Usb C","NanoSim",0,128,8,2023,4,"50 MP Wide, 12 MP Ultrawide,5 MP Telephoto macro, 32 MP Front", 5000, 2599.23f, 6.4,"1080 x 2340");
+        Telefon tel11 = new Telefon("Samsung","Galaxy S23 FE","Qualcomm SM8450 Snapdragon 8 Gen 1", "Dynamic AMOLED 2X", "Mint", "4G,5G", "Android 14", "Usb C","NanoSim",92,256,8,2023,4,"50 MP Wide, 8 MP Ultrawide, 12 MP Telephoto macro, 10 MP Front", 4500, 4599.23f, 6.4,"1080 x 2340");
+        Telefon tel12 = new Telefon(tel2);
+     private Telefon[] telefoane = {tel2,tel3,tel4,tel5,tel6,tel7,tel8,tel9,tel10,tel11};
+    
     public telefoaneint() {
         initComponents();
         setLocationRelativeTo(null);
          setVisible(true);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,6 +43,9 @@ public class telefoaneint extends javax.swing.JFrame {
 
         backtest = new java.awt.Button();
         titlu = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
         home = new javax.swing.JMenuItem();
@@ -47,6 +63,20 @@ public class telefoaneint extends javax.swing.JFrame {
         titlu.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         titlu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titlu.setText("Telefoane");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apasati pentru a vedea telefoanele" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+                ActionListener(evt);
+                ActionEvent(evt);
+            }
+        });
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         menu.setText("Home");
         menu.setToolTipText("");
@@ -67,11 +97,17 @@ public class telefoaneint extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(137, 137, 137)
                 .addComponent(titlu, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addComponent(backtest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 624, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -79,7 +115,11 @@ public class telefoaneint extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(backtest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(titlu, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 587, Short.MAX_VALUE))
+                .addGap(76, 76, 76)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         pack();
@@ -99,6 +139,41 @@ public class telefoaneint extends javax.swing.JFrame {
         home.setVisible(true);
     }//GEN-LAST:event_homeActionPerformed
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        String[] numeTel;
+        numeTel = new String[20];
+        for(int i=0;i<telefoane.length;i++){
+            String marca = telefoane[i].getMarca();
+            String model = telefoane[i].getModel();
+            numeTel[i]=marca + " " + model;
+        }
+        jComboBox1.setMaximumRowCount(numeTel.length);
+        jComboBox1.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e)
+            {
+                int selectedIndex=jComboBox1.getSelectedIndex();
+                if(selectedIndex>=0)
+                {
+                    Object obiectSelectat=telefoane[selectedIndex];
+                    String textAfisat = obiectSelectat.toString();
+                    jTextArea1.setText(textAfisat);
+                }
+            }
+        });
+        
+        jComboBox1.setModel(new DefaultComboBoxModel<>(numeTel));
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void ActionListener(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionListener
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ActionListener
+
+    private void ActionEvent(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionEvent
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ActionEvent
+    
+    
+     
     /**
      * @param args the command line arguments
      */
@@ -137,7 +212,10 @@ public class telefoaneint extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button backtest;
     private javax.swing.JMenuItem home;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JMenu menu;
     private javax.swing.JLabel titlu;
     // End of variables declaration//GEN-END:variables
