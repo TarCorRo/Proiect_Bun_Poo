@@ -2,18 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package newpackage;
+package interfete;
+
+import newpackage.InterfataGraficaMagazinElectronice;
 
 /**
  *
  * @author Razvan
  */
-public class catiint extends javax.swing.JFrame {
+public class laptopint extends javax.swing.JFrame {
 
     /**
-     * Creates new form catiint
+     * Creates new form laptopint
      */
-    public catiint() {
+    public laptopint() {
         initComponents();
         setLocationRelativeTo(null);
          setVisible(true);
@@ -46,7 +48,7 @@ public class catiint extends javax.swing.JFrame {
 
         titlu.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         titlu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titlu.setText("Casti");
+        titlu.setText("Laptopuri");
 
         menu.setText("Home");
 
@@ -92,7 +94,7 @@ public class catiint extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-       this.setVisible(false);
+        this.setVisible(false);
    
         InterfataGraficaMagazinElectronice home = new InterfataGraficaMagazinElectronice();
         home.setVisible(true);
@@ -115,20 +117,20 @@ public class catiint extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(catiint.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(laptopint.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(catiint.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(laptopint.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(catiint.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(laptopint.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(catiint.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(laptopint.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new catiint().setVisible(true);
+                new laptopint().setVisible(true);
             }
         });
     }

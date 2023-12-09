@@ -1,4 +1,4 @@
-package newpackage;
+package interfete;
 /**
  *
  * @author Razvan
@@ -7,12 +7,13 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.mycompany.magazinelectronice.*;
+import newpackage.InterfataGraficaMagazinElectronice;
 public class telefoaneint extends javax.swing.JFrame {
 
     /**
      * Creates new form telefoaneint
      */
-     Telefon tel1 = new Telefon();
+        Telefon tel1 = new Telefon();
         Telefon tel2 = new Telefon("Xiaomi","11T","Mediatek MT6893 Dimensity 1200", "AMOLED", "Space Gray", "4G,5G", "Android 14", "Usb C","NanoSim",38,128,12,2021,4,"108 MP Wide, 8 MP Ultrawide, 5 MP Telephoto macro, 16 MP Front", 5000, 1600, 6.67,"1080 x 2400" );
         Telefon tel3 = new Telefon("Samsung","S23 Ultra","Qualcomm SM8550-AC Snapdragon 8 Gen 2", "Dynamic AMOLED 2x", "Phantom Black", "4G,5G", "Android 14", "Usb C, Wireless, Reverse Wireless","NanoSim",23,512,12,2023,5,"200 MP Wide, 12 MP Ultrawide, 10 MP Telephoto , 10 MP periscope telephoto, 12 MP Front", 5000, 7600, 6.8,"1440 x 3088");
         Telefon tel4 = new Telefon("Apple","14 Pro Max","Apple 16 Bionic", "LTPO Super Retina XDR OLED", "Gold", "4G,5G", "iOS 17", "Lightning","NanoSim",75,512,10,2022,4,"48 MP Wide, 12 MP Ultrawide, 12 MP Telephoto , 12 MP Front", 4323, 5899, 6.7,"1290 x 2796");

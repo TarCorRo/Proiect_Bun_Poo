@@ -1,5 +1,5 @@
 package newpackage;
-import com.mycompany.magazinelectronice.*;
+import interfete.*;
 import java.awt.Color;
 
 /**

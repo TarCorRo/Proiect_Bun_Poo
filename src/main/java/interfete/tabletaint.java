@@ -2,18 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package newpackage;
+package interfete;
+
+import newpackage.InterfataGraficaMagazinElectronice;
 
 /**
  *
  * @author Razvan
  */
-public class interfataang extends javax.swing.JFrame {
+public class tabletaint extends javax.swing.JFrame {
 
     /**
-     * Creates new form interfataang
+     * Creates new form tabletaint
      */
-    public interfataang() {
+    public tabletaint() {
         initComponents();
         setLocationRelativeTo(null);
          setVisible(true);
@@ -46,7 +48,7 @@ public class interfataang extends javax.swing.JFrame {
 
         titlu.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         titlu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titlu.setText("Interfata Angajat");
+        titlu.setText("Tablete");
 
         menu.setText("Home");
 
@@ -78,7 +80,7 @@ public class interfataang extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(titlu, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 572, Short.MAX_VALUE))
+                .addGap(0, 249, Short.MAX_VALUE))
         );
 
         pack();
@@ -97,7 +99,7 @@ public class interfataang extends javax.swing.JFrame {
         InterfataGraficaMagazinElectronice home = new InterfataGraficaMagazinElectronice();
         home.setVisible(true);
     }//GEN-LAST:event_homeActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */
@@ -115,20 +117,20 @@ public class interfataang extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(interfataang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tabletaint.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(interfataang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tabletaint.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(interfataang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tabletaint.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(interfataang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(tabletaint.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new interfataang().setVisible(true);
+                new tabletaint().setVisible(true);
             }
         });
     }
