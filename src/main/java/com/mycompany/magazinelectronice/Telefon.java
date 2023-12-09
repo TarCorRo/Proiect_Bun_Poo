@@ -2,6 +2,9 @@ package com.mycompany.magazinelectronice;
 
 //@author Razvan
 
+import java.lang.reflect.Field;
+
+
 public class Telefon extends Device{
     
     String procesor, tipEcran, culoare, frecventaAntena, sisOpTel, tipIncarcare, tipSim, rezEcran, rezCamere;
@@ -81,6 +84,11 @@ public class Telefon extends Device{
                 "\nMemorie RAM telefon : "+ memorieRAM + " GB "+
                 "\nMarimea bateriei de pe telefon : "+ marimeBat + " mAh ";
     }
+    
+    public int getNumberOfProperties(){
+         Field[] fields = Telefon.class.getDeclaredFields();
+         return fields.length;
+     }
     
     public double getDiagonalaEcran() {
         return diagonalaEcran;

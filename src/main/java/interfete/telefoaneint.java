@@ -8,6 +8,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.mycompany.magazinelectronice.*;
 import newpackage.InterfataGraficaMagazinElectronice;
+import java.awt.*;
+import java.lang.reflect.Field;
+import java.util.*; 
 public class telefoaneint extends javax.swing.JFrame {
 
     /**
@@ -26,7 +29,7 @@ public class telefoaneint extends javax.swing.JFrame {
         Telefon tel11 = new Telefon("Samsung","Galaxy S23 FE","Qualcomm SM8450 Snapdragon 8 Gen 1", "Dynamic AMOLED 2X", "Mint", "4G,5G", "Android 14", "Usb C","NanoSim",92,256,8,2023,4,"50 MP Wide, 8 MP Ultrawide, 12 MP Telephoto macro, 10 MP Front", 4500, 4599.23f, 6.4,"1080 x 2340");
         Telefon tel12 = new Telefon(tel2);
      private Telefon[] telefoane = {tel2,tel3,tel4,tel5,tel6,tel7,tel8,tel9,tel10,tel11};
-    
+       
     public telefoaneint() {
         initComponents();
         setLocationRelativeTo(null);
@@ -143,11 +146,13 @@ public class telefoaneint extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         String[] numeTel;
         numeTel = new String[20];
+        
         for(int i=0;i<telefoane.length;i++){
             String marca = telefoane[i].getMarca();
             String model = telefoane[i].getModel();
             numeTel[i]=marca + " " + model;
         }
+        
         jComboBox1.setMaximumRowCount(numeTel.length);
         jComboBox1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e)
@@ -158,6 +163,7 @@ public class telefoaneint extends javax.swing.JFrame {
                     Object obiectSelectat=telefoane[selectedIndex];
                     String textAfisat = obiectSelectat.toString();
                     jTextArea1.setText(textAfisat);
+                    afisarePopUp(selectedIndex);
                 }
             }
         });
@@ -165,6 +171,50 @@ public class telefoaneint extends javax.swing.JFrame {
         jComboBox1.setModel(new DefaultComboBoxModel<>(numeTel));
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    public void afisarePopUp(int selectedIndex){
+        Telefon telefonSelectat = telefoane[selectedIndex];
+
+    JFrame frame = new JFrame("Notificare telefon");
+    JPanel panel = new JPanel(new GridBagLayout());
+
+    GridBagConstraints gbc = new GridBagConstraints();
+    gbc.gridx = 0;
+    gbc.gridy = 0;
+    gbc.anchor = GridBagConstraints.WEST;
+
+    Field[] fields = telefonSelectat.getClass().getDeclaredFields();
+    for (Field field : fields) {
+        JLabel label = new JLabel(field.getName());
+        JTextField textField = new JTextField(20); // Lățimea casetei pentru text
+
+        panel.add(label, gbc);
+        gbc.gridx++;
+        panel.add(textField, gbc);
+        gbc.gridx = 0;
+        gbc.gridy++;
+    }
+
+    JButton saveButton = new JButton("Salveaza");
+    saveButton.addActionListener(e -> {
+        for (Field field : fields) {
+            // Accesezi text field-ul corespunzător fiecărei variabile și efectuezi acțiunile necesare
+            // textFieldMap.get(field.getName()).getText();
+
+        }
+        ((JButton) e.getSource()).getRootPane().getParent().setVisible(false);
+    });
+
+    gbc.gridwidth = 2;
+    gbc.gridx = 0;
+    gbc.gridy++;
+    panel.add(saveButton, gbc);
+
+    frame.add(panel);
+    frame.pack();
+    frame.setVisible(true);
+    }
+    
+    
     private void ActionListener(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionListener
         // TODO add your handling code here:
     }//GEN-LAST:event_ActionListener
