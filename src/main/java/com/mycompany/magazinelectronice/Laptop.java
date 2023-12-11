@@ -213,6 +213,22 @@ public class Laptop extends Device{
     
     @Override
     public String toString() {
-        return super.toString() + " cu rezolutia de " + rezEcran + " procesor " + procesor + " tip ecran " + tipEcran + " culoare " + culoare + " frecventaRam " + frecventaRam + " sistemDeOperare " + sistemDeOperare + " tipPlacaVideo " + tipPlacaVideo + " modelPlacaVideo " + modelPlacaVideo + " tipPorturi " + tipPorturi + " autonomieBat " + autonomieBat + " memorieRam " + memorieRam + " nrCamere " + nrCamere + " rezCamere " + rezCamere + " marimeBat " + marimeBat + " nrPorturi " + nrPorturi + " diagonalaEcran " + diagonalaEcran + " greutate " ;
+        return super.toString() + " cu rezolutia de " + rezEcran + 
+                "\n procesor " + procesor + 
+                "\n tip ecran " + tipEcran + 
+                "\n culoare " + culoare + 
+                "\n frecventaRam " + frecventaRam + 
+                "\n sistemDeOperare " + sistemDeOperare + 
+                "\n tipPlacaVideo " + tipPlacaVideo + 
+                "\n modelPlacaVideo " + modelPlacaVideo + 
+                "\n tipPorturi " + tipPorturi + 
+                "\n autonomieBat " + autonomieBat + 
+                "\n memorieRam " + memorieRam + 
+                "\n nrCamere " + nrCamere + 
+                "\n rezCamere " + rezCamere + 
+                "\n marimeBat " + marimeBat + 
+                "\n nrPorturi " + nrPorturi + 
+                "\n diagonalaEcran " + diagonalaEcran + 
+                "\n greutate " + greutate;
     }
 }
