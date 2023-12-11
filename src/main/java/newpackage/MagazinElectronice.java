@@ -4,7 +4,7 @@ import com.mycompany.magazinelectronice.*;
 
 public class MagazinElectronice {
     public static boolean checkConditions(Device instance) {
-        return instance.getPret() == 2000.0f && instance.getCantitate() > 1;
+        return instance.getPret() >= 1500.0f && instance.getCantitate() > 1;
     }
     
     public static void main(String[] args) {
@@ -193,16 +193,21 @@ public class MagazinElectronice {
            fitnessBand1, fitnessBand11, fitnessBand12
        };
        
-       System.out.println("initiere test clase ");
+       System.out.println("          Initiere test clase               ");
+       System.out.println("////////////////////////////////////////////");
        test.afisInitiative(testClase);
-       System.out.println("final test clase ");
-         
-       System.out.println("initiere test conditie ");
+       System.out.println("////////////////////////////////////////////");
+       System.out.println("          Final test clase                  ");
+       System.out.println("\n\n\n");
+       System.out.println("          Initiere test conditie            ");
+       System.out.println("////////////////////////////////////////////");
        for (Device instance : instances) {
             if (checkConditions(instance)) { 
                 System.out.println(instance);
+                System.out.println();
             }
         }
-       System.out.println("final test conditie ");
+       System.out.println("////////////////////////////////////////////");
+       System.out.println("          Final test conditie               ");
     }
 }

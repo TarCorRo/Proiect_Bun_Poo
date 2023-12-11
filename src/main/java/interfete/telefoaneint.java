@@ -10,7 +10,6 @@ import com.mycompany.magazinelectronice.*;
 import newpackage.InterfataGraficaMagazinElectronice;
 import java.awt.*;
 import java.lang.reflect.Field;
-import java.util.*; 
 public class telefoaneint extends javax.swing.JFrame {
 
     /**
@@ -28,7 +27,7 @@ public class telefoaneint extends javax.swing.JFrame {
         Telefon tel10 = new Telefon("Samsung","Galaxy A54","Exynos 1380", "Super AMOLED", "Violet", "4G,5G", "Android 13", "Usb C","NanoSim",0,128,8,2023,4,"50 MP Wide, 12 MP Ultrawide,5 MP Telephoto macro, 32 MP Front", 5000, 2599.23f, 6.4,"1080 x 2340");
         Telefon tel11 = new Telefon("Samsung","Galaxy S23 FE","Qualcomm SM8450 Snapdragon 8 Gen 1", "Dynamic AMOLED 2X", "Mint", "4G,5G", "Android 14", "Usb C","NanoSim",92,256,8,2023,4,"50 MP Wide, 8 MP Ultrawide, 12 MP Telephoto macro, 10 MP Front", 4500, 4599.23f, 6.4,"1080 x 2340");
         Telefon tel12 = new Telefon(tel2);
-     private Telefon[] telefoane = {tel2,tel3,tel4,tel5,tel6,tel7,tel8,tel9,tel10,tel11};
+        private Telefon[] telefoane = {tel2,tel3,tel4,tel5,tel6,tel7,tel8,tel9,tel10,tel11};
        
     public telefoaneint() {
         initComponents();
@@ -193,14 +192,20 @@ public class telefoaneint extends javax.swing.JFrame {
         gbc.gridx = 0;
         gbc.gridy++;
     }
-
+    JTextField[] textFields = new JTextField[fields.length];
     JButton saveButton = new JButton("Salveaza");
     saveButton.addActionListener(e -> {
-        for (Field field : fields) {
-            // Accesezi text field-ul corespunzător fiecărei variabile și efectuezi acțiunile necesare
-            // textFieldMap.get(field.getName()).getText();
+        for (int i = 0; i < fields.length; i++) {
+        Field field = fields[i];
+        JTextField textField = textFields[i];
 
+        try {
+            field.setAccessible(true);
+            field.set(telefonSelectat, textField.getText());
+        } catch (IllegalAccessException ex) {
+            ex.printStackTrace();
         }
+    }
         ((JButton) e.getSource()).getRootPane().getParent().setVisible(false);
     });
 
