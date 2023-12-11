@@ -142,5 +142,6 @@ public class Desktop extends Device{
                 "\n memorieRam " + memorieRam + 
                 "\n nrPorturi " + nrPorturi + 
                 "\n greutate " + greutate;
+        
     }
 }

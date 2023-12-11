@@ -230,5 +230,6 @@ public class Laptop extends Device{
                 "\n nrPorturi " + nrPorturi + 
                 "\n diagonalaEcran " + diagonalaEcran + 
                 "\n greutate " + greutate;
+        
     }
 }
