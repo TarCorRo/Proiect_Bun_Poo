@@ -132,6 +132,15 @@ public class Desktop extends Device{
     
     @Override
     public String toString() {
-        return super.toString() + " procesor " + procesor + " culoare " + culoare + " frecventaRam " + frecventaRam + " sistemDeOperare " + sistemDeOperare + " tipPlacaVideo " + tipPlacaVideo + " modelPlacaVideo " + modelPlacaVideo + " tipPorturi " + tipPorturi + " memorieRam " + memorieRam + " nrPorturi " + nrPorturi + " greutate " ;
+        return super.toString() + " procesor " + procesor + 
+                "\n culoare " + culoare + 
+                "\n frecventaRam " + frecventaRam + 
+                "\n sistemDeOperare " + sistemDeOperare + 
+                "\n tipPlacaVideo " + tipPlacaVideo + 
+                "\n modelPlacaVideo " + modelPlacaVideo + 
+                "\n tipPorturi " + tipPorturi + 
+                "\n memorieRam " + memorieRam + 
+                "\n nrPorturi " + nrPorturi + 
+                "\n greutate " + greutate;
     }
 }
