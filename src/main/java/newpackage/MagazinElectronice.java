@@ -3,17 +3,8 @@ package newpackage;
 import com.mycompany.magazinelectronice.*;
 
 public class MagazinElectronice {
-    interface Checkable {
-            float getPret();
-            int getCantitate();
-    }
-    
-    public static boolean checkConditions(Object instance) {
-            if (instance instanceof Checkable) {
-                Checkable checkableInstance = (Checkable) instance;
-                return checkableInstance.getPret() == 2000.0f && checkableInstance.getCantitate() > 1;
-            }
-        return false;
+    public static boolean checkConditions(Device instance) {
+        return instance.getPret() == 2000.0f && instance.getCantitate() > 1;
     }
     
     public static void main(String[] args) {
@@ -106,8 +97,6 @@ public class MagazinElectronice {
                 16, 6, 1500.0f, 8.0f);
         Desktop d11 = new Desktop();
         Desktop d12 = new Desktop(d1);
-        
-
 
         BoxaPortabila boxa1 = new BoxaPortabila("Sony", "XB20", "Alb", "Bluetooth", "Litiu-ion", 199.99f, 4.0f, 60.0f, 100, 2018, 8, 85, 1200, 10, 15, 5);
         BoxaPortabila boxa2 = new BoxaPortabila("JBL", "Flip 4", "Negru", "Bluetooth", "Litiu-polimer", 149.99f, 4.2f, 50.0f, 150, 2017, 6, 80, 3000, 12, 20, 8);
@@ -161,7 +150,7 @@ public class MagazinElectronice {
         FitnessBand fitnessBand11 = new FitnessBand();
         FitnessBand fitnessBand12 = new FitnessBand(fitnessBand1);
         
-        Object[] instances = {
+        Device[] instances = {
            tel2, tel3, tel4, tel5, tel6, tel7, tel8, tel9, tel10, tel11, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11,
            l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, d1, d2, d3, d4, d5, d6, d7, d8, d9,  d10,
            boxa1, boxa2, boxa3, boxa4, boxa5, boxa6, boxa7, boxa8, boxa9, boxa10, casti1, casti2, casti3, casti4, casti5, casti6, casti7, casti8, casti9, casti10,
@@ -169,112 +158,51 @@ public class MagazinElectronice {
            fitnessBand1, fitnessBand2, fitnessBand3, fitnessBand4, fitnessBand5, fitnessBand6, fitnessBand7, fitnessBand8, fitnessBand9, fitnessBand10,
         };
         
-      Object[] telefon = { tel2, tel3, tel4, tel5, tel6, tel7, tel8, tel9, tel10, tel11
+      Device[] telefon = { tel2, tel3, tel4, tel5, tel6, tel7, tel8, tel9, tel10, tel11
         };
         
-      Object[] tableta = { tel2, tel3, tel4, tel5, tel6, tel7, tel8, tel9, tel10, tel11
+      Device[] tableta = { tel2, tel3, tel4, tel5, tel6, tel7, tel8, tel9, tel10, tel11
         };
         
-      Object[] laptop = { l1, l2, l3, l4, l5, l6, l7, l8, l9, l10
+      Device[] laptop = { l1, l2, l3, l4, l5, l6, l7, l8, l9, l10
         };
         
-      Object[] desktop = { d1, d2, d3, d4, d5, d6, d7, d8, d9,  d10,
+      Device[] desktop = { d1, d2, d3, d4, d5, d6, d7, d8, d9,  d10,
         };
         
-      Object[] boxa = { boxa1, boxa2, boxa3, boxa4, boxa5, boxa6, boxa7, boxa8, boxa9, boxa10
+      Device[] boxa = { boxa1, boxa2, boxa3, boxa4, boxa5, boxa6, boxa7, boxa8, boxa9, boxa10
         };
         
-      Object[] casti = { casti1, casti2, casti3, casti4, casti5, casti6, casti7, casti8, casti9, casti10
+      Device[] casti = { casti1, casti2, casti3, casti4, casti5, casti6, casti7, casti8, casti9, casti10
         };
         
-      Object[] smartwatch = { smartwatch1, smartwatch2, smartwatch3, smartwatch4, smartwatch5, smartwatch6, smartwatch7, smartwatch8, smartwatch9, smartwatch10
+      Device[] smartwatch = { smartwatch1, smartwatch2, smartwatch3, smartwatch4, smartwatch5, smartwatch6, smartwatch7, smartwatch8, smartwatch9, smartwatch10
         };
         
-      Object[] fitnessband = { fitnessBand1, fitnessBand2, fitnessBand3, fitnessBand4, fitnessBand5, fitnessBand6, fitnessBand7, fitnessBand8, fitnessBand9, fitnessBand10
+      Device[] fitnessband = { fitnessBand1, fitnessBand2, fitnessBand3, fitnessBand4, fitnessBand5, fitnessBand6, fitnessBand7, fitnessBand8, fitnessBand9, fitnessBand10
         };
         
-        if(args.length == 0)
-        {
-            System.out.println("Va rog sa introduceti un argument : ");
-            return;
-        }
-        switch(args[0])
-        {
-            case "Tableta":
-                System.out.println(tab1+"\n");
-                System.out.println(tab2+"\n");
-                System.out.println(tab3+"\n");
-                System.out.println(tab4+"\n");
-                System.out.println(tab5+"\n");
-                break;
-                
-            case "Telefon":
-                System.out.println(tel1+"\n");
-                System.out.println(tel2+"\n");
-                System.out.println(tel3+"\n");
-                System.out.println(tel4+"\n");
-                System.out.println(tel5+"\n");
-                break;
-                
-            case "Smartwatch":
-                System.out.println(smartwatch1+"\n");
-                System.out.println(smartwatch2+"\n");
-                System.out.println(smartwatch3+"\n");
-                System.out.println(smartwatch11+"\n");
-                System.out.println(smartwatch12+"\n");
-                break;
-                
-            case "FitnessBand":
-                System.out.println(fitnessBand1+"\n");
-                System.out.println(fitnessBand2+"\n");
-                System.out.println(fitnessBand3+"\n");
-                System.out.println(fitnessBand11+"\n");
-                System.out.println(fitnessBand12+"\n");
-                break;
-                    
-            case "Laptop":
-                System.out.println(l1+"\n");
-                System.out.println(l2+"\n");
-                System.out.println(l3+"\n");
-                System.out.println(l11+"\n");
-                System.out.println(l12+"\n");
-                break;
-                        
-            case "Desktop":
-                System.out.println(d1+"\n");
-                System.out.println(d2+"\n");
-                System.out.println(d3+"\n");
-                System.out.println(d11+"\n");
-                System.out.println(d12+"\n");
-                break;
-                            
-            case "Casti":
-                System.out.println(casti1+"\n");
-                System.out.println(casti2+"\n");
-                System.out.println(casti3+"\n");
-                System.out.println(casti11+"\n");
-                System.out.println(casti12+"\n");
-                break;
-                                
-            case "BoxePortabile":
-                System.out.println(boxa1+"\n");
-                System.out.println(boxa2+"\n");
-                System.out.println(boxa3+"\n");
-                System.out.println(boxa11+"\n");
-                System.out.println(boxa12+"\n");
-                break;
-                
-            case "TestInstante":
-                test.afisInitiative(instances);
-                break;
-                
-        }
+       Device[] testClase = {
+           tab1, tab2, tab12,
+           tel1, tel2, tel12,
+           l1, l11, l12,
+           d1, d11, d12,
+           boxa1, boxa11, boxa12,
+           casti1, casti11, casti12,
+           smartwatch1, smartwatch11, smartwatch12,
+           fitnessBand1, fitnessBand11, fitnessBand12
+       };
+       
+       System.out.println("initiere test clase ");
+       test.afisInitiative(testClase);
+       System.out.println("final test clase ");
          
-       // afisare instante in functie de conditie
-       for (Object instance : instances) {
+       System.out.println("initiere test conditie ");
+       for (Device instance : instances) {
             if (checkConditions(instance)) { 
                 System.out.println(instance);
             }
         }
+       System.out.println("final test conditie ");
     }
 }
