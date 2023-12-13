@@ -7,7 +7,7 @@ public class MagazinElectronice {
         return instance.getPret() >= 1500.0f && instance.getCantitate() > 1;
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) {      
         TestInitiative test = new TestInitiative();
         Instances instances = new Instances();
 

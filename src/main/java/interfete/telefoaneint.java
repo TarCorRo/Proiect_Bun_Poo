@@ -9,30 +9,34 @@ import java.awt.event.ActionListener;
 import com.mycompany.magazinelectronice.*;
 import newpackage.InterfataGraficaMagazinElectronice;
 import java.awt.*;
-import java.lang.reflect.Field;
+import java.text.DecimalFormat;
+import java.math.RoundingMode;
+import newpackage.*;
 public class telefoaneint extends javax.swing.JFrame {
 
     /**
      * Creates new form telefoaneint
      */
         Telefon tel1 = new Telefon();
-        Telefon tel2 = new Telefon("Xiaomi","11T","Mediatek MT6893 Dimensity 1200", "AMOLED", "Space Gray", "4G,5G", "Android 14", "Usb C","NanoSim",38,128,12,2021,4,"108 MP Wide, 8 MP Ultrawide, 5 MP Telephoto macro, 16 MP Front", 5000, 1600, 6.67,"1080 x 2400" );
-        Telefon tel3 = new Telefon("Samsung","S23 Ultra","Qualcomm SM8550-AC Snapdragon 8 Gen 2", "Dynamic AMOLED 2x", "Phantom Black", "4G,5G", "Android 14", "Usb C, Wireless, Reverse Wireless","NanoSim",23,512,12,2023,5,"200 MP Wide, 12 MP Ultrawide, 10 MP Telephoto , 10 MP periscope telephoto, 12 MP Front", 5000, 7600, 6.8,"1440 x 3088");
-        Telefon tel4 = new Telefon("Apple","14 Pro Max","Apple 16 Bionic", "LTPO Super Retina XDR OLED", "Gold", "4G,5G", "iOS 17", "Lightning","NanoSim",75,512,10,2022,4,"48 MP Wide, 12 MP Ultrawide, 12 MP Telephoto , 12 MP Front", 4323, 5899, 6.7,"1290 x 2796");
-        Telefon tel5 = new Telefon("Nokia","G42","Qualcomm SM4350-AC Snapdragon 480+ 5G", "IPS LCD", "Purple", "4G,5G", "Android 13", "Usb C","NanoSim",239,64,6,2023,4,"50 MP Wide, 2 MP Ultrawide, 2 MP Telephoto macro, 8 MP Front", 5000, 1399.99f, 6.56,"720 x 1612");
-        Telefon tel6 = new Telefon("Nokia","C300","Qualcomm SM6115 Snapdragon 662", "IPS LCD", "Blue", "4G,5G", "Android 13", "Usb C","NanoSim",8,128,8,2023,4,"13 MP Wide, 2 MP Ultrawide, 2 MP Telephoto macro, 8 MP Front", 4000, 832.78f, 6.52,"720 x 1600");
-        Telefon tel7 = new Telefon("Apple","iPhone 15 Pro Max","Apple A17 Pro", "LTPO Super Retina XDR OLED", "White Titanium", "4G,5G", "iOS 17", "Usb C","NanoSim",2,512,8,2023,4,"48 MP Wide, 12 MP Ultrawide, 12 MP Telephoto macro, 12 MP Front", 4441, 8978.64f, 6.7,"1290 x 2796");
-        Telefon tel8 = new Telefon("Apple","iPhone 15 Plus","Apple A16 Bionic", "Super Retina XDR OLED", "Green", "4G,5G", "iOS 17", "Usb C, Wireless","NanoSim",96,256,8,2023,3,"48 MP Wide, 12 MP Ultrawide, 12 MP Front", 4383, 5763.90f, 6.7,"1290 x 2796");
-        Telefon tel9 = new Telefon("Xiaomi","14 Pro","Qualcomm SM8650-AB Snapdragon 8 Gen 3", "LTPO AMOLED", "Titanium", "4G,5G", "Android 14, HyperOS", "Usb C, Wireless","NanoSim",1,512,16,2023,4,"50 MP Wide, 50 MP Ultrawide, 50 MP Telephoto macro, 32 MP Front", 4880, 6547.32f, 6.73,"1440 x 3200");
-        Telefon tel10 = new Telefon("Samsung","Galaxy A54","Exynos 1380", "Super AMOLED", "Violet", "4G,5G", "Android 13", "Usb C","NanoSim",0,128,8,2023,4,"50 MP Wide, 12 MP Ultrawide,5 MP Telephoto macro, 32 MP Front", 5000, 2599.23f, 6.4,"1080 x 2340");
-        Telefon tel11 = new Telefon("Samsung","Galaxy S23 FE","Qualcomm SM8450 Snapdragon 8 Gen 1", "Dynamic AMOLED 2X", "Mint", "4G,5G", "Android 14", "Usb C","NanoSim",92,256,8,2023,4,"50 MP Wide, 8 MP Ultrawide, 12 MP Telephoto macro, 10 MP Front", 4500, 4599.23f, 6.4,"1080 x 2340");
+        Telefon tel2 = new Telefon("Xiaomi","11T","Mediatek MT6893 Dimensity 1200", "AMOLED", "Space Gray", "4G,5G", "Android 14", "Usb C","NanoSim",38,128,12,2021,4,"108 MP Wide, 8 MP Ultrawide, 5 MP Telephoto macro, 16 MP Front", 5000, 1600, 6.67f,"1080 x 2400" );
+        Telefon tel3 = new Telefon("Samsung","S23 Ultra","Qualcomm SM8550-AC Snapdragon 8 Gen 2", "Dynamic AMOLED 2x", "Phantom Black", "4G,5G", "Android 14", "Usb C, Wireless, Reverse Wireless","NanoSim",23,512,12,2023,5,"200 MP Wide, 12 MP Ultrawide, 10 MP Telephoto , 10 MP periscope telephoto, 12 MP Front", 5000, 7600, 6.8f,"1440 x 3088");
+        Telefon tel4 = new Telefon("Apple","14 Pro Max","Apple 16 Bionic", "LTPO Super Retina XDR OLED", "Gold", "4G,5G", "iOS 17", "Lightning","NanoSim",75,512,10,2022,4,"48 MP Wide, 12 MP Ultrawide, 12 MP Telephoto , 12 MP Front", 4323, 5899, 6.7f,"1290 x 2796");
+        Telefon tel5 = new Telefon("Nokia","G42","Qualcomm SM4350-AC Snapdragon 480+ 5G", "IPS LCD", "Purple", "4G,5G", "Android 13", "Usb C","NanoSim",239,64,6,2023,4,"50 MP Wide, 2 MP Ultrawide, 2 MP Telephoto macro, 8 MP Front", 5000, 1399.99f, 6.56f,"720 x 1612");
+        Telefon tel6 = new Telefon("Nokia","C300","Qualcomm SM6115 Snapdragon 662", "IPS LCD", "Blue", "4G,5G", "Android 13", "Usb C","NanoSim",8,128,8,2023,4,"13 MP Wide, 2 MP Ultrawide, 2 MP Telephoto macro, 8 MP Front", 4000, 832.78f, 6.52f,"720 x 1600");
+        Telefon tel7 = new Telefon("Apple","iPhone 15 Pro Max","Apple A17 Pro", "LTPO Super Retina XDR OLED", "White Titanium", "4G,5G", "iOS 17", "Usb C","NanoSim",2,512,8,2023,4,"48 MP Wide, 12 MP Ultrawide, 12 MP Telephoto macro, 12 MP Front", 4441, 8978.64f, 6.7f,"1290 x 2796");
+        Telefon tel8 = new Telefon("Apple","iPhone 15 Plus","Apple A16 Bionic", "Super Retina XDR OLED", "Green", "4G,5G", "iOS 17", "Usb C, Wireless","NanoSim",96,256,8,2023,3,"48 MP Wide, 12 MP Ultrawide, 12 MP Front", 4383, 5763.90f, 6.7f,"1290 x 2796");
+        Telefon tel9 = new Telefon("Xiaomi","14 Pro","Qualcomm SM8650-AB Snapdragon 8 Gen 3", "LTPO AMOLED", "Titanium", "4G,5G", "Android 14, HyperOS", "Usb C, Wireless","NanoSim",1,512,16,2023,4,"50 MP Wide, 50 MP Ultrawide, 50 MP Telephoto macro, 32 MP Front", 4880, 6547.32f, 6.73f,"1440 x 3200");
+        Telefon tel10 = new Telefon("Samsung","Galaxy A54","Exynos 1380", "Super AMOLED", "Violet", "4G,5G", "Android 13", "Usb C","NanoSim",0,128,8,2023,4,"50 MP Wide, 12 MP Ultrawide,5 MP Telephoto macro, 32 MP Front", 5000, 2599.23f, 6.4f,"1080 x 2340");
+        Telefon tel11 = new Telefon("Samsung","Galaxy S23 FE","Qualcomm SM8450 Snapdragon 8 Gen 1", "Dynamic AMOLED 2X", "Mint", "4G,5G", "Android 14", "Usb C","NanoSim",92,256,8,2023,4,"50 MP Wide, 8 MP Ultrawide, 12 MP Telephoto macro, 10 MP Front", 4500, 4599.23f, 6.4f,"1080 x 2340");
         Telefon tel12 = new Telefon(tel2);
         private Telefon[] telefoane = {tel2,tel3,tel4,tel5,tel6,tel7,tel8,tel9,tel10,tel11};
        
     public telefoaneint() {
         initComponents();
         setLocationRelativeTo(null);
-         setVisible(true);
+        setVisible(true);
+        initializareComboBox(); // Inițializează combobox-ul
+        adaugaActionListenerComboBox();
     }
     
     /**
@@ -143,92 +147,156 @@ public class telefoaneint extends javax.swing.JFrame {
     }//GEN-LAST:event_homeActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        String[] numeTel;
-        numeTel = new String[20];
-        
-        for(int i=0;i<telefoane.length;i++){
-            String marca = telefoane[i].getMarca();
-            String model = telefoane[i].getModel();
-            numeTel[i]=marca + " " + model;
-        }
-        
-        jComboBox1.setMaximumRowCount(numeTel.length);
-        jComboBox1.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e)
-            {
-                int selectedIndex=jComboBox1.getSelectedIndex();
-                if(selectedIndex>=0)
-                {
-                    Object obiectSelectat=telefoane[selectedIndex];
-                    String textAfisat = obiectSelectat.toString();
-                    jTextArea1.setText(textAfisat);
-                    afisarePopUp(selectedIndex);
-                }
-            }
-        });
-        
-        jComboBox1.setModel(new DefaultComboBoxModel<>(numeTel));
+
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    public void afisarePopUp(int selectedIndex){
-        Telefon telefonSelectat = telefoane[selectedIndex];
+    public void afisarePopUp(int selectedIndex, Telefon[] telefoane){
+        
+    JFrame popup = new JFrame("Detalii Telefon");
+    popup.setSize(1000, 900);
+    popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-    JFrame frame = new JFrame("Notificare telefon");
-    JPanel panel = new JPanel(new GridBagLayout());
-
-    GridBagConstraints gbc = new GridBagConstraints();
-    gbc.gridx = 0;
-    gbc.gridy = 0;
-    gbc.anchor = GridBagConstraints.WEST;
-
-    Field[] fields = telefonSelectat.getClass().getDeclaredFields();
-    for (Field field : fields) {
-        JLabel label = new JLabel(field.getName());
-        JTextField textField = new JTextField(20); // Lățimea casetei pentru text
-
-        panel.add(label, gbc);
-        gbc.gridx++;
-        panel.add(textField, gbc);
-        gbc.gridx = 0;
-        gbc.gridy++;
+    JPanel panel = new JPanel();
+    panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
+    Telefon selectedPhone = telefoane[selectedIndex];
+    
+    if (selectedIndex >= 0 && selectedIndex < telefoane.length) {
+        JTextField textFieldMarca = new JTextField(selectedPhone.getMarca());
+        JTextField textFieldModel = new JTextField(selectedPhone.getModel());
+        JTextField textFieldCantitate = new JTextField(String.valueOf(selectedPhone.getCantitate()));
+        JTextField textFieldAnAparitie = new JTextField(String.valueOf(selectedPhone.getAnAparitie()));
+        JTextField textFieldPret = new JTextField(String.valueOf(selectedPhone.getPret()));
+        JTextField textFieldProcesor = new JTextField(selectedPhone.getProcesor());
+        JTextField textFieldTipEcran = new JTextField(selectedPhone.getTipEcran());
+        JTextField textFieldCuloare = new JTextField(selectedPhone.getCuloare());
+        JTextField textFieldFrecventaAntena = new JTextField(selectedPhone.getFrecventaAntena());
+        JTextField textFieldSisOpTel = new JTextField(selectedPhone.getSisOpTel());
+        JTextField textFieldTipIncarcare = new JTextField(selectedPhone.getTipIncarcare());
+        JTextField textFieldTipSim = new JTextField(selectedPhone.getTipSim());
+        JTextField textFieldRezEcran = new JTextField(selectedPhone.getRezEcran());
+        JTextField textFieldRezCamere = new JTextField(selectedPhone.getRezCamere());
+        JTextField textFieldMemorieROM = new JTextField(String.valueOf(selectedPhone.getMemorieROM()));
+        JTextField textFieldMemorieRAM = new JTextField(String.valueOf(selectedPhone.getMemorieRAM()));
+        JTextField textFieldNrCamere = new JTextField(String.valueOf(selectedPhone.getNrCamere()));
+        JTextField textFieldMarimeBat = new JTextField(String.valueOf(selectedPhone.getMarimeBat()));
+        JTextField textFieldDiagonalaEcran = new JTextField(String.valueOf(selectedPhone.getDiagonalaEcran()));
+    
+        addLabelAndTextField(panel, "Marca:", textFieldMarca);
+        addLabelAndTextField(panel, "Model:", textFieldModel);
+        addLabelAndTextField(panel, "Cantitate:", textFieldCantitate);
+        addLabelAndTextField(panel, "An aparitie:", textFieldAnAparitie);
+        addLabelAndTextField(panel, "Pret:", textFieldPret);
+        addLabelAndTextField(panel, "Procesor:", textFieldProcesor);
+        addLabelAndTextField(panel, "Tip ecran:", textFieldTipEcran);
+        addLabelAndTextField(panel, "Culoare:", textFieldCuloare);
+        addLabelAndTextField(panel, "Frecventa antena:", textFieldFrecventaAntena);
+        addLabelAndTextField(panel, "Sistem de operare:", textFieldSisOpTel);
+        addLabelAndTextField(panel, "Tip încărcare:", textFieldTipIncarcare);
+        addLabelAndTextField(panel, "Tip SIM:", textFieldTipSim);
+        addLabelAndTextField(panel, "Rezoluție ecran:", textFieldRezEcran);
+        addLabelAndTextField(panel, "Rezoluție camere:", textFieldRezCamere);
+        addLabelAndTextField(panel, "Memorie ROM:", textFieldMemorieROM);
+        addLabelAndTextField(panel, "Memorie RAM:", textFieldMemorieRAM);
+        addLabelAndTextField(panel, "Număr camere:", textFieldNrCamere);
+        addLabelAndTextField(panel, "Mărime baterie:", textFieldMarimeBat);
+        addLabelAndTextField(panel, "Diagonala ecran:", textFieldDiagonalaEcran);    
+        JButton saveButton = new JButton("Salvează");
+        saveButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+              String valoareMarca = textFieldMarca.getText();
+              String valoareModel = textFieldModel.getText();
+              int valoareCantitate =Integer.parseInt (textFieldCantitate.getText());
+              int valoareAnAparitie = Integer.parseInt (textFieldAnAparitie.getText());
+              float valoarePret = Float.parseFloat(textFieldPret.getText());
+              String valoareProcesor = textFieldProcesor.getText();
+              String valoareTipEcran = textFieldTipEcran.getText();
+              String valoareCuloare = textFieldCuloare.getText();
+              String valoareFrecventaAntena = textFieldFrecventaAntena.getText();
+              String valoareSisOpTel = textFieldSisOpTel.getText();
+              String valoareTipIncarcare = textFieldTipIncarcare.getText();
+              String valoareTipSim = textFieldTipSim.getText();
+              String valoareRezEcran = textFieldRezEcran.getText();
+              String valoareRezCamere = textFieldRezCamere.getText();
+              int valoareMemorieROM = Integer.parseInt(textFieldMemorieROM.getText());
+              int valoareMemorieRAM = Integer.parseInt(textFieldMemorieRAM.getText());
+              int valoareNrCamere = Integer.parseInt(textFieldNrCamere.getText());
+              int valoareMarimeBat = Integer.parseInt(textFieldMarimeBat.getText());
+              float valoareDiagonalaEcran = Float.parseFloat(textFieldDiagonalaEcran.getText());
+              
+              selectedPhone.setMarca(valoareMarca);
+              selectedPhone.setModel(valoareModel);
+              selectedPhone.setCantitate(valoareCantitate);
+              selectedPhone.setAnAparitie(valoareAnAparitie);
+              selectedPhone.setPret(valoarePret);              
+              selectedPhone.setProcesor(valoareProcesor);
+              selectedPhone.setTipEcran(valoareTipEcran);
+              selectedPhone.setCuloare(valoareCuloare);
+              selectedPhone.setFrecventaAntena(valoareFrecventaAntena);
+              selectedPhone.setSisOpTel(valoareSisOpTel);
+              selectedPhone.setTipIncarcare(valoareTipIncarcare);
+              selectedPhone.setTipSim(valoareTipSim);
+              selectedPhone.setRezCamere(valoareRezCamere);
+              selectedPhone.setMemorieROM(valoareMemorieROM);
+              selectedPhone.setRezEcran(valoareRezEcran);
+              selectedPhone.setmemorieRAM(valoareMemorieRAM);
+              selectedPhone.setNrCamere(valoareNrCamere);
+              selectedPhone.setMarimeBat(valoareMarimeBat);
+              selectedPhone.setDiagonalaEcran(Float.parseFloat(textFieldDiagonalaEcran.getText()));
+              telefoane[selectedIndex].setMarca(selectedPhone.getMarca());
+              JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(saveButton);
+              frame.dispose();
+              updateTextAreaWithSelectedPhone(selectedPhone);
+            }
+        });
+        panel.add(saveButton);
     }
-    JTextField[] textFields = new JTextField[fields.length];
-    JButton saveButton = new JButton("Salveaza");
-    saveButton.addActionListener(e -> {
-        for (int i = 0; i < fields.length; i++) {
-        Field field = fields[i];
-        JTextField textField = textFields[i];
-
-        try {
-            field.setAccessible(true);
-            field.set(telefonSelectat, textField.getText());
-        } catch (IllegalAccessException ex) {
-            ex.printStackTrace();
-        }
-    }
-        ((JButton) e.getSource()).getRootPane().getParent().setVisible(false);
-    });
-
-    gbc.gridwidth = 2;
-    gbc.gridx = 0;
-    gbc.gridy++;
-    panel.add(saveButton, gbc);
-
-    frame.add(panel);
-    frame.pack();
-    frame.setVisible(true);
+        
+        popup.add(panel);
+        popup.setVisible(true);     
     }
     
+    private void updateTextAreaWithSelectedPhone(Telefon selectedPhone) {
+    jTextArea1.setText(selectedPhone.toString());
+}
     
     private void ActionListener(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionListener
         // TODO add your handling code here:
     }//GEN-LAST:event_ActionListener
 
     private void ActionEvent(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionEvent
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_ActionEvent
     
+    private void addLabelAndTextField(JPanel panel, String labelText, JTextField textField) {
+    JLabel label = new JLabel(labelText);
+    panel.add(label);
+    panel.add(textField);
+}
     
+    private void initializareComboBox() {
+        String[] numeTel = new String[telefoane.length];
+        for(int i = 0; i < telefoane.length; i++) {
+            String marca = telefoane[i].getMarca();
+            String model = telefoane[i].getModel();
+            numeTel[i] = marca + " " + model;
+        }
+        jComboBox1.setModel(new DefaultComboBoxModel<>(numeTel));
+    }
+    
+    // Metoda pentru a adăuga ActionListener la combobox
+    private void adaugaActionListenerComboBox() {
+        jComboBox1.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                int selectedIndex = jComboBox1.getSelectedIndex();
+                if(selectedIndex >= 0) {
+                    Object obiectSelectat = telefoane[selectedIndex];
+                    String textAfisat = obiectSelectat.toString();
+                    jTextArea1.setText(textAfisat);
+                    afisarePopUp(selectedIndex, telefoane);
+                }
+            }
+        });
+    }
      
     /**
      * @param args the command line arguments

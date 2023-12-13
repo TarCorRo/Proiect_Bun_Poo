@@ -9,7 +9,7 @@ public class Telefon extends Device{
     
     String procesor, tipEcran, culoare, frecventaAntena, sisOpTel, tipIncarcare, tipSim, rezEcran, rezCamere;
     int memorieROM, memorieRAM, nrCamere, marimeBat;
-    double diagonalaEcran;
+    float diagonalaEcran;
     
     public Telefon(){
         super(null,null,0,0,0);
@@ -29,7 +29,7 @@ public class Telefon extends Device{
          this.rezEcran=null;
     }
     
-    public Telefon(String marca, String model, String procesor, String tipEcran, String culoare, String frecventaAntena, String sisOpTel, String tipIncarcare, String tipSim, int cantitate, int memorieROM, int memorieRAM, int anAparitie, int nrCamere,String rezCamere, int marimeBat, float pret, double diagonalaEcran, String rezEcran)
+    public Telefon(String marca, String model, String procesor, String tipEcran, String culoare, String frecventaAntena, String sisOpTel, String tipIncarcare, String tipSim, int cantitate, int memorieROM, int memorieRAM, int anAparitie, int nrCamere,String rezCamere, int marimeBat, float pret, float diagonalaEcran, String rezEcran)
     {
         super( marca, model, cantitate, anAparitie, pret);
          this.procesor=procesor;
