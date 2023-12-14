@@ -151,6 +151,15 @@ public class Instances {
         FitnessBand fitnessBand11 = new FitnessBand();
         FitnessBand fitnessBand12 = new FitnessBand(fitnessBand1);
         
+        Telefon[] telefoane = {tel2, tel3, tel4, tel5, tel6, tel7, tel8, tel9, tel10, tel11};
+        Tableta[] teblete = {tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11};
+        Laptop[] laptopuri = {l1, l2, l3, l4, l5, l6, l7, l8, l9, l10};
+        Desktop[] desktopuri = {d1, d2, d3, d4, d5, d6, d7, d8, d9,  d10};
+        Casti[] casti = {casti1, casti2, casti3, casti4, casti5, casti6, casti7, casti8, casti9, casti10};
+        BoxaPortabila[] boxe = {boxa1, boxa2, boxa3, boxa4, boxa5, boxa6, boxa7, boxa8, boxa9, boxa10};
+        Smartwatch[] smartwatchuri = {smartwatch1, smartwatch2, smartwatch3, smartwatch4, smartwatch5, smartwatch6, smartwatch7, smartwatch8, smartwatch9, smartwatch10};
+        FitnessBand[] fitnessBands = {fitnessBand1, fitnessBand2, fitnessBand3, fitnessBand4, fitnessBand5, fitnessBand6, fitnessBand7, fitnessBand8, fitnessBand9, fitnessBand10};
+        
         Device[] instances = {
            tel2, tel3, tel4, tel5, tel6, tel7, tel8, tel9, tel10, tel11, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11,
            l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, d1, d2, d3, d4, d5, d6, d7, d8, d9,  d10,
@@ -176,6 +185,22 @@ public class Instances {
                 return instances;
             case "testClase":
                 return testClase;
+            case "telefoane":
+                return telefoane;
+            case "teblete":
+                return teblete;
+            case "laptopuri":
+                return laptopuri;
+            case "desktopuri":
+                return desktopuri;
+            case "casti":
+                return casti;
+            case "boxe":
+                return boxe;
+            case "smartwatchuri":
+                return smartwatchuri;
+            case "fitnessBands":
+                return fitnessBands;    
             default:
                 return testClase;
             }
