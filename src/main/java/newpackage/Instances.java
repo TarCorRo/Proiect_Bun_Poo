@@ -170,6 +170,18 @@ public class Instances {
            fitnessBand1, fitnessBand11, fitnessBand12
        };
        
+       Device[] telefon = {
+           tel2,tel3,tel4,tel5,tel6,tel7,tel8,tel9,tel10,tel11
+       };
+       
+       public Device[] getVectorTelefon(){
+           return telefon;
+       }
+       
+       public Device[] getVectorDeInstante(){
+           return instances;
+       }
+       
        public Device[] getInstancesArray(String type) {
            switch (type) {
             case "instances":
