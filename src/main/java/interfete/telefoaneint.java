@@ -7,29 +7,17 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.mycompany.magazinelectronice.*;
-import newpackage.InterfataGraficaMagazinElectronice;
 import java.awt.*;
-import java.text.DecimalFormat;
-import java.math.RoundingMode;
 import newpackage.*;
-public class telefoaneint extends javax.swing.JFrame {
+
+public class telefoaneint extends javax.swing.JFrame {Instances inst = new Instances();
+    
+    Device[] tel = inst.getInstancesArray("telefoane");
+    Telefon[] telefoane = (Telefon[]) tel;
 
     /**
      * Creates new form telefoaneint
      */
-        Telefon tel1 = new Telefon();
-        Telefon tel2 = new Telefon("Xiaomi","11T","Mediatek MT6893 Dimensity 1200", "AMOLED", "Space Gray", "4G,5G", "Android 14", "Usb C","NanoSim",38,128,12,2021,4,"108 MP Wide, 8 MP Ultrawide, 5 MP Telephoto macro, 16 MP Front", 5000, 1600, 6.67f,"1080 x 2400" );
-        Telefon tel3 = new Telefon("Samsung","S23 Ultra","Qualcomm SM8550-AC Snapdragon 8 Gen 2", "Dynamic AMOLED 2x", "Phantom Black", "4G,5G", "Android 14", "Usb C, Wireless, Reverse Wireless","NanoSim",23,512,12,2023,5,"200 MP Wide, 12 MP Ultrawide, 10 MP Telephoto , 10 MP periscope telephoto, 12 MP Front", 5000, 7600, 6.8f,"1440 x 3088");
-        Telefon tel4 = new Telefon("Apple","14 Pro Max","Apple 16 Bionic", "LTPO Super Retina XDR OLED", "Gold", "4G,5G", "iOS 17", "Lightning","NanoSim",75,512,10,2022,4,"48 MP Wide, 12 MP Ultrawide, 12 MP Telephoto , 12 MP Front", 4323, 5899, 6.7f,"1290 x 2796");
-        Telefon tel5 = new Telefon("Nokia","G42","Qualcomm SM4350-AC Snapdragon 480+ 5G", "IPS LCD", "Purple", "4G,5G", "Android 13", "Usb C","NanoSim",239,64,6,2023,4,"50 MP Wide, 2 MP Ultrawide, 2 MP Telephoto macro, 8 MP Front", 5000, 1399.99f, 6.56f,"720 x 1612");
-        Telefon tel6 = new Telefon("Nokia","C300","Qualcomm SM6115 Snapdragon 662", "IPS LCD", "Blue", "4G,5G", "Android 13", "Usb C","NanoSim",8,128,8,2023,4,"13 MP Wide, 2 MP Ultrawide, 2 MP Telephoto macro, 8 MP Front", 4000, 832.78f, 6.52f,"720 x 1600");
-        Telefon tel7 = new Telefon("Apple","iPhone 15 Pro Max","Apple A17 Pro", "LTPO Super Retina XDR OLED", "White Titanium", "4G,5G", "iOS 17", "Usb C","NanoSim",2,512,8,2023,4,"48 MP Wide, 12 MP Ultrawide, 12 MP Telephoto macro, 12 MP Front", 4441, 8978.64f, 6.7f,"1290 x 2796");
-        Telefon tel8 = new Telefon("Apple","iPhone 15 Plus","Apple A16 Bionic", "Super Retina XDR OLED", "Green", "4G,5G", "iOS 17", "Usb C, Wireless","NanoSim",96,256,8,2023,3,"48 MP Wide, 12 MP Ultrawide, 12 MP Front", 4383, 5763.90f, 6.7f,"1290 x 2796");
-        Telefon tel9 = new Telefon("Xiaomi","14 Pro","Qualcomm SM8650-AB Snapdragon 8 Gen 3", "LTPO AMOLED", "Titanium", "4G,5G", "Android 14, HyperOS", "Usb C, Wireless","NanoSim",1,512,16,2023,4,"50 MP Wide, 50 MP Ultrawide, 50 MP Telephoto macro, 32 MP Front", 4880, 6547.32f, 6.73f,"1440 x 3200");
-        Telefon tel10 = new Telefon("Samsung","Galaxy A54","Exynos 1380", "Super AMOLED", "Violet", "4G,5G", "Android 13", "Usb C","NanoSim",0,128,8,2023,4,"50 MP Wide, 12 MP Ultrawide,5 MP Telephoto macro, 32 MP Front", 5000, 2599.23f, 6.4f,"1080 x 2340");
-        Telefon tel11 = new Telefon("Samsung","Galaxy S23 FE","Qualcomm SM8450 Snapdragon 8 Gen 1", "Dynamic AMOLED 2X", "Mint", "4G,5G", "Android 14", "Usb C","NanoSim",92,256,8,2023,4,"50 MP Wide, 8 MP Ultrawide, 12 MP Telephoto macro, 10 MP Front", 4500, 4599.23f, 6.4f,"1080 x 2340");
-        Telefon tel12 = new Telefon(tel2);
-        private Telefon[] telefoane = {tel2,tel3,tel4,tel5,tel6,tel7,tel8,tel9,tel10,tel11};
        
     public telefoaneint() {
         initComponents();
@@ -105,13 +93,13 @@ public class telefoaneint extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(137, 137, 137)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(titlu, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addGap(95, 95, 95)
                 .addComponent(backtest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jComboBox1, 0, 304, Short.MAX_VALUE)
                 .addGap(49, 49, 49)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 624, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
@@ -121,8 +109,10 @@ public class telefoaneint extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(backtest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(titlu, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(76, 76, 76)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(titlu, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(70, 70, 70)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -201,6 +191,7 @@ public class telefoaneint extends javax.swing.JFrame {
         addLabelAndTextField(panel, "Mărime baterie:", textFieldMarimeBat);
         addLabelAndTextField(panel, "Diagonala ecran:", textFieldDiagonalaEcran);    
         JButton saveButton = new JButton("Salvează");
+
         saveButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
               String valoareMarca = textFieldMarca.getText();
