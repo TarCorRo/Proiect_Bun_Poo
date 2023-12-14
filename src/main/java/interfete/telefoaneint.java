@@ -25,6 +25,7 @@ public class telefoaneint extends javax.swing.JFrame {Instances inst = new Insta
         setVisible(true);
         initializareComboBox(); // Inițializează combobox-ul
         adaugaActionListenerComboBox();
+        editBut.setVisible(false);
     }
     
     /**
@@ -41,6 +42,7 @@ public class telefoaneint extends javax.swing.JFrame {Instances inst = new Insta
         jComboBox1 = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        editBut = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
         home = new javax.swing.JMenuItem();
@@ -73,6 +75,13 @@ public class telefoaneint extends javax.swing.JFrame {Instances inst = new Insta
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        editBut.setText("Editare detalii telefon");
+        editBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editButActionPerformed(evt);
+            }
+        });
+
         menu.setText("Home");
         menu.setToolTipText("");
 
@@ -97,9 +106,11 @@ public class telefoaneint extends javax.swing.JFrame {Instances inst = new Insta
                 .addComponent(titlu, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(95, 95, 95)
                 .addComponent(backtest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jComboBox1, 0, 304, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(editBut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBox1, 0, 304, Short.MAX_VALUE))
                 .addGap(49, 49, 49)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 624, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
@@ -116,7 +127,9 @@ public class telefoaneint extends javax.swing.JFrame {Instances inst = new Insta
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(editBut)
+                .addGap(57, 57, 57))
         );
 
         pack();
@@ -142,14 +155,32 @@ public class telefoaneint extends javax.swing.JFrame {Instances inst = new Insta
 
     public void afisarePopUp(int selectedIndex, Telefon[] telefoane){
         
-    JFrame popup = new JFrame("Detalii Telefon");
+         
+    }
+    
+    private void updateTextAreaWithSelectedPhone(Telefon selectedPhone) {
+    jTextArea1.setText(selectedPhone.toString());
+}
+    
+    private void ActionListener(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionListener
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ActionListener
+
+    private void ActionEvent(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionEvent
+       
+    }//GEN-LAST:event_ActionEvent
+
+    private void editButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButActionPerformed
+       int selectedIndex = jComboBox1.getSelectedIndex();
+        if (selectedIndex >= 0) {
+        Telefon selectedPhone = telefoane[selectedIndex];
+        JFrame popup = new JFrame("Detalii Telefon");
     popup.setSize(1000, 900);
     popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     JPanel panel = new JPanel();
     panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
-    Telefon selectedPhone = telefoane[selectedIndex];
-    
+       
     if (selectedIndex >= 0 && selectedIndex < telefoane.length) {
         JTextField textFieldMarca = new JTextField(selectedPhone.getMarca());
         JTextField textFieldModel = new JTextField(selectedPhone.getModel());
@@ -243,26 +274,14 @@ public class telefoaneint extends javax.swing.JFrame {Instances inst = new Insta
     }
         
         popup.add(panel);
-        popup.setVisible(true);     
+        popup.setVisible(true);
+    }//GEN-LAST:event_editButActionPerformed
     }
-    
-    private void updateTextAreaWithSelectedPhone(Telefon selectedPhone) {
-    jTextArea1.setText(selectedPhone.toString());
-}
-    
-    private void ActionListener(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionListener
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ActionListener
-
-    private void ActionEvent(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionEvent
-       
-    }//GEN-LAST:event_ActionEvent
-    
     private void addLabelAndTextField(JPanel panel, String labelText, JTextField textField) {
-    JLabel label = new JLabel(labelText);
-    panel.add(label);
-    panel.add(textField);
-}
+        JLabel label = new JLabel(labelText);
+        panel.add(label);
+        panel.add(textField);
+    }
     
     private void initializareComboBox() {
         String[] numeTel = new String[telefoane.length];
@@ -276,17 +295,17 @@ public class telefoaneint extends javax.swing.JFrame {Instances inst = new Insta
     
     // Metoda pentru a adăuga ActionListener la combobox
     private void adaugaActionListenerComboBox() {
-        jComboBox1.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                int selectedIndex = jComboBox1.getSelectedIndex();
-                if(selectedIndex >= 0) {
-                    Object obiectSelectat = telefoane[selectedIndex];
-                    String textAfisat = obiectSelectat.toString();
-                    jTextArea1.setText(textAfisat);
-                    afisarePopUp(selectedIndex, telefoane);
-                }
+        jComboBox1.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            int selectedIndex = jComboBox1.getSelectedIndex();
+            if (selectedIndex >= 0) {
+                Object obiectSelectat = telefoane[selectedIndex];
+                String textAfisat = obiectSelectat.toString();
+                jTextArea1.setText(textAfisat);
+                editBut.setVisible(true); // Facem butonul de editare vizibil
             }
-        });
+        }
+    });
     }
      
     /**
@@ -326,6 +345,7 @@ public class telefoaneint extends javax.swing.JFrame {Instances inst = new Insta
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button backtest;
+    private javax.swing.JButton editBut;
     private javax.swing.JMenuItem home;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JMenuBar jMenuBar1;

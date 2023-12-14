@@ -52,9 +52,12 @@
               <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
               <Component id="backtest" min="-2" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-              <Component id="jComboBox1" pref="304" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="editBut" max="32767" attributes="0"/>
+                  <Component id="jComboBox1" pref="304" max="32767" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="624" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
@@ -76,7 +79,9 @@
                   <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="412" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="99" max="32767" attributes="0"/>
+              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <Component id="editBut" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -133,5 +138,13 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="editBut">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Editare detalii telefon"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editButActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>
