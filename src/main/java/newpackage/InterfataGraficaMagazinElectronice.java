@@ -10,7 +10,7 @@ import com.mycompany.magazinelectronice.*;
  */
 public class InterfataGraficaMagazinElectronice extends javax.swing.JFrame {
 
-  
+    
     
     public InterfataGraficaMagazinElectronice() {
         initComponents();
@@ -310,10 +310,95 @@ public class InterfataGraficaMagazinElectronice extends javax.swing.JFrame {
     addLabelAndTextField(dialog, "Cantitate:", textFieldCantitate);
     addLabelAndTextField(dialog, "An aparitie:", textFieldAnAparitie);
     addLabelAndTextField(dialog, "Pret:", textFieldPret);
+    
+    Instances instances = new Instances();
+    Device[] instancesArray =  instances.getInstancesArray("instances");
+    
+    rezcautdupacond myFrame = new rezcautdupacond();
+    StringBuilder resultBuilder = new StringBuilder();
 
     JButton searchButton = new JButton("Cauta");
     searchButton.addActionListener(event -> {
-       
+        String marca = textFieldMarca.getText().trim();
+    String model = textFieldModel.getText().trim();
+    String cantitateText = textFieldCantitate.getText().trim();
+    String anAparitieText = textFieldAnAparitie.getText().trim();
+    String pretText = textFieldPret.getText().trim();
+ 
+    
+   
+    Device searchDevice = new Device();
+    
+    if (!marca.isEmpty()) {
+        searchDevice.setMarca(marca);
+    }
+    
+    if (!model.isEmpty()) {
+    searchDevice.setModel(model);
+    }
+    
+    int cantitate = 0;
+    if (!cantitateText.isEmpty()) {
+    try {
+        cantitate = Integer.parseInt(cantitateText);
+    } catch (NumberFormatException e) {       
+        System.out.println("Introduceti un numar valid pentru cantitate.");
+    }
+    }
+    searchDevice.setCantitate(cantitate);
+    
+    int anAparitie = 0;
+    if (!anAparitieText.isEmpty()) {
+    try {
+        anAparitie = Integer.parseInt(anAparitieText);
+    } catch (NumberFormatException e) {    
+        System.out.println("Introduceti un numar valid pentru anul de aparitie.");
+    }
+    }
+    searchDevice.setAnAparitie(anAparitie);
+    
+    if (!model.isEmpty()) {
+    searchDevice.setModel(model);
+    }
+    float pret = 0.0f;
+    if (!pretText.isEmpty()) {
+    try {
+        pret = Float.parseFloat(pretText);
+    } catch (NumberFormatException e) {   
+        System.out.println("Introduceti un numar valid pentru pret.");
+    }
+    }
+    searchDevice.setPret(pret);
+    for (Device instance : instancesArray) {
+        boolean match = true; 
+
+    
+    if (!marca.isEmpty() && !instance.getMarca().equals(searchDevice.getMarca())) {
+        match = false; 
+    }
+
+    if (!model.isEmpty() && !instance.getModel().equals(searchDevice.getModel())) {
+        match = false;
+    }
+    
+    if (searchDevice.getCantitate() != 0 && instance.getCantitate() != searchDevice.getCantitate()) {
+        match = false; 
+    }
+    
+    if (searchDevice.getAnAparitie() != 0 && instance.getAnAparitie() != searchDevice.getAnAparitie()) {
+        match = false;
+    }
+    
+    if (searchDevice.getPret() != 0.0f && instance.getPret() != searchDevice.getPret()) {
+        match = false;
+    }
+    if (match) {
+        String result = "Informațiile căutate: ..."; 
+        myFrame.displaySearchResult(result);
+        myFrame.displaySearchResult(resultBuilder.toString());
+        myFrame.setVisible(true);
+    }
+    }
     });
     
     dialog.add(searchButton);
@@ -328,6 +413,7 @@ public class InterfataGraficaMagazinElectronice extends javax.swing.JFrame {
     container.add(label);
     container.add(textField);
 }
+    
     
     /**
      * @param args the command line arguments

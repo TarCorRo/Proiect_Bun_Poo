@@ -16,6 +16,10 @@ public class rezcautdupacond extends javax.swing.JFrame {
     public rezcautdupacond() {
         initComponents();
     }
+    
+    public void displaySearchResult(String result) {
+        jTextArea1.setText(result);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,9 +70,7 @@ public class rezcautdupacond extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
