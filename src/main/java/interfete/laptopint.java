@@ -46,6 +46,7 @@ public class laptopint extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
         home = new javax.swing.JMenuItem();
@@ -70,6 +71,13 @@ public class laptopint extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apasati pentru a vedea laptopuri" }));
 
+        jButton1.setText("Editare detalii Laptop");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         menu.setText("Home");
 
         home.setText("Home");
@@ -93,9 +101,11 @@ public class laptopint extends javax.swing.JFrame {
                 .addComponent(titlu, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBox1, 0, 323, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
@@ -110,7 +120,9 @@ public class laptopint extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 102, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(60, 60, 60))
         );
 
         pack();
@@ -130,15 +142,16 @@ public class laptopint extends javax.swing.JFrame {
         home.setVisible(true);
     }//GEN-LAST:event_homeActionPerformed
 
-    public void afisarePopUp(int selectedIndex, Laptop[] laptopuri){
-        
-    JFrame popup = new JFrame("Detalii Telefon");
-    popup.setSize(1000, 900);
-    popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int selectedIndex = jComboBox1.getSelectedIndex();
 
-    JPanel panel = new JPanel();
-    panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
-    Laptop selectedLaptop = laptopuri[selectedIndex];
+        JFrame popup = new JFrame("Detalii Telefon");
+        popup.setSize(1000, 900);
+        popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
+        Laptop selectedLaptop = laptopuri[selectedIndex];
     
     if (selectedIndex >= 0 && selectedIndex < laptopuri.length) {
         JTextField textFieldMarca = new JTextField(selectedLaptop.getMarca());
@@ -155,8 +168,8 @@ public class laptopint extends javax.swing.JFrame {
         JTextField textFieldTipPlacaVideo = new JTextField(selectedLaptop.getTipPlacaVideo());
         JTextField textFieldModelPlacaVideo = new JTextField(selectedLaptop.getModelPlacaVideo());
         JTextField textFieldTipPorturi = new JTextField(selectedLaptop.getTipPorturi());
-        JTextField textFieldAutonomieBat = new JTextField(selectedLaptop.getAutonomieBat());
-        JTextField textFieldRezCamere = new JTextField(selectedLaptop.getRezCamere());
+        JTextField textFieldAutonomieBat = new JTextField(String.valueOf(selectedLaptop.getAutonomieBat()));
+        JTextField textFieldRezCamere = new JTextField(String.valueOf(selectedLaptop.getRezCamere()));
         JTextField textFieldNrPorturi = new JTextField(String.valueOf(selectedLaptop.getNrPorturi()));
         JTextField textFieldMemorieRam = new JTextField(String.valueOf(selectedLaptop.getMemorieRam()));
         JTextField textFieldNrCamere = new JTextField(String.valueOf(selectedLaptop.getNrCamere()));
@@ -249,23 +262,25 @@ public class laptopint extends javax.swing.JFrame {
     }
         
         popup.add(panel);
-        popup.setVisible(true);     
-    }
-    
+        popup.setVisible(true);  
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     private void addLabelAndTextField(JPanel panel, String labelText, JTextField textField) {
-    JLabel label = new JLabel(labelText);
-    panel.add(label);
-    panel.add(textField);
+        JLabel label = new JLabel(labelText);
+        panel.add(label);
+        panel.add(textField);
 }
     
     private void initializareComboBox() {
         String[] numeLap = new String[laptopuri.length];
+        
         for(int i = 0; i < laptopuri.length; i++) {
             String marca = laptopuri[i].getMarca();
             String model = laptopuri[i].getModel();
             numeLap[i] = marca + " " + model;
         }
         jComboBox1.setModel(new DefaultComboBoxModel<>(numeLap));
+        jTextArea1.setText(laptopuri[0].toString());
     }
     
     // Metoda pentru a adăuga ActionListener la combobox
@@ -273,19 +288,20 @@ public class laptopint extends javax.swing.JFrame {
         jComboBox1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 int selectedIndex = jComboBox1.getSelectedIndex();
+                
                 if(selectedIndex >= 0) {
                     Object obiectSelectat = laptopuri[selectedIndex];
                     String textAfisat = obiectSelectat.toString();
                     jTextArea1.setText(textAfisat);
-                    afisarePopUp(selectedIndex, laptopuri);
+                    jButton1.setVisible(true);
                 }
             }
         });
     }
     
     private void updateTextAreaWithSelectedLaptop(Laptop selectedLaptop) {
-    jTextArea1.setText(selectedLaptop.toString());
-}
+        jTextArea1.setText(selectedLaptop.toString());
+    }
     
     /**
      * @param args the command line arguments
@@ -325,6 +341,7 @@ public class laptopint extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button back;
     private javax.swing.JMenuItem home;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;

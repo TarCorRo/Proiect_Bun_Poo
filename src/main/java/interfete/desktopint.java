@@ -8,7 +8,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.mycompany.magazinelectronice.*;
-import com.mycompany.magazinelectronice.Desktop;
 import java.awt.*;
 import newpackage.*;
 
@@ -20,7 +19,7 @@ public class desktopint extends javax.swing.JFrame {
     Instances inst = new Instances();
     
     Device[] desk = inst.getInstancesArray("desktopuri");
-    Desktop[] desktopuri = (Desktop[]) desk;
+    Desktops[] desktopuri = (Desktops[]) desk;
 
     /**
      * Creates new form desktopint
@@ -47,6 +46,7 @@ public class desktopint extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
         home = new javax.swing.JMenuItem();
@@ -71,6 +71,13 @@ public class desktopint extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        jButton1.setText("Editare detalii Desktop");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         menu.setText("Home");
 
         home.setText("Home");
@@ -94,9 +101,11 @@ public class desktopint extends javax.swing.JFrame {
                 .addComponent(titlu, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBox1, 0, 313, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
@@ -111,7 +120,9 @@ public class desktopint extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 102, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(59, 59, 59))
         );
 
         pack();
@@ -131,15 +142,15 @@ public class desktopint extends javax.swing.JFrame {
         home.setVisible(true);
     }//GEN-LAST:event_homeActionPerformed
 
-    public void afisarePopUp(int selectedIndex, Desktop[] desktopuri){
-        
-    JFrame popup = new JFrame("Detalii Telefon");
-    popup.setSize(1000, 900);
-    popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int selectedIndex = jComboBox1.getSelectedIndex();
+        JFrame popup = new JFrame("Detalii Telefon");
+        popup.setSize(1000, 900);
+        popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-    JPanel panel = new JPanel();
-    panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
-    Desktop selectedDesktop = desktopuri[selectedIndex];
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
+        Desktops selectedDesktop = desktopuri[selectedIndex];
     
     if (selectedIndex >= 0 && selectedIndex < desktopuri.length) {
         JTextField textFieldMarca = new JTextField(selectedDesktop.getMarca());
@@ -219,22 +230,25 @@ public class desktopint extends javax.swing.JFrame {
         
         popup.add(panel);
         popup.setVisible(true);     
-    }
+    }//GEN-LAST:event_jButton1ActionPerformed
     
     private void addLabelAndTextField(JPanel panel, String labelText, JTextField textField) {
-    JLabel label = new JLabel(labelText);
-    panel.add(label);
-    panel.add(textField);
-}
+        JLabel label = new JLabel(labelText);
+        panel.add(label);
+        panel.add(textField);
+    }
     
     private void initializareComboBox() {
         String[] numeDesk = new String[desktopuri.length];
+        
         for(int i = 0; i < desktopuri.length; i++) {
             String marca = desktopuri[i].getMarca();
             String model = desktopuri[i].getModel();
+            
             numeDesk[i] = marca + " " + model;
         }
         jComboBox1.setModel(new DefaultComboBoxModel<>(numeDesk));
+        jTextArea1.setText(desktopuri[0].toString());
     }
     
     // Metoda pentru a adăuga ActionListener la combobox
@@ -242,17 +256,18 @@ public class desktopint extends javax.swing.JFrame {
         jComboBox1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 int selectedIndex = jComboBox1.getSelectedIndex();
+                
                 if(selectedIndex >= 0) {
                     Object obiectSelectat = desktopuri[selectedIndex];
                     String textAfisat = obiectSelectat.toString();
                     jTextArea1.setText(textAfisat);
-                    afisarePopUp(selectedIndex, desktopuri);
+                    jButton1.setVisible(true);
                 }
             }
         });
     }
     
-    private void updateTextAreaWithSelectedLaptop(Desktop selectedDesktop) {
+    private void updateTextAreaWithSelectedLaptop(Desktops selectedDesktop) {
         jTextArea1.setText(selectedDesktop.toString());
     }
     /**
@@ -293,6 +308,7 @@ public class desktopint extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button back;
     private javax.swing.JMenuItem home;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;

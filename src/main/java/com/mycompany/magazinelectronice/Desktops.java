@@ -1,16 +1,16 @@
 package com.mycompany.magazinelectronice;
 
-public class Desktop extends Device{
+public class Desktops extends Device{
     String procesor, culoare, frecventaRam, sistemDeOperare, tipPlacaVideo, modelPlacaVideo, tipPorturi;
     int memorieRam, nrPorturi;
     float greutate;
     
-    public Desktop() 
+    public Desktops() 
     {
         super(null,null,0,0,0);
     }
     
-    public Desktop(String marca, String model, String procesor, String culoare, String frecventaRam, String sistemDeOperare, String tipPlacaVideo, String modelPlacaVideo, String tipPorturi, int anAparitie, int cantitate, int memorieRam, int nrPorturi,  float pret, float greutate) {
+    public Desktops(String marca, String model, String procesor, String culoare, String frecventaRam, String sistemDeOperare, String tipPlacaVideo, String modelPlacaVideo, String tipPorturi, int anAparitie, int cantitate, int memorieRam, int nrPorturi,  float pret, float greutate) {
         super( marca, model, cantitate, anAparitie, pret);
         this.procesor = procesor;
         this.culoare = culoare;
@@ -24,7 +24,7 @@ public class Desktop extends Device{
         this.greutate = greutate;
     }
     
-    public Desktop(Desktop l) {
+    public Desktops(Desktops l) {
         super( l.marca, l.model, l.cantitate, l.anAparitie, l.pret);
         this.procesor = l.procesor;
         this.culoare = l.culoare;
