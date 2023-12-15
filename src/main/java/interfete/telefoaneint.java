@@ -152,12 +152,7 @@ public class telefoaneint extends javax.swing.JFrame {Instances inst = new Insta
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
 
     }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    public void afisarePopUp(int selectedIndex, Telefon[] telefoane){
-        
-         
-    }
-    
+ 
     private void updateTextAreaWithSelectedPhone(Telefon selectedPhone) {
     jTextArea1.setText(selectedPhone.toString());
 }

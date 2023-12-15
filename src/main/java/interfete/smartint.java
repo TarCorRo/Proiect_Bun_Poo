@@ -5,13 +5,20 @@
 package interfete;
 
 import newpackage.InterfataGraficaMagazinElectronice;
-
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import com.mycompany.magazinelectronice.*;
+import java.awt.*;
+import newpackage.*;
 /**
  *
  * @author Razvan
  */
-public class smartint extends javax.swing.JFrame {
+public class smartint extends javax.swing.JFrame {Instances inst = new Instances();
 
+    Device[] smartwatch = inst.getInstancesArray("smartwatch-uri");
+    Smartwatch[] smartwatch1 = (Smartwatch[]) smartwatch;
     /**
      * Creates new form smartint
      */
@@ -19,6 +26,9 @@ public class smartint extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
          setVisible(true);
+        initializareComboBox(); // Inițializează combobox-ul
+        adaugaActionListenerComboBox();
+        editButton.setVisible(false);
     }
 
     /**
@@ -32,6 +42,10 @@ public class smartint extends javax.swing.JFrame {
 
         back = new java.awt.Button();
         jLabel1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        editButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
         home = new javax.swing.JMenuItem();
@@ -49,6 +63,15 @@ public class smartint extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Smart Watchuri");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apasa aici pentru a vedea Smartwatch-urile", "Samsung", "Apple", "Huawei", "Garmin", "Fitbit", "Sony", "Amazfit", "Fossil", "OnePlus", "Casio", " " }));
+        jComboBox1.setToolTipText("Apasati aici pentru a vedea Smartwatch-urile");
+
+        editButton.setText("Editare detalii Smartwatch");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         menu.setText("Home");
 
@@ -71,8 +94,16 @@ public class smartint extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(137, 137, 137)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(editButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(120, 120, 120)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 695, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,7 +111,14 @@ public class smartint extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 253, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(editButton))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE))
+                .addGap(94, 94, 94))
         );
 
         pack();
@@ -100,6 +138,146 @@ public class smartint extends javax.swing.JFrame {
         home.setVisible(true);
     }//GEN-LAST:event_homeActionPerformed
 
+     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+
+    }                                          
+ 
+    private void updateTextAreaWithSelectedPhone(Smartwatch selectedWatch) {
+    jTextArea1.setText(selectedWatch.toString());
+}
+    
+    private void ActionListener(java.awt.event.ActionEvent evt) {                                
+        // TODO add your handling code here:
+    }                               
+
+    private void ActionEvent(java.awt.event.ActionEvent evt) {                             
+       
+    }
+    private void editButActionPerformed(java.awt.event.ActionEvent evt) {                                        
+       int selectedIndex = jComboBox1.getSelectedIndex();
+        if (selectedIndex >= 0) {
+        Smartwatch selectedWatch = smartwatch1[selectedIndex];
+        JFrame popup = new JFrame("Detalii Smartwatch");
+    popup.setSize(1000, 900);
+    popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+    JPanel panel = new JPanel();
+    panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
+       
+    if (selectedIndex >= 0 && selectedIndex < smartwatch1.length) {
+        JTextField textFieldMarca = new JTextField(selectedWatch.getMarca());
+        JTextField textFieldModel = new JTextField(selectedWatch.getModel());
+        JTextField textFieldCantitate = new JTextField(String.valueOf(selectedWatch.getCantitate()));
+        JTextField textFieldAnAparitie = new JTextField(String.valueOf(selectedWatch.getAnAparitie()));
+        JTextField textFieldPret = new JTextField(String.valueOf(selectedWatch.getPret()));
+        JTextField textFieldProcesor = new JTextField(selectedWatch.getProcesor());
+        JTextField textFieldTipEcran = new JTextField(selectedWatch.getTipEcran());
+        JTextField textFieldCuloare = new JTextField(selectedWatch.getCuloare());
+        JTextField textFieldSisOpTel = new JTextField(selectedWatch.getSistemDeOperareSmtWtc());
+        JTextField textFieldTipIncarcare = new JTextField(selectedWatch.getTipIncarcare());
+        JTextField textFieldTipSim = new JTextField(selectedWatch.getTipSim());
+        JTextField textFieldRezEcran = new JTextField(selectedWatch.getRezEcran());
+        JTextField textFieldMemorieROM = new JTextField(String.valueOf(selectedWatch.getMemorieROM()));
+        JTextField textFieldMemorieRAM = new JTextField(String.valueOf(selectedWatch.getMemorieRAM()));
+        JTextField textFieldMarimeBat = new JTextField(String.valueOf(selectedWatch.getMarimeBat()));
+        JTextField textFieldDiagonalaEcran = new JTextField(String.valueOf(selectedWatch.getDiagonalaEcran()));
+    
+        addLabelAndTextField(panel, "Marca:", textFieldMarca);
+        addLabelAndTextField(panel, "Model:", textFieldModel);
+        addLabelAndTextField(panel, "Cantitate:", textFieldCantitate);
+        addLabelAndTextField(panel, "An aparitie:", textFieldAnAparitie);
+        addLabelAndTextField(panel, "Pret:", textFieldPret);
+        addLabelAndTextField(panel, "Procesor:", textFieldProcesor);
+        addLabelAndTextField(panel, "Tip ecran:", textFieldTipEcran);
+        addLabelAndTextField(panel, "Culoare:", textFieldCuloare);
+        addLabelAndTextField(panel, "Sistem de operare:", textFieldSisOpTel);
+        addLabelAndTextField(panel, "Tip încărcare:", textFieldTipIncarcare);
+        addLabelAndTextField(panel, "Tip SIM:", textFieldTipSim);
+        addLabelAndTextField(panel, "Rezoluție ecran:", textFieldRezEcran);
+        addLabelAndTextField(panel, "Memorie ROM:", textFieldMemorieROM);
+        addLabelAndTextField(panel, "Memorie RAM:", textFieldMemorieRAM);
+        addLabelAndTextField(panel, "Mărime baterie:", textFieldMarimeBat);
+        addLabelAndTextField(panel, "Diagonala ecran:", textFieldDiagonalaEcran);    
+        JButton saveButton = new JButton("Salvează");
+
+        saveButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+              String valoareMarca = textFieldMarca.getText();
+              String valoareModel = textFieldModel.getText();
+              int valoareCantitate =Integer.parseInt (textFieldCantitate.getText());
+              int valoareAnAparitie = Integer.parseInt (textFieldAnAparitie.getText());
+              float valoarePret = Float.parseFloat(textFieldPret.getText());
+              String valoareProcesor = textFieldProcesor.getText();
+              String valoareTipEcran = textFieldTipEcran.getText();
+              String valoareCuloare = textFieldCuloare.getText();
+              String valoareSisOpTel = textFieldSisOpTel.getText();
+              String valoareTipIncarcare = textFieldTipIncarcare.getText();
+              String valoareTipSim = textFieldTipSim.getText();
+              int valoareRezEcran = Integer.parseInt(textFieldRezEcran.getText());
+              int valoareMemorieROM = Integer.parseInt(textFieldMemorieROM.getText());
+              int valoareMemorieRAM = Integer.parseInt(textFieldMemorieRAM.getText());
+              int valoareMarimeBat = Integer.parseInt(textFieldMarimeBat.getText());
+              float valoareDiagonalaEcran = Float.parseFloat(textFieldDiagonalaEcran.getText());
+              
+              selectedWatch.setMarca(valoareMarca);
+              selectedWatch.setModel(valoareModel);
+              selectedWatch.setCantitate(valoareCantitate);
+              selectedWatch.setAnAparitie(valoareAnAparitie);
+              selectedWatch.setPret(valoarePret);              
+              selectedWatch.setProcesor(valoareProcesor);
+              selectedWatch.setTipEcran(valoareTipEcran);
+              selectedWatch.setCuloare(valoareCuloare);
+              selectedWatch.setSistemDeOperareSmtWtc(valoareSisOpTel);
+              selectedWatch.setTipIncarcare(valoareTipIncarcare);
+              selectedWatch.setTipSim(valoareTipSim);
+              selectedWatch.setMemorieROM(valoareMemorieROM);
+              selectedWatch.setRezEcran(valoareRezEcran);
+              selectedWatch.setMemorieRAM(valoareMemorieRAM);
+              selectedWatch.setMarimeBat(valoareMarimeBat);
+              selectedWatch.setDiagonalaEcran(Float.parseFloat(textFieldDiagonalaEcran.getText()));
+              smartwatch1[selectedIndex].setMarca(selectedWatch.getMarca());
+              JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(saveButton);
+              frame.dispose();
+              updateTextAreaWithSelectedPhone(selectedWatch);
+            }
+        });
+        panel.add(saveButton);
+    }
+        
+        popup.add(panel);
+        popup.setVisible(true);
+    }                                       
+    }
+    private void addLabelAndTextField(JPanel panel, String labelText, JTextField textField) {
+        JLabel label = new JLabel(labelText);
+        panel.add(label);
+        panel.add(textField);
+    }
+    
+    private void initializareComboBox() {
+        String[] numeWatch = new String[smartwatch1.length];
+        for(int i = 0; i < smartwatch1.length; i++) {
+            String marca = smartwatch1[i].getMarca();
+            String model = smartwatch1[i].getModel();
+            numeWatch[i] = marca + " " + model;
+        }
+        jComboBox1.setModel(new DefaultComboBoxModel<>(numeWatch));
+    }
+    
+    // Metoda pentru a adăuga ActionListener la combobox
+    private void adaugaActionListenerComboBox() {
+        jComboBox1.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            int selectedIndex = jComboBox1.getSelectedIndex();
+            if (selectedIndex >= 0) {
+                Object obiectSelectat = smartwatch1[selectedIndex];
+                String textAfisat = obiectSelectat.toString();
+                jTextArea1.setText(textAfisat);
+                editButton.setVisible(true); // Facem butonul de editare vizibil
+            }
+        }
+    });
+    }
     /**
      * @param args the command line arguments
      */
@@ -137,9 +315,13 @@ public class smartint extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button back;
+    private javax.swing.JButton editButton;
     private javax.swing.JMenuItem home;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JMenu menu;
     // End of variables declaration//GEN-END:variables
 }

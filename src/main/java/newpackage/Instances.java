@@ -182,6 +182,10 @@ public class Instances {
        Device[] telefon = {
            tel2,tel3,tel4,tel5,tel6,tel7,tel8,tel9,tel10,tel11
        };
+       Device[] smartwatch = {
+           smartwatch1, smartwatch2, smartwatch3, smartwatch4, smartwatch5, smartwatch6,
+           smartwatch7, smartwatch8, smartwatch9, smartwatch10
+       };
        
        public Device[] getVectorTelefon(){
            return telefon;
