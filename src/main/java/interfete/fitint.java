@@ -4,7 +4,12 @@
  */
 package interfete;
 
-import newpackage.InterfataGraficaMagazinElectronice;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import com.mycompany.magazinelectronice.*;
+import java.awt.*;
+import newpackage.*;
 
 /**
  *
@@ -12,6 +17,8 @@ import newpackage.InterfataGraficaMagazinElectronice;
  */
 public class fitint extends javax.swing.JFrame {
 
+    Device[] fitBand = inst.getInstancesArray("Bratari Fitness");
+    FitnessBaand[] fitBand1 = (FitnessBand[]) fitBand;
     /**
      * Creates new form fitint
      */
@@ -32,6 +39,10 @@ public class fitint extends javax.swing.JFrame {
 
         back = new java.awt.Button();
         jLabel1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        editButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
         home = new javax.swing.JMenuItem();
@@ -49,6 +60,14 @@ public class fitint extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Bratari Fitness");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apasati aici pentru a vedea Bratarile Fitness" }));
+
+        editButton.setText("Editare date Bratari Fitness");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         menu.setText("Home");
 
@@ -73,6 +92,14 @@ public class fitint extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(editButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(57, 57, 57)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 632, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,7 +107,14 @@ public class fitint extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 253, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(editButton))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE))
+                .addGap(17, 17, 17))
         );
 
         pack();
@@ -100,6 +134,146 @@ public class fitint extends javax.swing.JFrame {
         home.setVisible(true);
     }//GEN-LAST:event_homeActionPerformed
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+
+    }                                          
+ 
+    private void updateTextAreaWithSelectedPhone(FitnessBand selectedBand) {
+    jTextArea1.setText(selectedBand.toString());
+}
+    
+    private void ActionListener(java.awt.event.ActionEvent evt) {                                
+        // TODO add your handling code here:
+    }                               
+
+    private void ActionEvent(java.awt.event.ActionEvent evt) {                             
+       
+    }
+    private void editButActionPerformed(java.awt.event.ActionEvent evt) {                                        
+       int selectedIndex = jComboBox1.getSelectedIndex();
+        if (selectedIndex >= 0) {
+        FitnessBand selectedBand = fitBand1[selectedIndex];
+        JFrame popup = new JFrame("Detalii FitnessBand");
+    popup.setSize(1000, 900);
+    popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+    JPanel panel = new JPanel();
+    panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
+       
+    if (selectedIndex >= 0 && selectedIndex < fitBand1.length) {
+        JTextField textFieldMarca = new JTextField(selectedBand.getMarca());
+        JTextField textFieldModel = new JTextField(selectedBand.getModel());
+        JTextField textFieldCantitate = new JTextField(String.valueOf(selectedBand.getCantitate()));
+        JTextField textFieldAnAparitie = new JTextField(String.valueOf(selectedBand.getAnAparitie()));
+        JTextField textFieldPret = new JTextField(String.valueOf(selectedBand.getPret()));
+        JTextField textFieldProcesor = new JTextField(selectedBand.getProcesor());
+        JTextField textFieldTipEcran = new JTextField(selectedBand.getTipEcran());
+        JTextField textFieldCuloare = new JTextField(selectedBand.getCuloare());
+        JTextField textFieldSisOpTel = new JTextField(selectedBand.getSistemDeOperareSmtWtc());
+        JTextField textFieldTipIncarcare = new JTextField(selectedBand.getTipIncarcare());
+        JTextField textFieldTipSim = new JTextField(selectedBand.getTipSim());
+        JTextField textFieldRezEcran = new JTextField(selectedBand.getRezEcran());
+        JTextField textFieldMemorieROM = new JTextField(String.valueOf(selectedBand.getMemorieROM()));
+        JTextField textFieldMemorieRAM = new JTextField(String.valueOf(selectedBand.getMemorieRAM()));
+        JTextField textFieldMarimeBat = new JTextField(String.valueOf(selectedBand.getMarimeBat()));
+        JTextField textFieldDiagonalaEcran = new JTextField(String.valueOf(selectedBand.getDiagonalaEcran()));
+    
+        addLabelAndTextField(panel, "Marca:", textFieldMarca);
+        addLabelAndTextField(panel, "Model:", textFieldModel);
+        addLabelAndTextField(panel, "Cantitate:", textFieldCantitate);
+        addLabelAndTextField(panel, "An aparitie:", textFieldAnAparitie);
+        addLabelAndTextField(panel, "Pret:", textFieldPret);
+        addLabelAndTextField(panel, "Procesor:", textFieldProcesor);
+        addLabelAndTextField(panel, "Tip ecran:", textFieldTipEcran);
+        addLabelAndTextField(panel, "Culoare:", textFieldCuloare);
+        addLabelAndTextField(panel, "Sistem de operare:", textFieldSisOpTel);
+        addLabelAndTextField(panel, "Tip încărcare:", textFieldTipIncarcare);
+        addLabelAndTextField(panel, "Tip SIM:", textFieldTipSim);
+        addLabelAndTextField(panel, "Rezoluție ecran:", textFieldRezEcran);
+        addLabelAndTextField(panel, "Memorie ROM:", textFieldMemorieROM);
+        addLabelAndTextField(panel, "Memorie RAM:", textFieldMemorieRAM);
+        addLabelAndTextField(panel, "Mărime baterie:", textFieldMarimeBat);
+        addLabelAndTextField(panel, "Diagonala ecran:", textFieldDiagonalaEcran);    
+        JButton saveButton = new JButton("Salvează");
+
+        saveButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+              String valoareMarca = textFieldMarca.getText();
+              String valoareModel = textFieldModel.getText();
+              int valoareCantitate =Integer.parseInt (textFieldCantitate.getText());
+              int valoareAnAparitie = Integer.parseInt (textFieldAnAparitie.getText());
+              float valoarePret = Float.parseFloat(textFieldPret.getText());
+              String valoareProcesor = textFieldProcesor.getText();
+              String valoareTipEcran = textFieldTipEcran.getText();
+              String valoareCuloare = textFieldCuloare.getText();
+              String valoareSisOpTel = textFieldSisOpTel.getText();
+              String valoareTipIncarcare = textFieldTipIncarcare.getText();
+              String valoareTipSim = textFieldTipSim.getText();
+              int valoareRezEcran = Integer.parseInt(textFieldRezEcran.getText());
+              int valoareMemorieROM = Integer.parseInt(textFieldMemorieROM.getText());
+              int valoareMemorieRAM = Integer.parseInt(textFieldMemorieRAM.getText());
+              int valoareMarimeBat = Integer.parseInt(textFieldMarimeBat.getText());
+              float valoareDiagonalaEcran = Float.parseFloat(textFieldDiagonalaEcran.getText());
+              
+              selectedBand.setMarca(valoareMarca);
+              selectedBand.setModel(valoareModel);
+              selectedBand.setCantitate(valoareCantitate);
+              selectedBand.setAnAparitie(valoareAnAparitie);
+              selectedBand.setPret(valoarePret);              
+              selectedBand.setProcesor(valoareProcesor);
+              selectedBand.setTipEcran(valoareTipEcran);
+              selectedBand.setCuloare(valoareCuloare);
+              selectedBand.setSistemDeOperareSmtWtc(valoareSisOpTel);
+              selectedBand.setTipIncarcare(valoareTipIncarcare);
+              selectedBand.setTipSim(valoareTipSim);
+              selectedBand.setMemorieROM(valoareMemorieROM);
+              selectedBand.setRezEcran(valoareRezEcran);
+              selectedBand.setMemorieRAM(valoareMemorieRAM);
+              selectedBand.setMarimeBat(valoareMarimeBat);
+              selectedBand.setDiagonalaEcran(Float.parseFloat(textFieldDiagonalaEcran.getText()));
+              fitBand1[selectedIndex].setMarca(selectedBand.getMarca());
+              JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(saveButton);
+              frame.dispose();
+              updateTextAreaWithSelectedPhone(selectedBand);
+            }
+        });
+        panel.add(saveButton);
+    }
+        
+        popup.add(panel);
+        popup.setVisible(true);
+    }                                       
+    }
+    private void addLabelAndTextField(JPanel panel, String labelText, JTextField textField) {
+        JLabel label = new JLabel(labelText);
+        panel.add(label);
+        panel.add(textField);
+    }
+    
+    private void initializareComboBox() {
+        String[] numeWatch = new String[fitBand1.length];
+        for(int i = 0; i < fitBand1.length; i++) {
+            String marca = fitBand1[i].getMarca();
+            String model = fitBand1[i].getModel();
+            numeWatch[i] = marca + " " + model;
+        }
+        jComboBox1.setModel(new DefaultComboBoxModel<>(numeWatch));
+    }
+    
+    // Metoda pentru a adăuga ActionListener la combobox
+    private void adaugaActionListenerComboBox() {
+        jComboBox1.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            int selectedIndex = jComboBox1.getSelectedIndex();
+            if (selectedIndex >= 0) {
+                Object obiectSelectat = fitBand1[selectedIndex];
+                String textAfisat = obiectSelectat.toString();
+                jTextArea1.setText(textAfisat);
+                editButton.setVisible(true); // Facem butonul de editare vizibil
+            }
+        }
+    });
+    }
     /**
      * @param args the command line arguments
      */
@@ -137,9 +311,13 @@ public class fitint extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button back;
+    private javax.swing.JButton editButton;
     private javax.swing.JMenuItem home;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JMenu menu;
     // End of variables declaration//GEN-END:variables
 }
