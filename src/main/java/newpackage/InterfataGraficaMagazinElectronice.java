@@ -1,20 +1,25 @@
 package newpackage;
+
 import interfete.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.Container;
 import javax.swing.*;
 import com.mycompany.magazinelectronice.*;
+import java.util.*;
 
 /**
  *
  * @author Razvan
  */
 public class InterfataGraficaMagazinElectronice extends javax.swing.JFrame {
+
     public InterfataGraficaMagazinElectronice() {
         initComponents();
-         setLocationRelativeTo(null);
-         setVisible(true);
-         getContentPane().setBackground(new Color(173, 216, 230)); 
-    setVisible(true);
+        setLocationRelativeTo(null);
+        setVisible(true);
+        getContentPane().setBackground(new Color(173, 216, 230));
+        setVisible(true);
     }
 
     /**
@@ -224,194 +229,218 @@ public class InterfataGraficaMagazinElectronice extends javax.swing.JFrame {
 
     private void telefoanebutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefoanebutActionPerformed
         this.setVisible(false);
-        
+
         telefoaneint telint = new telefoaneint();
         telint.setVisible(true);
     }//GEN-LAST:event_telefoanebutActionPerformed
 
     private void tabletabutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabletabutActionPerformed
         this.setVisible(false);
-        
+
         tabletaint tabint = new tabletaint();
         tabint.setVisible(true);
     }//GEN-LAST:event_tabletabutActionPerformed
 
     private void desktopbutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_desktopbutActionPerformed
         this.setVisible(false);
-        
+
         desktopint deskint = new desktopint();
         deskint.setVisible(true);
     }//GEN-LAST:event_desktopbutActionPerformed
 
     private void laptopbutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laptopbutActionPerformed
         this.setVisible(false);
-        
+
         laptopint lapint = new laptopint();
         lapint.setVisible(true);
     }//GEN-LAST:event_laptopbutActionPerformed
 
     private void smartwatchbutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smartwatchbutActionPerformed
         this.setVisible(false);
-        
+
         smartint smint = new smartint();
         smint.setVisible(true);
     }//GEN-LAST:event_smartwatchbutActionPerformed
 
     private void fitnessbutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fitnessbutActionPerformed
         this.setVisible(false);
-        
+
         fitint fint = new fitint();
         fint.setVisible(true);
     }//GEN-LAST:event_fitnessbutActionPerformed
 
     private void castibutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_castibutActionPerformed
         this.setVisible(false);
-        
+
         catiint casint = new catiint();
         casint.setVisible(true);
     }//GEN-LAST:event_castibutActionPerformed
 
     private void boxeportbutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxeportbutActionPerformed
         this.setVisible(false);
-        
+
         boxeint boxint = new boxeint();
         boxint.setVisible(true);
     }//GEN-LAST:event_boxeportbutActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         this.setVisible(false);
-   
+
         InterfataGraficaMagazinElectronice home = new InterfataGraficaMagazinElectronice();
         home.setVisible(true);
     }//GEN-LAST:event_homeActionPerformed
 
     private void angActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_angActionPerformed
         this.setVisible(false);
-   
+
         interfataang angint = new interfataang();
         angint.setVisible(true);
     }//GEN-LAST:event_angActionPerformed
 
     private void cautParActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cautParActionPerformed
         JDialog dialog = new JDialog(this, "Cautare", true);
-    dialog.setLayout(new GridLayout(6, 2));
+        dialog.setLayout(new GridLayout(6, 2));
 
-    JTextField textFieldMarca = new JTextField();
-    JTextField textFieldModel = new JTextField();
-    JTextField textFieldCantitate = new JTextField();
-    JTextField textFieldAnAparitie = new JTextField();
-    JTextField textFieldPret = new JTextField();
+        JTextField textFieldMarca = new JTextField();
+        JTextField textFieldModel = new JTextField();
+        JTextField textFieldCantitate = new JTextField();
+        JTextField textFieldAnAparitie = new JTextField();
+        JTextField textFieldPret = new JTextField();
 
-    addLabelAndTextField(dialog, "Marca:", textFieldMarca);
-    addLabelAndTextField(dialog, "Model:", textFieldModel);
-    addLabelAndTextField(dialog, "Cantitate:", textFieldCantitate);
-    addLabelAndTextField(dialog, "An aparitie:", textFieldAnAparitie);
-    addLabelAndTextField(dialog, "Pret:", textFieldPret);
-    
-    Instances instances = new Instances();
-    Device[] instancesArray =  instances.getInstancesArray("instances");
-    
-    rezcautdupacond myFrame = new rezcautdupacond();
-    StringBuilder resultBuilder = new StringBuilder();
+        addLabelAndTextField(dialog, "Marca:", textFieldMarca);
+        addLabelAndTextField(dialog, "Model:", textFieldModel);
+        addLabelAndTextField(dialog, "Cantitate:", textFieldCantitate);
+        addLabelAndTextField(dialog, "An aparitie:", textFieldAnAparitie);
+        addLabelAndTextField(dialog, "Pret:", textFieldPret);
 
-    JButton searchButton = new JButton("Cauta");
-    searchButton.addActionListener(event -> {
-        String marca = textFieldMarca.getText().trim();
-    String model = textFieldModel.getText().trim();
-    String cantitateText = textFieldCantitate.getText().trim();
-    String anAparitieText = textFieldAnAparitie.getText().trim();
-    String pretText = textFieldPret.getText().trim();
- 
-    
-   
-    Device searchDevice = new Device();
-    
-    if (!marca.isEmpty()) {
-        searchDevice.setMarca(marca);
-    }
-    
-    if (!model.isEmpty()) {
-    searchDevice.setModel(model);
-    }
-    
-    int cantitate = 0;
-    if (!cantitateText.isEmpty()) {
-    try {
-        cantitate = Integer.parseInt(cantitateText);
-    } catch (NumberFormatException e) {       
-        System.out.println("Introduceti un numar valid pentru cantitate.");
-    }
-    }
-    searchDevice.setCantitate(cantitate);
-    
-    int anAparitie = 0;
-    if (!anAparitieText.isEmpty()) {
-    try {
-        anAparitie = Integer.parseInt(anAparitieText);
-    } catch (NumberFormatException e) {    
-        System.out.println("Introduceti un numar valid pentru anul de aparitie.");
-    }
-    }
-    searchDevice.setAnAparitie(anAparitie);
-    
-    if (!model.isEmpty()) {
-    searchDevice.setModel(model);
-    }
-    float pret = 0.0f;
-    if (!pretText.isEmpty()) {
-    try {
-        pret = Float.parseFloat(pretText);
-    } catch (NumberFormatException e) {   
-        System.out.println("Introduceti un numar valid pentru pret.");
-    }
-    }
-    searchDevice.setPret(pret);
-    for (Device instance : instancesArray) {
-        boolean match = true; 
+        Instances instances = new Instances();
+        Device[] instancesArray = instances.getInstancesArray("instances");
 
-    
-    if (!marca.isEmpty() && !instance.getMarca().equals(searchDevice.getMarca())) {
-        match = false; 
-    }
+        rezcautdupacond myFrame = new rezcautdupacond();
+        StringBuilder resultBuilder = new StringBuilder();
 
-    if (!model.isEmpty() && !instance.getModel().equals(searchDevice.getModel())) {
-        match = false;
-    }
-    
-    if (searchDevice.getCantitate() != 0 && instance.getCantitate() != searchDevice.getCantitate()) {
-        match = false; 
-    }
-    
-    if (searchDevice.getAnAparitie() != 0 && instance.getAnAparitie() != searchDevice.getAnAparitie()) {
-        match = false;
-    }
-    
-    if (searchDevice.getPret() != 0.0f && instance.getPret() != searchDevice.getPret()) {
-        match = false;
-    }
-    if (match) {
-        String result = "Informațiile căutate: ..."; 
-        myFrame.displaySearchResult(result);
-        myFrame.displaySearchResult(resultBuilder.toString());
-        myFrame.setVisible(true);
-    }
-    }
-    });
-    
-    dialog.add(searchButton);
-    
-    dialog.setSize(400, 400);
-    dialog.setLocationRelativeTo(this);
-    dialog.setVisible(true);
+        JButton searchButton = new JButton("Cauta");
+        searchButton.addActionListener(event -> {
+            String marca = textFieldMarca.getText().trim();
+            String model = textFieldModel.getText().trim();
+            String cantitateText = textFieldCantitate.getText().trim();
+            String anAparitieText = textFieldAnAparitie.getText().trim();
+            String pretText = textFieldPret.getText().trim();
+
+            Device searchDevice = new Device();
+            List<Device> foundDevices = new ArrayList<>();
+
+            if (!marca.isEmpty()) {
+                searchDevice.setMarca(marca);
+            }
+
+            if (!model.isEmpty()) {
+                searchDevice.setModel(model);
+            }
+
+            int cantitate = 0;
+            if (!cantitateText.isEmpty()) {
+                try {
+                    cantitate = Integer.parseInt(cantitateText);
+                } catch (NumberFormatException e) {
+                    System.out.println("Introduceti un numar valid pentru cantitate.");
+                }
+            }
+            searchDevice.setCantitate(cantitate);
+
+            int anAparitie = 0;
+            if (!anAparitieText.isEmpty()) {
+                try {
+                    anAparitie = Integer.parseInt(anAparitieText);
+                } catch (NumberFormatException e) {
+                    System.out.println("Introduceti un numar valid pentru anul de aparitie.");
+                }
+            }
+            searchDevice.setAnAparitie(anAparitie);
+
+            if (!model.isEmpty()) {
+                searchDevice.setModel(model);
+            }
+            float pret = 0.0f;
+            if (!pretText.isEmpty()) {
+                try {
+                    pret = Float.parseFloat(pretText);
+                } catch (NumberFormatException e) {
+                    System.out.println("Introduceti un numar valid pentru pret.");
+                }
+            }
+            searchDevice.setPret(pret);
+
+            for (Device instance : instancesArray) {
+                boolean match = true;
+
+                if (!marca.isEmpty() && !instance.getMarca().equals(searchDevice.getMarca())) {
+                    match = false;
+                }
+
+                if (!model.isEmpty() && !instance.getModel().equals(searchDevice.getModel())) {
+                    match = false;
+                }
+
+                if (searchDevice.getCantitate() != 0 && instance.getCantitate() != searchDevice.getCantitate()) {
+                    match = false;
+                } else if (searchDevice.getCantitate() == 0 && instance.getCantitate() != 0) {
+                    match = false;
+                }
+
+                if (searchDevice.getAnAparitie() != 0 && instance.getAnAparitie() != searchDevice.getAnAparitie()) {
+                    match = false;
+                }
+
+                if (searchDevice.getPret() != 0.0f && instance.getPret() != searchDevice.getPret()) {
+                    match = false;
+                }
+
+                if (match) {
+                    foundDevices.add(instance);
+                }
+
+            }
+            if (foundDevices.isEmpty()) {
+                myFrame.displaySearchResult("NU S-A GASIT NICIUN PRODUS");
+                myFrame.setVisible(true);
+                dialog.dispose();
+                this.setVisible(false);
+            } else {
+
+                Set<String> uniqueResults = new HashSet<>();
+
+                for (Device device : foundDevices) {
+                    String result = device.toString();
+                    if (!uniqueResults.contains(result)) {
+                        uniqueResults.add(result);
+                    }
+                }
+
+                for (String uniqueResult : uniqueResults) {
+                    resultBuilder.append(uniqueResult).append("\n\n\n\n");
+                }
+                myFrame.displaySearchResult(resultBuilder.toString());
+                myFrame.setVisible(true);
+
+                dialog.dispose();
+                this.setVisible(false);
+            }
+
+        });
+
+        dialog.add(searchButton);
+        dialog.setSize(400, 400);
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
     }//GEN-LAST:event_cautParActionPerformed
 
     private void addLabelAndTextField(Container container, String labelText, JTextField textField) {
-    JLabel label = new JLabel(labelText);
-    container.add(label);
-    container.add(textField);
-}
-    
-    
+        JLabel label = new JLabel(labelText);
+        container.add(label);
+        container.add(textField);
+    }
+
     /**
      * @param args the command line arguments
      */
