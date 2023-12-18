@@ -9,9 +9,6 @@ import com.mycompany.magazinelectronice.*;
  * @author Razvan
  */
 public class InterfataGraficaMagazinElectronice extends javax.swing.JFrame {
-
-    
-    
     public InterfataGraficaMagazinElectronice() {
         initComponents();
          setLocationRelativeTo(null);

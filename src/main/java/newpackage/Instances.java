@@ -11,7 +11,7 @@ import com.mycompany.magazinelectronice.*;
  * @author as577
  */
 public class Instances {
-    Tableta tab1 = new Tableta();
+        Tableta tab1 = new Tableta();
         Tableta tab2 = new Tableta("Xiaomi","Pad 6","Qualcomm SM8250-AC Snapdragon 870 5G", "IPS LCD", "Blue", "4G,5G", "Android 13, MIUI Pad 14", "Usb C","NONE",8,256,8,2023,2,"13 MP Main, 8 MP Front", 8840, 1827, 11,"1800 x 2880");
         Tableta tab3 = new Tableta("Samsung","Galaxy Tab A8","Unisoc Tiger T618", "TFT LCD", "Pink Gold", "NONE", "Android 13, One UI 5", "Usb C","NONE",0,32,2,2021,2,"8 MP Main, 5 MP Front", 7040, 999, 10.5,"1200 x 1920");
         Tableta tab4 = new Tableta("Apple","iPad (2022)","Apple A14 Bionic", "Liquid Retina IPS LCD", "Yellow", "4G,5G", "iPadOS 17.1.1", "Usb Lightning","NONE",92,256,4,2022,2,"12 MP Main, 12 MP Front", 7606, 2900, 10.9,"1640 x 2360");
@@ -38,64 +38,28 @@ public class Instances {
         Telefon tel12 = new Telefon(tel2);
         
         Laptop l1 = new Laptop("Dell", "XPS 13", "1920x1080", "Intel i7", "LED", "Silver", "2666 MHz", "Windows 10", "Integrated", "N/A", "USB-C, Thunderbolt 3", "10 ore", 2021, 50, 16, 1, 8, 5000, 3, 1200.0f, 13.0f, 2.7f);
-        Laptop l2 = new Laptop("HP", "Spectre x360", "2560x1440", "Intel i5", "OLED", "Dark Ash", "2400 MHz",
-                "Windows 11", "Integrated", "N/A", "USB-C, HDMI", "12 ore", 2022, 30,
-                8, 2, 12, 6000, 4, 1500.0f, 2.8f, 15.6f);
+        Laptop l2 = new Laptop("HP", "Spectre x360", "2560x1440", "Intel i5", "OLED", "Dark Ash", "2400 MHz", "Windows 11", "Integrated", "N/A", "USB-C, HDMI", "12 ore", 2022, 30, 8, 2, 12, 6000, 4, 1500.0f, 2.8f, 15.6f);
         Laptop l3 = new Laptop("Lenovo", "ThinkPad X1 Carbon", "2560x1440", "Intel i7", "IPS", "Black", "3200 MHz", "Windows 10 Pro", "Integrated", "N/A", "USB-C, HDMI", "15 ore", 2021, 40, 16, 1, 8, 5500, 3,  1400.0f, 2.5f, 1.4f);
-        Laptop l4 = new Laptop("Asus", "ROG Zephyrus G14", "1920x1080", "AMD Ryzen 9", "IPS", "Moonlight White", "3200 MHz",
-                "Windows 10", "NVIDIA GeForce RTX 3060", "6GB GDDR6", "USB-C, HDMI", "10 ore", 2020, 20,
-                32, 0, 0, 4800, 2, 2000.0f, 3.5f, 1.7f);
-        Laptop l5 = new Laptop("Apple", "MacBook Air", "2560x1600", "Apple M1", "Retina", "Gold", "4266 MHz",
-                "macOS Monterey", "Integrated", "N/A", "Thunderbolt 3, USB-C", "15 ore", 2020, 25,
-                8, 1, 8, 4000, 2, 1300.0f, 2.8f, 13.3f);
-        Laptop l6 = new Laptop("Acer", "Swift 3", "1920x1080", "AMD Ryzen 5", "IPS", "Silver", "3200 MHz",
-                "Windows 10", "Integrated", "N/A", "USB-C, HDMI", "12 ore", 2022, 35,
-                16, 1, 8, 4500, 3, 900.0f, 2.6f, 1.5f);
-        Laptop l7 = new Laptop("MSI", "GS66 Stealth", "1920x1080", "Intel i9", "IPS", "Black", "3200 MHz",
-                "Windows 10", "NVIDIA GeForce RTX 3080", "8GB GDDR6", "Thunderbolt 3, HDMI", "8 ore", 2021, 15,
-                64, 1, 8, 5200, 4, 2500.0f, 4.6f, 15.2f);
-        Laptop l8 = new Laptop("Razer", "Blade 15", "1920x1080", "Intel i7", "IPS", "Black", "2933 MHz",
-                "Windows 10", "NVIDIA GeForce RTX 3070", "8GB GDDR6", "USB-C, HDMI", "6 ore", 2021, 18,
-                16, 1, 8, 4000, 3, 2200.0f, 4.7f, 10.2f);
-        Laptop l9 = new Laptop("Samsung", "Galaxy Book Pro", "1920x1080", "Intel i5", "AMOLED", "Mystic Silver", "3200 MHz",
-                "Windows 10", "Integrated", "N/A", "USB-C, HDMI", "20 ore", 2021, 28,
-                8, 1, 8, 6000, 2, 1100.0f, 2.9f, 7.3f);
-        Laptop l10 = new Laptop("Dell", "Inspiron 14", "1366x768", "AMD Ryzen 7", "LED", "Platinum Silver", "2400 MHz",
-                "Windows 10", "Integrated", "N/A", "USB-C, HDMI", "8 ore", 2020, 22,
-                16, 1, 8, 3500, 3, 800.0f, 3.0f, 1.3f);
+        Laptop l4 = new Laptop("Asus", "ROG Zephyrus G14", "1920x1080", "AMD Ryzen 9", "IPS", "Moonlight White", "3200 MHz","Windows 10", "NVIDIA GeForce RTX 3060", "6GB GDDR6", "USB-C, HDMI", "10 ore", 2020, 20, 32, 0, 0, 4800, 2, 2000.0f, 3.5f, 1.7f);
+        Laptop l5 = new Laptop("Apple", "MacBook Air", "2560x1600", "Apple M1", "Retina", "Gold", "4266 MHz", "macOS Monterey", "Integrated", "N/A", "Thunderbolt 3, USB-C", "15 ore", 2020, 25, 8, 1, 8, 4000, 2, 1300.0f, 2.8f, 13.3f);
+        Laptop l6 = new Laptop("Acer", "Swift 3", "1920x1080", "AMD Ryzen 5", "IPS", "Silver", "3200 MHz", "Windows 10", "Integrated", "N/A", "USB-C, HDMI", "12 ore", 2022, 35, 16, 1, 8, 4500, 3, 900.0f, 2.6f, 1.5f);
+        Laptop l7 = new Laptop("MSI", "GS66 Stealth", "1920x1080", "Intel i9", "IPS", "Black", "3200 MHz", "Windows 10", "NVIDIA GeForce RTX 3080", "8GB GDDR6", "Thunderbolt 3, HDMI", "8 ore", 2021, 15, 64, 1, 8, 5200, 4, 2500.0f, 4.6f, 15.2f);
+        Laptop l8 = new Laptop("Razer", "Blade 15", "1920x1080", "Intel i7", "IPS", "Black", "2933 MHz", "Windows 10", "NVIDIA GeForce RTX 3070", "8GB GDDR6", "USB-C, HDMI", "6 ore", 2021, 18, 16, 1, 8, 4000, 3, 2200.0f, 4.7f, 10.2f);
+        Laptop l9 = new Laptop("Samsung", "Galaxy Book Pro", "1920x1080", "Intel i5", "AMOLED", "Mystic Silver", "3200 MHz", "Windows 10", "Integrated", "N/A", "USB-C, HDMI", "20 ore", 2021, 28, 8, 1, 8, 6000, 2, 1100.0f, 2.9f, 7.3f);
+        Laptop l10 = new Laptop("Dell", "Inspiron 14", "1366x768", "AMD Ryzen 7", "LED", "Platinum Silver", "2400 MHz", "Windows 10", "Integrated", "N/A", "USB-C, HDMI", "8 ore", 2020, 22, 16, 1, 8, 3500, 3, 800.0f, 3.0f, 1.3f);
         Laptop l11 = new Laptop();
         Laptop l12 = new Laptop(l1);
         
-        Desktops d1 = new Desktops("HP", "Pavilion", "Intel i5", "Black", "2666 MHz",
-                "Windows 10", "Integrated", "N/A", "USB, HDMI", 2020, 30,
-                8, 4, 900.0f, 7.5f);
-        Desktops d2 = new Desktops("Dell", "Inspiron", "AMD Ryzen 7", "Silver", "3200 MHz",
-                "Windows 11", "NVIDIA GeForce GTX 1650", "4GB GDDR5", "USB-C, HDMI", 2021, 25,
-                16, 6, 1200.0f, 8.2f);
-        Desktops d3 = new Desktops("Lenovo", "IdeaCentre", "Intel i7", "White", "2933 MHz",
-                "Windows 10", "AMD Radeon RX 550", "2GB GDDR5", "USB, HDMI", 2019, 20,
-                12, 5, 800.0f, 6.8f);
-        Desktops d4 = new Desktops("Acer", "Aspire", "Intel i3", "Black", "2400 MHz",
-                "Windows 10", "Integrated", "N/A", "USB, VGA", 2022, 35,
-                4, 3, 500.0f, 5.0f);
-        Desktops d5 = new Desktops("Asus", "ROG Strix", "AMD Ryzen 9", "Gray", "3600 MHz",
-                "Windows 10", "NVIDIA GeForce RTX 3080", "10GB GDDR6X", "USB-C, HDMI", 2022, 15,
-                32, 8, 2500.0f, 10.5f);
-        Desktops d6 = new Desktops("Apple", "Mac mini", "Apple M1", "Silver", "4266 MHz",
-                "macOS Monterey", "Integrated", "N/A", "Thunderbolt 4, HDMI", 2021, 18,
-                16, 4, 1500.0f, 3.0f);
-        Desktops d7 = new Desktops("CyberPowerPC", "Gamer Xtreme VR", "Intel i9", "Black", "3200 MHz",
-                "Windows 10", "NVIDIA GeForce RTX 3060", "12GB GDDR6", "USB, HDMI", 2021, 10,
-                64, 6, 1800.0f, 15.0f);
-        Desktops d8 = new Desktops("Alienware", "Aurora R12", "Intel i7", "Dark Side of the Moon", "3200 MHz",
-                "Windows 11", "NVIDIA GeForce RTX 3070", "8GB GDDR6", "USB-C, HDMI", 2020, 22,
-                32, 5, 2000.0f, 12.8f);
-        Desktops d9 = new Desktops("MSI", "Infinite X", "Intel i5", "Black", "2666 MHz",
-                "Windows 10", "NVIDIA GeForce GTX 1660 Ti", "6GB GDDR5", "USB, HDMI", 2021, 28,
-                8, 4, 1100.0f, 9.3f);
-        Desktops d10 = new Desktops("Custom", "Build", "AMD Ryzen 5", "RGB", "3200 MHz",
-                "Windows 10", "N/A", "N/A", "USB, HDMI", 2022, 15,
-                16, 6, 1500.0f, 8.0f);
+        Desktops d1 = new Desktops("HP", "Pavilion", "Intel i5", "Black", "2666 MHz", "Windows 10", "Integrated", "N/A", "USB, HDMI", 2020, 30, 8, 4, 900.0f, 7.5f);
+        Desktops d2 = new Desktops("Dell", "Inspiron", "AMD Ryzen 7", "Silver", "3200 MHz", "Windows 11", "NVIDIA GeForce GTX 1650", "4GB GDDR5", "USB-C, HDMI", 2021, 25, 16, 6, 1200.0f, 8.2f);
+        Desktops d3 = new Desktops("Lenovo", "IdeaCentre", "Intel i7", "White", "2933 MHz",  "Windows 10", "AMD Radeon RX 550", "2GB GDDR5", "USB, HDMI", 2019, 20, 12, 5, 800.0f, 6.8f);
+        Desktops d4 = new Desktops("Acer", "Aspire", "Intel i3", "Black", "2400 MHz",  "Windows 10", "Integrated", "N/A", "USB, VGA", 2022, 35, 4, 3, 500.0f, 5.0f);
+        Desktops d5 = new Desktops("Asus", "ROG Strix", "AMD Ryzen 9", "Gray", "3600 MHz", "Windows 10", "NVIDIA GeForce RTX 3080", "10GB GDDR6X", "USB-C, HDMI", 2022, 15, 32, 8, 2500.0f, 10.5f);
+        Desktops d6 = new Desktops("Apple", "Mac mini", "Apple M1", "Silver", "4266 MHz", "macOS Monterey", "Integrated", "N/A", "Thunderbolt 4, HDMI", 2021, 18, 16, 4, 1500.0f, 3.0f);
+        Desktops d7 = new Desktops("CyberPowerPC", "Gamer Xtreme VR", "Intel i9", "Black", "3200 MHz", "Windows 10", "NVIDIA GeForce RTX 3060", "12GB GDDR6", "USB, HDMI", 2021, 10, 64, 6, 1800.0f, 15.0f);
+        Desktops d8 = new Desktops("Alienware", "Aurora R12", "Intel i7", "Dark Side of the Moon", "3200 MHz", "Windows 11", "NVIDIA GeForce RTX 3070", "8GB GDDR6", "USB-C, HDMI", 2020, 22, 32, 5, 2000.0f, 12.8f);
+        Desktops d9 = new Desktops("MSI", "Infinite X", "Intel i5", "Black", "2666 MHz", "Windows 10", "NVIDIA GeForce GTX 1660 Ti", "6GB GDDR5", "USB, HDMI", 2021, 28, 8, 4, 1100.0f, 9.3f);
+        Desktops d10 = new Desktops("Custom", "Build", "AMD Ryzen 5", "RGB", "3200 MHz", "Windows 10", "N/A", "N/A", "USB, HDMI", 2022, 15, 16, 6, 1500.0f, 8.0f);
         Desktops d11 = new Desktops();
         Desktops d12 = new Desktops(d1);
 
@@ -178,22 +142,6 @@ public class Instances {
            smartwatch1, smartwatch11, smartwatch12,
            fitnessBand1, fitnessBand11, fitnessBand12
        };
-       
-       Device[] telefon = {
-           tel2,tel3,tel4,tel5,tel6,tel7,tel8,tel9,tel10,tel11
-       };
-       Device[] smartwatch = {
-           smartwatch1, smartwatch2, smartwatch3, smartwatch4, smartwatch5, smartwatch6,
-           smartwatch7, smartwatch8, smartwatch9, smartwatch10
-       };
-       
-       public Device[] getVectorTelefon(){
-           return telefon;
-       }
-       
-       public Device[] getVectorDeInstante(){
-           return instances;
-       }
        
        public Device[] getInstancesArray(String type) {
            switch (type) {

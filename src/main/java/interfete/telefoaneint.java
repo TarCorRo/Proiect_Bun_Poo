@@ -10,7 +10,8 @@ import com.mycompany.magazinelectronice.*;
 import java.awt.*;
 import newpackage.*;
 
-public class telefoaneint extends javax.swing.JFrame {Instances inst = new Instances();
+public class telefoaneint extends javax.swing.JFrame {
+    Instances inst = new Instances();
     
     Device[] tel = inst.getInstancesArray("telefoane");
     Telefon[] telefoane = (Telefon[]) tel;
@@ -154,8 +155,8 @@ public class telefoaneint extends javax.swing.JFrame {Instances inst = new Insta
     }//GEN-LAST:event_jComboBox1ActionPerformed
  
     private void updateTextAreaWithSelectedPhone(Telefon selectedPhone) {
-    jTextArea1.setText(selectedPhone.toString());
-}
+        jTextArea1.setText(selectedPhone.toString());
+    }
     
     private void ActionListener(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionListener
         // TODO add your handling code here:
@@ -286,6 +287,7 @@ public class telefoaneint extends javax.swing.JFrame {Instances inst = new Insta
             numeTel[i] = marca + " " + model;
         }
         jComboBox1.setModel(new DefaultComboBoxModel<>(numeTel));
+        jTextArea1.setText(telefoane[0].toString());
     }
     
     // Metoda pentru a adăuga ActionListener la combobox
