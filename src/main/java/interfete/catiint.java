@@ -6,15 +6,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.mycompany.magazinelectronice.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import newpackage.*;
 
 public class catiint extends javax.swing.JFrame {
+
     Instances inst = new Instances();
-    
+
     Device[] casca = inst.getInstancesArray("casti");
     Casti[] casti = (Casti[]) casca;
-    
-    public catiint() { 
+
+    public catiint() {
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
@@ -131,150 +134,273 @@ public class catiint extends javax.swing.JFrame {
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         this.setVisible(false);
-   
+
         InterfataGraficaMagazinElectronice home = new InterfataGraficaMagazinElectronice();
         home.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-       this.setVisible(false);
-   
+        this.setVisible(false);
+
         InterfataGraficaMagazinElectronice home = new InterfataGraficaMagazinElectronice();
         home.setVisible(true);
     }//GEN-LAST:event_homeActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int selectedIndex = jComboBox1.getSelectedIndex();
-        
-    if (selectedIndex >= 0) {
-        Casti selectedCasti = casti[selectedIndex];
-        JFrame popup = new JFrame("Detalii Casti");
-        popup.setSize(1000, 900);
-        popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
-       
-    if (selectedIndex >= 0 && selectedIndex < casti.length) {
-        JTextField textFieldMarca = new JTextField(selectedCasti.getMarca());
-        JTextField textFieldModel = new JTextField(selectedCasti.getModel());
-        JTextField textFieldCantitate = new JTextField(String.valueOf(selectedCasti.getCantitate()));
-        JTextField textFieldAnAparitie = new JTextField(String.valueOf(selectedCasti.getAnAparitie()));
-        JTextField textFieldPret = new JTextField(String.valueOf(selectedCasti.getPret()));
-        JTextField textFieldCuloare = new JTextField(selectedCasti.getCuloare());
-        JTextField textFieldContactCuUrechea = new JTextField(selectedCasti.getContactCuUrechea());
-        JTextField textFieldPrincipiuDeFunctionare = new JTextField(selectedCasti.getPrincipiuDeFunctionare());
-        JTextField textFieldTipConectivitate = new JTextField(selectedCasti.getTipConectivitate());
-        JTextField textFieldLungimeCablu = new JTextField(String.valueOf(selectedCasti.getLungimeCablu()));
-        JTextField textFieldRaspunsInFrecventa = new JTextField(String.valueOf(selectedCasti.getRaspunsInFrecventa()));
-        JTextField textFieldAutonomie = new JTextField(String.valueOf(selectedCasti.getAutonomie()));
-        JTextField textFieldImpedanta = new JTextField(String.valueOf(selectedCasti.getImpedanta()));
-        JTextField textFieldGreutate = new JTextField(String.valueOf(selectedCasti.getGreutate()));
-        JTextField textFieldSpl = new JTextField(String.valueOf(selectedCasti.getSpl()));
-        
-        addLabelAndTextField(panel, "Marca:", textFieldMarca);
-        addLabelAndTextField(panel, "Model:", textFieldModel);
-        addLabelAndTextField(panel, "Cantitate:", textFieldCantitate);
-        addLabelAndTextField(panel, "An aparitie:", textFieldAnAparitie);
-        addLabelAndTextField(panel, "Pret:", textFieldPret);
-        addLabelAndTextField(panel, "Culoarea:", textFieldCuloare);
-        addLabelAndTextField(panel, "Contactul cu urechea:", textFieldContactCuUrechea);
-        addLabelAndTextField(panel, "Principiul de functionare:", textFieldPrincipiuDeFunctionare);
-        addLabelAndTextField(panel, "Tip conectivitate:", textFieldTipConectivitate);
-        addLabelAndTextField(panel, "Lungimea cablului", textFieldLungimeCablu);
-        addLabelAndTextField(panel, "Raspuns in frecventa :", textFieldRaspunsInFrecventa);
-        addLabelAndTextField(panel, "Autonomie:", textFieldAutonomie);
-        addLabelAndTextField(panel, "Impedanta:", textFieldImpedanta);
-        addLabelAndTextField(panel, "Greutate:", textFieldGreutate);
-        addLabelAndTextField(panel, "Spl:", textFieldSpl);
-        
-        jButton1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-              String valoareMarca = textFieldMarca.getText();
-              String valoareModel = textFieldModel.getText();
-              int valoareCantitate =Integer.parseInt (textFieldCantitate.getText());
-              int valoareAnAparitie = Integer.parseInt (textFieldAnAparitie.getText());
-              float valoarePret = Float.parseFloat(textFieldPret.getText());
-              String valoareCuloare = textFieldCuloare.getText();
-              String valoareContactCuUrechea = textFieldContactCuUrechea.getText();
-              String valoarePrincipiuDeFunctionare = textFieldPrincipiuDeFunctionare.getText();
-              String valoareTipConectivitate = textFieldMarca.getText();
-              float valoareLungimeCablu = Float.parseFloat(textFieldLungimeCablu.getText());
-              float valoareRaspunsInFrecventa = Float.parseFloat(textFieldRaspunsInFrecventa.getText()); 
-              int valoareAutonomie =Integer.parseInt (textFieldAutonomie.getText());
-              int valoareImpedanta =Integer.parseInt (textFieldImpedanta.getText());
-              int valoareGreutate =Integer.parseInt (textFieldGreutate.getText());
-              int valoareSpl =Integer.parseInt (textFieldSpl.getText());
-              
-              selectedCasti.setMarca(valoareMarca);
-              selectedCasti.setModel(valoareModel);
-              selectedCasti.setCantitate(valoareCantitate);
-              selectedCasti.setAnAparitie(valoareAnAparitie);
-              selectedCasti.setPret(valoarePret);
-              selectedCasti.setCuloare(valoareCuloare);
-              selectedCasti.setContactCuUrechea(valoareContactCuUrechea);
-              selectedCasti.setPrincipiuDeFunctionare(valoarePrincipiuDeFunctionare);
-              selectedCasti.setTipConectivitate(valoareTipConectivitate);
-              selectedCasti.setLungimeCablu(valoareLungimeCablu);
-              selectedCasti.setRaspunsInFrecventa(valoareRaspunsInFrecventa);
-              selectedCasti.setAutonomie(valoareAutonomie);
-              selectedCasti.setImpedanta(valoareImpedanta);
-              selectedCasti.setGreutate(valoareGreutate);
-              selectedCasti.setSpl(valoareSpl);
-              casti[selectedIndex].setMarca(selectedCasti.getMarca());
-              JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(jButton1);
-              frame.dispose();
-              updateTextAreaWithSelectedCasti(selectedCasti);
+        if (selectedIndex >= 0) {
+            Casti selectedCasti = casti[selectedIndex];
+            JFrame popup = new JFrame("Detalii Casti");
+            popup.setSize(1000, 900);
+            popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+            JPanel panel = new JPanel();
+            panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
+
+            if (selectedIndex >= 0 && selectedIndex < casti.length) {
+                JTextField textFieldMarca = new JTextField(selectedCasti.getMarca());
+                JTextField textFieldModel = new JTextField(selectedCasti.getModel());
+                JTextField textFieldCantitate = new JTextField(String.valueOf(selectedCasti.getCantitate()));
+                JTextField textFieldAnAparitie = new JTextField(String.valueOf(selectedCasti.getAnAparitie()));
+                JTextField textFieldPret = new JTextField(String.valueOf(selectedCasti.getPret()));
+                JTextField textFieldCuloare = new JTextField(selectedCasti.getCuloare());
+                JTextField textFieldContactCuUrechea = new JTextField(selectedCasti.getContactCuUrechea());
+                JTextField textFieldPrincipiuDeFunctionare = new JTextField(selectedCasti.getPrincipiuDeFunctionare());
+                JTextField textFieldTipConectivitate = new JTextField(selectedCasti.getTipConectivitate());
+                JTextField textFieldLungimeCablu = new JTextField(String.valueOf(selectedCasti.getLungimeCablu()));
+                JTextField textFieldRaspunsInFrecventa = new JTextField(String.valueOf(selectedCasti.getRaspunsInFrecventa()));
+                JTextField textFieldAutonomie = new JTextField(String.valueOf(selectedCasti.getAutonomie()));
+                JTextField textFieldImpedanta = new JTextField(String.valueOf(selectedCasti.getImpedanta()));
+                JTextField textFieldGreutate = new JTextField(String.valueOf(selectedCasti.getGreutate()));
+                JTextField textFieldSpl = new JTextField(String.valueOf(selectedCasti.getSpl()));
+
+                addLabelAndTextField(panel, "Marca:", textFieldMarca);
+                addLabelAndTextField(panel, "Model:", textFieldModel);
+                addLabelAndTextField(panel, "Cantitate:", textFieldCantitate);
+                addLabelAndTextField(panel, "An aparitie:", textFieldAnAparitie);
+                addLabelAndTextField(panel, "Pret:", textFieldPret);
+                addLabelAndTextField(panel, "Culoarea:", textFieldCuloare);
+                addLabelAndTextField(panel, "Contactul cu urechea:", textFieldContactCuUrechea);
+                addLabelAndTextField(panel, "Principiul de functionare:", textFieldPrincipiuDeFunctionare);
+                addLabelAndTextField(panel, "Tip conectivitate:", textFieldTipConectivitate);
+                addLabelAndTextField(panel, "Lungimea cablului", textFieldLungimeCablu);
+                addLabelAndTextField(panel, "Raspuns in frecventa :", textFieldRaspunsInFrecventa);
+                addLabelAndTextField(panel, "Autonomie:", textFieldAutonomie);
+                addLabelAndTextField(panel, "Impedanta:", textFieldImpedanta);
+                addLabelAndTextField(panel, "Greutate:", textFieldGreutate);
+                addLabelAndTextField(panel, "Spl:", textFieldSpl);
+
+                jButton1.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        String valoareMarca = textFieldMarca.getText();
+                        String valoareModel = textFieldModel.getText();
+                        int valoareCantitate = Integer.parseInt(textFieldCantitate.getText());
+                        int valoareAnAparitie = Integer.parseInt(textFieldAnAparitie.getText());
+                        float valoarePret = Float.parseFloat(textFieldPret.getText());
+                        String valoareCuloare = textFieldCuloare.getText();
+                        String valoareContactCuUrechea = textFieldContactCuUrechea.getText();
+                        String valoarePrincipiuDeFunctionare = textFieldPrincipiuDeFunctionare.getText();
+                        String valoareTipConectivitate = textFieldMarca.getText();
+                        float valoareLungimeCablu = Float.parseFloat(textFieldLungimeCablu.getText());
+                        float valoareRaspunsInFrecventa = Float.parseFloat(textFieldRaspunsInFrecventa.getText());
+                        int valoareAutonomie = Integer.parseInt(textFieldAutonomie.getText());
+                        int valoareImpedanta = Integer.parseInt(textFieldImpedanta.getText());
+                        int valoareGreutate = Integer.parseInt(textFieldGreutate.getText());
+                        int valoareSpl = Integer.parseInt(textFieldSpl.getText());
+
+                        selectedCasti.setMarca(valoareMarca);
+                        selectedCasti.setModel(valoareModel);
+                        selectedCasti.setCantitate(valoareCantitate);
+                        selectedCasti.setAnAparitie(valoareAnAparitie);
+                        selectedCasti.setPret(valoarePret);
+                        selectedCasti.setCuloare(valoareCuloare);
+                        selectedCasti.setContactCuUrechea(valoareContactCuUrechea);
+                        selectedCasti.setPrincipiuDeFunctionare(valoarePrincipiuDeFunctionare);
+                        selectedCasti.setTipConectivitate(valoareTipConectivitate);
+                        selectedCasti.setLungimeCablu(valoareLungimeCablu);
+                        selectedCasti.setRaspunsInFrecventa(valoareRaspunsInFrecventa);
+                        selectedCasti.setAutonomie(valoareAutonomie);
+                        selectedCasti.setImpedanta(valoareImpedanta);
+                        selectedCasti.setGreutate(valoareGreutate);
+                        selectedCasti.setSpl(valoareSpl);
+                        casti[selectedIndex].setMarca(selectedCasti.getMarca());
+                        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(jButton1);
+                        frame.dispose();
+                        updateTextAreaWithSelectedCasti(selectedCasti);
+                    }
+                });
+                panel.add(jButton1);
             }
-            });
-        panel.add(jButton1);
-    }
-        
-        popup.add(panel);
-        popup.setVisible(true);
-    }      
+
+            popup.add(panel);
+            popup.setVisible(true);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+        JDialog dialog = new JDialog(this, "Cautare", true);
+        dialog.setLayout(new GridLayout(25, 0, 25, 10));
+        jComboBox1.setSelectedIndex(0);
+        JTextField textFieldMarca = new JTextField();
+        JTextField textFieldModel = new JTextField();
+        JTextField textFieldCantitate = new JTextField();
+        JTextField textFieldAnAparitie = new JTextField();
+        JTextField textFieldPret = new JTextField();
+        JTextField textFieldCuloare = new JTextField();
+        JTextField textFieldContactCuUrechea = new JTextField();
+        JTextField textFieldPrincipiuDeFunctionare = new JTextField();
+        JTextField textFieldTipConectivitate = new JTextField();
+        JTextField textFieldLungimeCablu = new JTextField();
+        JTextField textFieldRaspunsInFrecventa = new JTextField();
+        JTextField textFieldAutonomie = new JTextField();
+        JTextField textFieldImpedanta = new JTextField();
+        JTextField textFieldGreutate = new JTextField();
+        JTextField textFieldSpl = new JTextField();
+
+        addLabelAndTextField1(dialog, "Marca:", textFieldMarca);
+        addLabelAndTextField1(dialog, "Model:", textFieldModel);
+        addLabelAndTextField1(dialog, "Cantitate:", textFieldCantitate);
+        addLabelAndTextField1(dialog, "An aparitie:", textFieldAnAparitie);
+        addLabelAndTextField1(dialog, "Pret:", textFieldPret);
+        addLabelAndTextField1(dialog, "Culoare:", textFieldCuloare);
+        addLabelAndTextField1(dialog, "Contact cu urechea:", textFieldContactCuUrechea);
+        addLabelAndTextField1(dialog, "Princpiu de functionare:", textFieldPrincipiuDeFunctionare);
+        addLabelAndTextField1(dialog, "Tip conectivitate:", textFieldTipConectivitate);
+        addLabelAndTextField1(dialog, "Lungime cablu:", textFieldLungimeCablu);
+        addLabelAndTextField1(dialog, "raspuns in frecventa:", textFieldRaspunsInFrecventa);
+        addLabelAndTextField1(dialog, "Autonomie:", textFieldAutonomie);
+        addLabelAndTextField1(dialog, "Impedanta:", textFieldImpedanta);
+        addLabelAndTextField1(dialog, "Greutate:", textFieldGreutate);
+        addLabelAndTextField1(dialog, "Spl:", textFieldSpl);
+
+        StringBuilder resultBuilder = new StringBuilder();
+
+        JButton searchButton = new JButton("Cauta");
+        searchButton.addActionListener(event -> {
+            String marca = textFieldMarca.getText().trim();
+            String model = textFieldModel.getText().trim();
+            String cantitateText = textFieldCantitate.getText().trim();
+            String anAparitieText = textFieldAnAparitie.getText().trim();
+            String pretText = textFieldPret.getText().trim();
+            String culoare = textFieldCuloare.getText().trim();
+            String contactCuUrechea = textFieldContactCuUrechea.getText().trim();
+            String principiuDeFunctionare = textFieldPrincipiuDeFunctionare.getText().trim();
+            String tipConectivitate = textFieldTipConectivitate.getText().trim();
+            String lungimeCablu = textFieldLungimeCablu.getText().trim();
+            String raspunsInFrecventa = textFieldRaspunsInFrecventa.getText().trim();
+            String autonomie = textFieldAutonomie.getText().trim();
+            String impedanta = textFieldImpedanta.getText().trim();
+            String greutate = textFieldGreutate.getText().trim();
+            String spl = textFieldSpl.getText().trim();
+
+            java.util.List< Casti> foundDevices = new ArrayList<>();
+            boolean emptyTextFields = false;
+
+            if (marca.isEmpty() && model.isEmpty()
+                    && cantitateText.isEmpty() && anAparitieText.isEmpty()
+                    && pretText.isEmpty() && culoare.isEmpty()
+                    && contactCuUrechea.isEmpty() && principiuDeFunctionare.isEmpty()
+                    && tipConectivitate.isEmpty() && lungimeCablu.isEmpty()
+                    && raspunsInFrecventa.isEmpty() && autonomie.isEmpty()
+                    && impedanta.isEmpty() && greutate.isEmpty() && spl.isEmpty()) {
+                emptyTextFields = true;
+            }
+            if (emptyTextFields) {
+                foundDevices.addAll(Arrays.asList(casti));
+            } else {
+                for (Casti instance : casti) {
+                    boolean match = true;
+                    if (!marca.isEmpty() && !instance.getMarca().equals(marca)
+                            || !model.isEmpty() && !instance.getModel().equals(model)
+                            || !cantitateText.isEmpty() && instance.getCantitate() != Integer.parseInt(cantitateText)
+                            || !anAparitieText.isEmpty() && instance.getAnAparitie() != Integer.parseInt(anAparitieText)
+                            || !pretText.isEmpty() && instance.getPret() != Float.parseFloat(pretText)
+                            || !culoare.isEmpty() && instance.getCuloare().equals(culoare)
+                            || !contactCuUrechea.isEmpty() && !instance.getContactCuUrechea().equals(contactCuUrechea)
+                            || !principiuDeFunctionare.isEmpty() && !instance.getPrincipiuDeFunctionare().equals(principiuDeFunctionare)
+                            || !tipConectivitate.isEmpty() && !instance.getTipConectivitate().equals(tipConectivitate)
+                            || !lungimeCablu.isEmpty() && instance.getLungimeCablu() != Float.parseFloat(lungimeCablu)
+                            || !raspunsInFrecventa.isEmpty() && instance.getRaspunsInFrecventa() != Float.parseFloat(raspunsInFrecventa)
+                            || !autonomie.isEmpty() && instance.getAutonomie() != Integer.parseInt(autonomie)
+                            || !impedanta.isEmpty() && instance.getImpedanta() != Integer.parseInt(impedanta)
+                            || !greutate.isEmpty() && instance.getGreutate() != Integer.parseInt(greutate)
+                            || !spl.isEmpty() && instance.getSpl() != Integer.parseInt(spl)) {
+                        match = false;
+                    }
+
+                    if (match) {
+                        foundDevices.add(instance);
+                    }
+                }
+            }
+            if (foundDevices.isEmpty()) {
+                if (!emptyTextFields) {
+                    jTextArea1.setText("NU S-A GASIT NICIUN PRODUS");
+                    dialog.dispose();
+                }
+            } else {
+                for (Casti casti : foundDevices) {
+                    resultBuilder.append(casti).append("\n\n");
+                }
+
+                jTextArea1.setText(resultBuilder.toString());
+                dialog.dispose();
+            }
+        });
+
+        dialog.add(searchButton);
+        dialog.setSize(600, 800);
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void updateTextAreaWithSelectedCasti(Casti selectedCasti) {
         jTextArea1.setText(selectedCasti.toString());
-    }                          
+    }
 
-     private void addLabelAndTextField(JPanel panel, String labelText, JTextField textField) {
+    private void addLabelAndTextField1(JDialog panel, String labelText, JTextField textField) {
+        JLabel label = new JLabel(labelText);
+        panel.add(label);
+        panel.add(textField);
+
+    }
+
+    private void addLabelAndTextField(JPanel panel, String labelText, JTextField textField) {
         JLabel label = new JLabel(labelText);
         panel.add(label);
         panel.add(textField);
     }
-     
+
     private void initializareComboBox() {
-        String[] nume = new String[casti.length];
-        for(int i = 0; i < casti.length; i++) {
+        String[] nume = new String[casti.length + 1];
+        nume[0] = "Alege Casti";
+
+        for (int i = 0; i < casti.length; i++) {
             String marca = casti[i].getMarca();
             String model = casti[i].getModel();
-            nume[i] = marca + " " + model;
+            nume[i + 1] = marca + " " + model;
         }
         jComboBox1.setModel(new DefaultComboBoxModel<>(nume));
-        jTextArea1.setText(casti[0].toString());
-    }   
-    
-    
+    }
+
     private void adaugaActionListenerComboBox() {
         jComboBox1.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent e) {
-            int selectedIndex = jComboBox1.getSelectedIndex();
-            if (selectedIndex >= 0) {
-                Object obiectSelectat = casti[selectedIndex];
-                String textAfisat = obiectSelectat.toString();
-                jTextArea1.setText(textAfisat);
-                jButton1.setVisible(true); // Facem butonul de editare vizibil
+            public void actionPerformed(ActionEvent e) {
+                int selectedIndex = jComboBox1.getSelectedIndex();
+                if (selectedIndex >= 1 && selectedIndex - 1 < casti.length) {
+                    Object obiectSelectat = casti[selectedIndex - 1];
+                    String textAfisat = obiectSelectat.toString();
+                    jTextArea1.setText(textAfisat);
+                    jButton1.setVisible(true); // Facem butonul de editare vizibil
+                } else {
+                    jTextArea1.setText("");
+                    jButton1.setVisible(false);
+                }
             }
-        }
-    });
+        });
     }
-   
+
     /**
      * @param args the command line arguments
      */
