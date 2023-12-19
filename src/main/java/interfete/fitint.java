@@ -178,6 +178,7 @@ public class fitint extends javax.swing.JFrame {
         JTextField textFieldTipEcran = new JTextField(selectedBand.getTipEcran());
         JTextField textFieldCuloare = new JTextField(selectedBand.getCuloare());
         JTextField textFieldSisOpTel = new JTextField(selectedBand.getSistemDeOperareSmtWtc());
+        JTextField textFieldCapabilities = new JTextField(selectedBand.getCapabilities());
         JTextField textFieldTipIncarcare = new JTextField(selectedBand.getTipIncarcare());
         JTextField textFieldTipSim = new JTextField(selectedBand.getTipSim());
         JTextField textFieldRezEcran = new JTextField(String.valueOf(selectedBand.getRezEcran()));
@@ -195,6 +196,7 @@ public class fitint extends javax.swing.JFrame {
         addLabelAndTextField(panel, "Tip ecran:", textFieldTipEcran);
         addLabelAndTextField(panel, "Culoare:", textFieldCuloare);
         addLabelAndTextField(panel, "Sistem de operare:", textFieldSisOpTel);
+        addLabelAndTextField(panel, "Caapabilitati:", textFieldCapabilities);
         addLabelAndTextField(panel, "Tip încărcare:", textFieldTipIncarcare);
         addLabelAndTextField(panel, "Tip SIM:", textFieldTipSim);
         addLabelAndTextField(panel, "Rezoluție ecran:", textFieldRezEcran);
@@ -215,6 +217,7 @@ public class fitint extends javax.swing.JFrame {
               String valoareTipEcran = textFieldTipEcran.getText();
               String valoareCuloare = textFieldCuloare.getText();
               String valoareSisOpTel = textFieldSisOpTel.getText();
+              String valoareCapabilities = textFieldCapabilities.getText();
               String valoareTipIncarcare = textFieldTipIncarcare.getText();
               String valoareTipSim = textFieldTipSim.getText();
               int valoareRezEcran = Integer.parseInt(textFieldRezEcran.getText());
@@ -232,6 +235,7 @@ public class fitint extends javax.swing.JFrame {
               selectedBand.setTipEcran(valoareTipEcran);
               selectedBand.setCuloare(valoareCuloare);
               selectedBand.setSistemDeOperareSmtWtc(valoareSisOpTel);
+              selectedBand.setCapabilities(valoareCapabilities);
               selectedBand.setTipIncarcare(valoareTipIncarcare);
               selectedBand.setTipSim(valoareTipSim);
               selectedBand.setMemorieROM(valoareMemorieROM);
@@ -268,12 +272,12 @@ public class fitint extends javax.swing.JFrame {
         JTextField textFieldTipEcran = new JTextField();
         JTextField textFieldCuloare = new JTextField();
         JTextField textFieldSisOpTel = new JTextField();
+        JTextField textFieldCapabilities = new JTextField();
         JTextField textFieldTipIncarcare = new JTextField();
         JTextField textFieldTipSim = new JTextField();
         JTextField textFieldRezEcran = new JTextField();
         JTextField textFieldMemorieROM = new JTextField();
         JTextField textFieldMemorieRAM = new JTextField();
-        JTextField textFieldNrCamere = new JTextField();
         JTextField textFieldMarimeBat = new JTextField();
         JTextField textFieldDiagonalaEcran = new JTextField();
 
@@ -286,6 +290,7 @@ public class fitint extends javax.swing.JFrame {
         addLabelAndTextField(dialog, "Tip ecran:", textFieldTipEcran);
         addLabelAndTextField(dialog, "Culoare:", textFieldCuloare);
         addLabelAndTextField(dialog, "Sistem de operare:", textFieldSisOpTel);
+        addLabelAndTextField(dialog, "Capabilitati:", textFieldCapabilities);
         addLabelAndTextField(dialog, "Tip încărcare:", textFieldTipIncarcare);
         addLabelAndTextField(dialog, "Tip SIM:", textFieldTipSim);
         addLabelAndTextField(dialog, "Memorie ROM:", textFieldMemorieROM);
@@ -306,6 +311,7 @@ public class fitint extends javax.swing.JFrame {
             String tipEcran = textFieldTipEcran.getText().trim();
             String culoare = textFieldCuloare.getText().trim();
             String sisOpTel = textFieldSisOpTel.getText().trim();
+            String capab = textFieldCapabilities.getText().trim();
             String tipIncarcare = textFieldTipIncarcare.getText().trim();
             String tipSim = textFieldTipSim.getText().trim();
             String rezEcran = textFieldRezEcran.getText().trim();
@@ -342,6 +348,7 @@ public class fitint extends javax.swing.JFrame {
                             || !tipEcran.isEmpty() && !instance.getTipEcran().equals(tipEcran)
                             || !culoare.isEmpty() && !instance.getCuloare().equals(culoare)
                             || !sisOpTel.isEmpty() && !instance.getSistemDeOperareSmtWtc().equals(sisOpTel)
+                            || !capab.isEmpty() && !instance.getCapabilities().equals(capab)
                             || !tipIncarcare.isEmpty() && !instance.getTipIncarcare().equals(tipIncarcare)
                             || !tipSim.isEmpty() && !instance.getTipSim().equals(tipSim)
                             || !rezEcran.isEmpty() && instance.getRezEcran() != Integer.parseInt(rezEcran)
