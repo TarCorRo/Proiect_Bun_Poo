@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package interfete;
 
 import newpackage.InterfataGraficaMagazinElectronice;
@@ -31,6 +27,7 @@ public class smartint extends javax.swing.JFrame {
         setVisible(true);
         initializareComboBox(); // Inițializează combobox-ul
         adaugaActionListenerComboBox();
+        editButton.setVisible(false);
     }
 
     /**
@@ -113,12 +110,9 @@ public class smartint extends javax.swing.JFrame {
                     .addComponent(editButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(215, 215, 215))))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,7 +128,7 @@ public class smartint extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editButton)
                     .addComponent(jButton1))
-                .addGap(74, 74, 74))
+                .addGap(14, 14, 14))
         );
 
         pack();
@@ -392,14 +386,15 @@ public class smartint extends javax.swing.JFrame {
     }
     
     private void initializareComboBox() {
-        String[] numeWatch = new String[smartwatch1.length];
+        String[] numeWatch = new String[smartwatch1.length + 1];
+        numeWatch[0] = "Alege SmartWatch";
+        
         for(int i = 0; i < smartwatch1.length; i++) {
             String marca = smartwatch1[i].getMarca();
             String model = smartwatch1[i].getModel();
-            numeWatch[i] = marca + " " + model;
+            numeWatch[i + 1] = marca + " " + model;
         }
         jComboBox1.setModel(new DefaultComboBoxModel<>(numeWatch));
-        jTextArea1.setText(smartwatch1[0].toString());
     }
     
     // Metoda pentru a adăuga ActionListener la combobox
@@ -408,12 +403,15 @@ public class smartint extends javax.swing.JFrame {
         public void actionPerformed(ActionEvent e) {
             int selectedIndex = jComboBox1.getSelectedIndex();
             
-            if (selectedIndex >= 0) {
-                Object obiectSelectat = smartwatch1[selectedIndex];
+            if (selectedIndex >= 1 && selectedIndex - 1 < smartwatch1.length) {
+                Object obiectSelectat = smartwatch1[selectedIndex - 1];
                 String textAfisat = obiectSelectat.toString();
                 jTextArea1.setText(textAfisat);
-                editButton.setVisible(true); // Facem butonul de editare vizibil
-            }
+                editButton.setVisible(true); 
+            } else {
+                    jTextArea1.setText("");
+                    editButton.setVisible(false);
+                }
         }
     });
     }

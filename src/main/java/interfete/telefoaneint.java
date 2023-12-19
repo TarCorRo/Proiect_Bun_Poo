@@ -23,7 +23,8 @@ public class telefoaneint extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
-        initializareComboBox(); // Inițializează combobox-ul
+        initializareComboBox(); 
+        editBut.setVisible(false);
         adaugaActionListenerComboBox();
 
     }
@@ -437,27 +438,33 @@ public class telefoaneint extends javax.swing.JFrame {
     }
 
     private void initializareComboBox() {
-        String[] numeTel = new String[telefoane.length];
+        String[] numeTel = new String[telefoane.length + 1];
+        numeTel[0] = "Alege Telefon";
+        
         for (int i = 0; i < telefoane.length; i++) {
             String marca = telefoane[i].getMarca();
             String model = telefoane[i].getModel();
-            numeTel[i] = marca + " " + model;
+            numeTel[i + 1] = marca + " " + model;
         }
+        
         jComboBox1.setModel(new DefaultComboBoxModel<>(numeTel));
-        jTextArea1.setText(telefoane[0].toString());
     }
 
-    // Metoda pentru a adăuga ActionListener la combobox
     private void adaugaActionListenerComboBox() {
         jComboBox1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 int selectedIndex = jComboBox1.getSelectedIndex();
-                if (selectedIndex >= 0) {
-                    Object obiectSelectat = telefoane[selectedIndex];
+                
+                if (selectedIndex >= 1 && selectedIndex - 1 < telefoane.length) {
+                    Object obiectSelectat = telefoane[selectedIndex - 1];
                     String textAfisat = obiectSelectat.toString();
                     jTextArea1.setText(textAfisat);
-                    editBut.setVisible(true); // Facem butonul de editare vizibil
+                    editBut.setVisible(true); 
+                } else {
+                    jTextArea1.setText("");
+                    editBut.setVisible(false);
                 }
+               
             }
         });
     }

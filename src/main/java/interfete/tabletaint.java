@@ -30,7 +30,8 @@ public class tabletaint extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
-        initializareComboBox(); // Inițializează combobox-ul
+        initializareComboBox(); 
+        jButton1.setVisible(false);
         adaugaActionListenerComboBox();
     }
 
@@ -176,7 +177,7 @@ public class tabletaint extends javax.swing.JFrame {
     popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     JPanel panel = new JPanel();
-    panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
+    panel.setLayout(new GridLayout(0, 2)); 
        
     if (selectedIndex >= 0 && selectedIndex < tablete.length) {
         JTextField textFieldMarca = new JTextField(selectedTablet.getMarca());
@@ -427,16 +428,16 @@ public class tabletaint extends javax.swing.JFrame {
     }
     
     private void initializareComboBox() {
-        String[] numeLap = new String[tablete.length];
+        String[] numeLap = new String[tablete.length + 1];
+        numeLap[0] = "Alege Tableta";
         
         for(int i = 0; i < tablete.length; i++) {
             String marca = tablete[i].getMarca();
             String model = tablete[i].getModel();
-            numeLap[i] = marca + " " + model;
+            numeLap[i + 1] = marca + " " + model;
         }
 
         jComboBox1.setModel(new DefaultComboBoxModel<>(numeLap));
-        jTextArea1.setText(tablete[0].toString());
     }
     
     private void adaugaActionListenerComboBox() {
@@ -444,11 +445,14 @@ public class tabletaint extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 int selectedIndex = jComboBox1.getSelectedIndex();
                 
-                if(selectedIndex >= 0) {
-                    Object obiectSelectat = tablete[selectedIndex];
+                if(selectedIndex >= 1 && selectedIndex - 1 < tablete.length) {
+                    Object obiectSelectat = tablete[selectedIndex - 1];
                     String textAfisat = obiectSelectat.toString();
                     jTextArea1.setText(textAfisat);
                     jButton1.setVisible(true);
+                }  else {
+                    jTextArea1.setText("");
+                    jButton1.setVisible(false);
                 }
             }
         });
