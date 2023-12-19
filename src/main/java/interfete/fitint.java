@@ -16,16 +16,19 @@ import newpackage.*;
  * @author Razvan
  */
 public class fitint extends javax.swing.JFrame {
+    Instances inst = new Instances();
 
-    Device[] fitBand = inst.getInstancesArray("Bratari Fitness");
-    FitnessBaand[] fitBand1 = (FitnessBand[]) fitBand;
+    Device[] fitBand = inst.getInstancesArray("fitnessBands");
+    FitnessBand[] fitBand1 = (FitnessBand[]) fitBand;
     /**
      * Creates new form fitint
      */
     public fitint() {
         initComponents();
         setLocationRelativeTo(null);
-         setVisible(true);
+        setVisible(true);
+        initializareComboBox();
+        adaugaActionListenerComboBox();
     }
 
     /**
@@ -64,6 +67,11 @@ public class fitint extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apasati aici pentru a vedea Bratarile Fitness" }));
 
         editButton.setText("Editare date Bratari Fitness");
+        editButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editButtonActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -134,31 +142,17 @@ public class fitint extends javax.swing.JFrame {
         home.setVisible(true);
     }//GEN-LAST:event_homeActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-
-    }                                          
- 
-    private void updateTextAreaWithSelectedPhone(FitnessBand selectedBand) {
-    jTextArea1.setText(selectedBand.toString());
-}
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
+    int selectedIndex = jComboBox1.getSelectedIndex();
     
-    private void ActionListener(java.awt.event.ActionEvent evt) {                                
-        // TODO add your handling code here:
-    }                               
-
-    private void ActionEvent(java.awt.event.ActionEvent evt) {                             
-       
-    }
-    private void editButActionPerformed(java.awt.event.ActionEvent evt) {                                        
-       int selectedIndex = jComboBox1.getSelectedIndex();
-        if (selectedIndex >= 0) {
+    if (selectedIndex >= 0) {
         FitnessBand selectedBand = fitBand1[selectedIndex];
         JFrame popup = new JFrame("Detalii FitnessBand");
-    popup.setSize(1000, 900);
-    popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        popup.setSize(1000, 900);
+        popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-    JPanel panel = new JPanel();
-    panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
        
     if (selectedIndex >= 0 && selectedIndex < fitBand1.length) {
         JTextField textFieldMarca = new JTextField(selectedBand.getMarca());
@@ -172,7 +166,7 @@ public class fitint extends javax.swing.JFrame {
         JTextField textFieldSisOpTel = new JTextField(selectedBand.getSistemDeOperareSmtWtc());
         JTextField textFieldTipIncarcare = new JTextField(selectedBand.getTipIncarcare());
         JTextField textFieldTipSim = new JTextField(selectedBand.getTipSim());
-        JTextField textFieldRezEcran = new JTextField(selectedBand.getRezEcran());
+        JTextField textFieldRezEcran = new JTextField(String.valueOf(selectedBand.getRezEcran()));
         JTextField textFieldMemorieROM = new JTextField(String.valueOf(selectedBand.getMemorieROM()));
         JTextField textFieldMemorieRAM = new JTextField(String.valueOf(selectedBand.getMemorieRAM()));
         JTextField textFieldMarimeBat = new JTextField(String.valueOf(selectedBand.getMarimeBat()));
@@ -242,8 +236,13 @@ public class fitint extends javax.swing.JFrame {
         
         popup.add(panel);
         popup.setVisible(true);
-    }                                       
     }
+    }//GEN-LAST:event_editButtonActionPerformed
+                                         
+    private void updateTextAreaWithSelectedPhone(FitnessBand selectedBand) {
+        jTextArea1.setText(selectedBand.toString());
+    }
+    
     private void addLabelAndTextField(JPanel panel, String labelText, JTextField textField) {
         JLabel label = new JLabel(labelText);
         panel.add(label);
@@ -258,6 +257,7 @@ public class fitint extends javax.swing.JFrame {
             numeWatch[i] = marca + " " + model;
         }
         jComboBox1.setModel(new DefaultComboBoxModel<>(numeWatch));
+        jTextArea1.setText(fitBand1[0].toString());
     }
     
     // Metoda pentru a adăuga ActionListener la combobox
@@ -265,6 +265,7 @@ public class fitint extends javax.swing.JFrame {
         jComboBox1.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
             int selectedIndex = jComboBox1.getSelectedIndex();
+           
             if (selectedIndex >= 0) {
                 Object obiectSelectat = fitBand1[selectedIndex];
                 String textAfisat = obiectSelectat.toString();

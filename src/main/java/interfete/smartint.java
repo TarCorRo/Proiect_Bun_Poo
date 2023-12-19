@@ -15,9 +15,10 @@ import newpackage.*;
  *
  * @author Razvan
  */
-public class smartint extends javax.swing.JFrame {Instances inst = new Instances();
+public class smartint extends javax.swing.JFrame {
+    Instances inst = new Instances();
 
-    Device[] smartwatch = inst.getInstancesArray("smartwatch-uri");
+    Device[] smartwatch = inst.getInstancesArray("smartwatchuri");
     Smartwatch[] smartwatch1 = (Smartwatch[]) smartwatch;
     /**
      * Creates new form smartint
@@ -25,10 +26,9 @@ public class smartint extends javax.swing.JFrame {Instances inst = new Instances
     public smartint() {
         initComponents();
         setLocationRelativeTo(null);
-         setVisible(true);
+        setVisible(true);
         initializareComboBox(); // Inițializează combobox-ul
         adaugaActionListenerComboBox();
-        editButton.setVisible(false);
     }
 
     /**
@@ -68,6 +68,11 @@ public class smartint extends javax.swing.JFrame {Instances inst = new Instances
         jComboBox1.setToolTipText("Apasati aici pentru a vedea Smartwatch-urile");
 
         editButton.setText("Editare detalii Smartwatch");
+        editButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editButtonActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -138,31 +143,17 @@ public class smartint extends javax.swing.JFrame {Instances inst = new Instances
         home.setVisible(true);
     }//GEN-LAST:event_homeActionPerformed
 
-     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
+    int selectedIndex = jComboBox1.getSelectedIndex();
 
-    }                                          
- 
-    private void updateTextAreaWithSelectedPhone(Smartwatch selectedWatch) {
-    jTextArea1.setText(selectedWatch.toString());
-}
-    
-    private void ActionListener(java.awt.event.ActionEvent evt) {                                
-        // TODO add your handling code here:
-    }                               
-
-    private void ActionEvent(java.awt.event.ActionEvent evt) {                             
-       
-    }
-    private void editButActionPerformed(java.awt.event.ActionEvent evt) {                                        
-       int selectedIndex = jComboBox1.getSelectedIndex();
-        if (selectedIndex >= 0) {
+    if (selectedIndex >= 0) {
         Smartwatch selectedWatch = smartwatch1[selectedIndex];
         JFrame popup = new JFrame("Detalii Smartwatch");
-    popup.setSize(1000, 900);
-    popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        popup.setSize(1000, 900);
+        popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-    JPanel panel = new JPanel();
-    panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
        
     if (selectedIndex >= 0 && selectedIndex < smartwatch1.length) {
         JTextField textFieldMarca = new JTextField(selectedWatch.getMarca());
@@ -176,7 +167,7 @@ public class smartint extends javax.swing.JFrame {Instances inst = new Instances
         JTextField textFieldSisOpTel = new JTextField(selectedWatch.getSistemDeOperareSmtWtc());
         JTextField textFieldTipIncarcare = new JTextField(selectedWatch.getTipIncarcare());
         JTextField textFieldTipSim = new JTextField(selectedWatch.getTipSim());
-        JTextField textFieldRezEcran = new JTextField(selectedWatch.getRezEcran());
+        JTextField textFieldRezEcran = new JTextField(String.valueOf(selectedWatch.getRezEcran()));
         JTextField textFieldMemorieROM = new JTextField(String.valueOf(selectedWatch.getMemorieROM()));
         JTextField textFieldMemorieRAM = new JTextField(String.valueOf(selectedWatch.getMemorieRAM()));
         JTextField textFieldMarimeBat = new JTextField(String.valueOf(selectedWatch.getMarimeBat()));
@@ -246,8 +237,13 @@ public class smartint extends javax.swing.JFrame {Instances inst = new Instances
         
         popup.add(panel);
         popup.setVisible(true);
-    }                                       
+    }                
+    }//GEN-LAST:event_editButtonActionPerformed
+
+    private void updateTextAreaWithSelectedPhone(Smartwatch selectedWatch) {
+        jTextArea1.setText(selectedWatch.toString());
     }
+
     private void addLabelAndTextField(JPanel panel, String labelText, JTextField textField) {
         JLabel label = new JLabel(labelText);
         panel.add(label);
@@ -262,6 +258,7 @@ public class smartint extends javax.swing.JFrame {Instances inst = new Instances
             numeWatch[i] = marca + " " + model;
         }
         jComboBox1.setModel(new DefaultComboBoxModel<>(numeWatch));
+        jTextArea1.setText(smartwatch1[0].toString());
     }
     
     // Metoda pentru a adăuga ActionListener la combobox
@@ -269,6 +266,7 @@ public class smartint extends javax.swing.JFrame {Instances inst = new Instances
         jComboBox1.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
             int selectedIndex = jComboBox1.getSelectedIndex();
+            
             if (selectedIndex >= 0) {
                 Object obiectSelectat = smartwatch1[selectedIndex];
                 String textAfisat = obiectSelectat.toString();
