@@ -299,7 +299,7 @@ public class InterfataGraficaMagazinElectronice extends javax.swing.JFrame {
 
     private void cautParActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cautParActionPerformed
         JDialog dialog = new JDialog(this, "Cautare", true);
-        dialog.setLayout(new GridLayout(6, 2));
+        dialog.setLayout(new GridLayout(6, 2, 50, 20));
 
         JTextField textFieldMarca = new JTextField();
         JTextField textFieldModel = new JTextField();
@@ -327,99 +327,46 @@ public class InterfataGraficaMagazinElectronice extends javax.swing.JFrame {
             String anAparitieText = textFieldAnAparitie.getText().trim();
             String pretText = textFieldPret.getText().trim();
 
-            Device searchDevice = new Device();
             List<Device> foundDevices = new ArrayList<>();
-
-            if (!marca.isEmpty()) {
-                searchDevice.setMarca(marca);
+            boolean emptyTextFields = false;
+            
+            if (marca.isEmpty() && model.isEmpty() 
+                    && cantitateText.isEmpty() && anAparitieText.isEmpty() 
+                    && pretText.isEmpty()) {
+                emptyTextFields = true;
             }
-
-            if (!model.isEmpty()) {
-                searchDevice.setModel(model);
-            }
-
-            int cantitate = 0;
-            if (!cantitateText.isEmpty()) {
-                try {
-                    cantitate = Integer.parseInt(cantitateText);
-                } catch (NumberFormatException e) {
-                    System.out.println("Introduceti un numar valid pentru cantitate.");
-                }
-            }
-            searchDevice.setCantitate(cantitate);
-
-            int anAparitie = 0;
-            if (!anAparitieText.isEmpty()) {
-                try {
-                    anAparitie = Integer.parseInt(anAparitieText);
-                } catch (NumberFormatException e) {
-                    System.out.println("Introduceti un numar valid pentru anul de aparitie.");
-                }
-            }
-            searchDevice.setAnAparitie(anAparitie);
-
-            if (!model.isEmpty()) {
-                searchDevice.setModel(model);
-            }
-            float pret = 0.0f;
-            if (!pretText.isEmpty()) {
-                try {
-                    pret = Float.parseFloat(pretText);
-                } catch (NumberFormatException e) {
-                    System.out.println("Introduceti un numar valid pentru pret.");
-                }
-            }
-            searchDevice.setPret(pret);
-
-            for (Device instance : instancesArray) {
-                boolean match = true;
-
-                if (!marca.isEmpty() && !instance.getMarca().equals(searchDevice.getMarca())) {
-                    match = false;
-                }
-
-                if (!model.isEmpty() && !instance.getModel().equals(searchDevice.getModel())) {
-                    match = false;
-                }
-
-                if (searchDevice.getCantitate() != 0 && instance.getCantitate() != searchDevice.getCantitate()) {
-                    match = false;
-                } else if (searchDevice.getCantitate() == 0 && instance.getCantitate() != 0) {
-                    match = false;
-                }
-
-                if (searchDevice.getAnAparitie() != 0 && instance.getAnAparitie() != searchDevice.getAnAparitie()) {
-                    match = false;
-                }
-
-                if (searchDevice.getPret() != 0.0f && instance.getPret() != searchDevice.getPret()) {
-                    match = false;
-                }
-
-                if (match) {
-                    foundDevices.add(instance);
-                }
-
-            }
-            if (foundDevices.isEmpty()) {
-                myFrame.displaySearchResult("NU S-A GASIT NICIUN PRODUS");
-                myFrame.setVisible(true);
-                dialog.dispose();
-                this.setVisible(false);
+            
+            if(emptyTextFields) {
+                foundDevices.addAll(Arrays.asList(instancesArray));
             } else {
-
-                Set<String> uniqueResults = new HashSet<>();
-
-                for (Device device : foundDevices) {
-                    String result = device.toString();
-                    if (!uniqueResults.contains(result)) {
-                        uniqueResults.add(result);
+                for (Device instance : instancesArray) {
+                    boolean match = true;
+                    
+                    if (!marca.isEmpty() && !instance.getMarca().equals(marca)
+                            || !model.isEmpty() && !instance.getModel().equals(model)
+                            || !cantitateText.isEmpty() && instance.getCantitate() != Integer.parseInt(cantitateText)
+                            || !anAparitieText.isEmpty() && instance.getAnAparitie() != Integer.parseInt(anAparitieText)
+                            || !pretText.isEmpty() && instance.getPret() != Float.parseFloat(pretText)
+                            ) {
+                        match = false;
                     }
+                    
+                    if (match) foundDevices.add(instance);
                 }
+            }
 
-                for (String uniqueResult : uniqueResults) {
-                    resultBuilder.append(uniqueResult).append("\n\n\n\n");
+            if (foundDevices.isEmpty()) {
+                if(!emptyTextFields) {
+                    myFrame.displaySearchResult("NU S-A GASIT NICIUN PRODUS");
+                    myFrame.setVisible(true);
+                    dialog.dispose();
+                    this.setVisible(false);
                 }
+            } else {
+                for (Device device : foundDevices) {
+                    resultBuilder.append(device).append("\n\n");
+                }
+                
                 myFrame.displaySearchResult(resultBuilder.toString());
                 myFrame.setVisible(true);
 
@@ -430,7 +377,7 @@ public class InterfataGraficaMagazinElectronice extends javax.swing.JFrame {
         });
 
         dialog.add(searchButton);
-        dialog.setSize(400, 400);
+        dialog.setSize(500, 500);
         dialog.setLocationRelativeTo(this);
         dialog.setVisible(true);
     }//GEN-LAST:event_cautParActionPerformed
