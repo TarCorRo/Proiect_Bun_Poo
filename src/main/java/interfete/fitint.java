@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.mycompany.magazinelectronice.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import newpackage.*;
 
 /**
@@ -46,6 +48,7 @@ public class fitint extends javax.swing.JFrame {
         editButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
         home = new javax.swing.JMenuItem();
@@ -77,6 +80,8 @@ public class fitint extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        jButton1.setText("Cautare");
+
         menu.setText("Home");
 
         home.setText("Home");
@@ -98,16 +103,21 @@ public class fitint extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(102, 102, 102)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
                 .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jComboBox1, 0, 300, Short.MAX_VALUE)
                     .addComponent(editButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(40, 40, 40)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 40, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(269, 269, 269))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,12 +127,13 @@ public class fitint extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(74, 74, 74)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(editButton))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE))
-                .addGap(74, 74, 74))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(editButton)
+                    .addComponent(jButton1))
+                .addGap(26, 26, 26))
         );
 
         pack();
@@ -142,6 +153,9 @@ public class fitint extends javax.swing.JFrame {
         home.setVisible(true);
     }//GEN-LAST:event_homeActionPerformed
 
+    private void updateTextAreaWithSelectedBand(FitnessBand selectedBand) {
+        jTextArea1.setText(selectedBand.toString());
+    }
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
     int selectedIndex = jComboBox1.getSelectedIndex();
     
@@ -228,7 +242,7 @@ public class fitint extends javax.swing.JFrame {
               fitBand1[selectedIndex].setMarca(selectedBand.getMarca());
               JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(saveButton);
               frame.dispose();
-              updateTextAreaWithSelectedPhone(selectedBand);
+              updateTextAreaWithSelectedBand(selectedBand);
             }
         });
         panel.add(saveButton);
@@ -238,12 +252,139 @@ public class fitint extends javax.swing.JFrame {
         popup.setVisible(true);
     }
     }//GEN-LAST:event_editButtonActionPerformed
-                                         
-    private void updateTextAreaWithSelectedPhone(FitnessBand selectedBand) {
-        jTextArea1.setText(selectedBand.toString());
-    }
+
     
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        JDialog dialog = new JDialog(this, "Cautare", true);
+        dialog.setLayout(new GridLayout(25, 0, 30, 5));
+        jComboBox1.setSelectedIndex(0);
+
+        JTextField textFieldMarca = new JTextField();
+        JTextField textFieldModel = new JTextField();
+        JTextField textFieldCantitate = new JTextField();
+        JTextField textFieldAnAparitie = new JTextField();
+        JTextField textFieldPret = new JTextField();
+        JTextField textFieldProcesor = new JTextField();
+        JTextField textFieldTipEcran = new JTextField();
+        JTextField textFieldCuloare = new JTextField();
+        JTextField textFieldSisOpTel = new JTextField();
+        JTextField textFieldTipIncarcare = new JTextField();
+        JTextField textFieldTipSim = new JTextField();
+        JTextField textFieldRezEcran = new JTextField();
+        JTextField textFieldMemorieROM = new JTextField();
+        JTextField textFieldMemorieRAM = new JTextField();
+        JTextField textFieldNrCamere = new JTextField();
+        JTextField textFieldMarimeBat = new JTextField();
+        JTextField textFieldDiagonalaEcran = new JTextField();
+
+        addLabelAndTextField(dialog, "Marca:", textFieldMarca);
+        addLabelAndTextField(dialog, "Model:", textFieldModel);
+        addLabelAndTextField(dialog, "Cantitate:", textFieldCantitate);
+        addLabelAndTextField(dialog, "An aparitie:", textFieldAnAparitie);
+        addLabelAndTextField(dialog, "Pret:", textFieldPret);
+        addLabelAndTextField(dialog, "Procesor:", textFieldProcesor);
+        addLabelAndTextField(dialog, "Tip ecran:", textFieldTipEcran);
+        addLabelAndTextField(dialog, "Culoare:", textFieldCuloare);
+        addLabelAndTextField(dialog, "Sistem de operare:", textFieldSisOpTel);
+        addLabelAndTextField(dialog, "Tip încărcare:", textFieldTipIncarcare);
+        addLabelAndTextField(dialog, "Tip SIM:", textFieldTipSim);
+        addLabelAndTextField(dialog, "Memorie ROM:", textFieldMemorieROM);
+        addLabelAndTextField(dialog, "Memorie RAM:", textFieldMemorieRAM);
+        addLabelAndTextField(dialog, "Mărime baterie:", textFieldMarimeBat);
+        addLabelAndTextField(dialog, "Diagonala ecran:", textFieldDiagonalaEcran);
+
+        StringBuilder resultBuilder = new StringBuilder();
+
+        JButton searchButton = new JButton("Cauta");
+        searchButton.addActionListener(event -> {
+            String marca = textFieldMarca.getText().trim();
+            String model = textFieldModel.getText().trim();
+            String cantitateText = textFieldCantitate.getText().trim();
+            String anAparitieText = textFieldAnAparitie.getText().trim();
+            String pretText = textFieldPret.getText().trim();
+            String procesor = textFieldProcesor.getText().trim();
+            String tipEcran = textFieldTipEcran.getText().trim();
+            String culoare = textFieldCuloare.getText().trim();
+            String sisOpTel = textFieldSisOpTel.getText().trim();
+            String tipIncarcare = textFieldTipIncarcare.getText().trim();
+            String tipSim = textFieldTipSim.getText().trim();
+            String rezEcran = textFieldRezEcran.getText().trim();
+            String memorieROM = textFieldMemorieROM.getText().trim();
+            String memorieRAM = textFieldMemorieRAM.getText().trim();
+            String marimeBat = textFieldMarimeBat.getText().trim();
+            String diagonalaEcran = textFieldDiagonalaEcran.getText().trim();
+
+            java.util.List<FitnessBand> foundDevices = new ArrayList<>();
+            boolean emptyTextFields = false;
+
+            if (marca.isEmpty() && model.isEmpty()
+                    && cantitateText.isEmpty() && anAparitieText.isEmpty()
+                    && pretText.isEmpty() && procesor.isEmpty()
+                    && tipEcran.isEmpty() && culoare.isEmpty()
+                    && tipIncarcare.isEmpty() && tipSim.isEmpty()
+                    && memorieROM.isEmpty() && rezEcran.isEmpty()&& marimeBat.isEmpty()
+                    && diagonalaEcran.isEmpty()) {
+                emptyTextFields = true;
+            }
+
+            if (emptyTextFields) {
+                foundDevices.addAll(Arrays.asList(fitBand1));
+            } else {
+                for (FitnessBand instance : fitBand1) {
+                    boolean match = true;
+
+                    if (!marca.isEmpty() && !instance.getMarca().equals(marca)
+                            || !model.isEmpty() && !instance.getModel().equals(model)
+                            || !cantitateText.isEmpty() && instance.getCantitate() != Integer.parseInt(cantitateText)
+                            || !anAparitieText.isEmpty() && instance.getAnAparitie() != Integer.parseInt(anAparitieText)
+                            || !pretText.isEmpty() && instance.getPret() != Float.parseFloat(pretText)
+                            || !procesor.isEmpty() && !instance.getProcesor().equals(procesor)
+                            || !tipEcran.isEmpty() && !instance.getTipEcran().equals(tipEcran)
+                            || !culoare.isEmpty() && !instance.getCuloare().equals(culoare)
+                            || !sisOpTel.isEmpty() && !instance.getSistemDeOperareSmtWtc().equals(sisOpTel)
+                            || !tipIncarcare.isEmpty() && !instance.getTipIncarcare().equals(tipIncarcare)
+                            || !tipSim.isEmpty() && !instance.getTipSim().equals(tipSim)
+                            || !rezEcran.isEmpty() && instance.getRezEcran() != Integer.parseInt(rezEcran)
+                            || !memorieROM.isEmpty() && instance.getMemorieROM() != Integer.parseInt(memorieROM)
+                            || !memorieRAM.isEmpty() && instance.getMemorieRAM() != Integer.parseInt(memorieRAM)
+                            || !marimeBat.isEmpty() && instance.getMarimeBat() != Integer.parseInt(marimeBat)
+                            || !diagonalaEcran.isEmpty() && instance.getDiagonalaEcran() != Float.parseFloat(diagonalaEcran)) {
+                        match = false;
+                    }
+
+                    if (match) {
+                        foundDevices.add(instance);
+                    }
+                }
+            }
+
+            if (foundDevices.isEmpty()) {
+                if (!emptyTextFields) {
+                    jTextArea1.setText("NU S-A GASIT NICIUN PRODUS");
+                    dialog.dispose();
+                }
+            } else {
+                for (FitnessBand fitBand2 : foundDevices) {
+                    resultBuilder.append(fitBand2).append("\n\n");
+                }
+
+                jTextArea1.setText(resultBuilder.toString());
+                dialog.dispose();
+            }
+        });
+
+        dialog.add(searchButton);
+        dialog.setSize(600, 800);
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
+    }
+                                         
     private void addLabelAndTextField(JPanel panel, String labelText, JTextField textField) {
+        JLabel label = new JLabel(labelText);
+        panel.add(label);
+        panel.add(textField);
+    }
+    private void addLabelAndTextField(JDialog panel, String labelText, JTextField textField) {
         JLabel label = new JLabel(labelText);
         panel.add(label);
         panel.add(textField);
@@ -314,6 +455,7 @@ public class fitint extends javax.swing.JFrame {
     private java.awt.Button back;
     private javax.swing.JButton editButton;
     private javax.swing.JMenuItem home;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
