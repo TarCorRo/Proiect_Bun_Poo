@@ -445,8 +445,8 @@ public class laptopint extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 int selectedIndex = jComboBox1.getSelectedIndex();
                 
-                if(selectedIndex >= 1) {
-                    Object obiectSelectat = laptopuri[selectedIndex];
+                if(selectedIndex >= 1 && selectedIndex - 1 < laptopuri.length) {
+                    Object obiectSelectat = laptopuri[selectedIndex - 1];
                     String textAfisat = obiectSelectat.toString();
                     jTextArea1.setText(textAfisat);
                     jButton1.setVisible(true);
