@@ -317,7 +317,6 @@ public class smartint extends javax.swing.JFrame {
             String rezEcran = textFieldRezEcran.getText().trim();
             String memorieROM = textFieldMemorieROM.getText().trim();
             String memorieRAM = textFieldMemorieRAM.getText().trim();
-            String nrCamere = textFieldNrCamere.getText().trim();
             String marimeBat = textFieldMarimeBat.getText().trim();
             String diagonalaEcran = textFieldDiagonalaEcran.getText().trim();
 
