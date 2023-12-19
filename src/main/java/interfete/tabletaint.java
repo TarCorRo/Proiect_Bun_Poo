@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.mycompany.magazinelectronice.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import newpackage.*;
 
 /**
@@ -47,6 +49,7 @@ public class tabletaint extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jComboBox1 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
         home = new javax.swing.JMenuItem();
@@ -83,6 +86,13 @@ public class tabletaint extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Search");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         menu.setText("Home");
 
         home.setText("Home");
@@ -112,7 +122,9 @@ public class tabletaint extends javax.swing.JFrame {
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
                     .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(40, 40, 40)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
@@ -125,10 +137,13 @@ public class tabletaint extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE))
-                .addGap(74, 74, 74))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addGap(14, 14, 14))
         );
 
         pack();
@@ -258,6 +273,152 @@ public class tabletaint extends javax.swing.JFrame {
         popup.add(panel);
         popup.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        JDialog dialog = new JDialog(this, "Cautare", true);
+        dialog.setLayout(new GridLayout(25, 0, 30, 5));
+        jComboBox1.setSelectedIndex(0);
+
+        JTextField textFieldMarca = new JTextField();
+        JTextField textFieldModel = new JTextField();
+        JTextField textFieldCantitate = new JTextField();
+        JTextField textFieldAnAparitie = new JTextField();
+        JTextField textFieldPret = new JTextField();
+        JTextField textFieldProcesor = new JTextField();
+        JTextField textFieldTipEcran = new JTextField();
+        JTextField textFieldCuloare = new JTextField();
+        JTextField textFieldFrecventaAntena = new JTextField();
+        JTextField textFieldSisOpTab = new JTextField();
+        JTextField textFieldTipIncarcare = new JTextField();
+        JTextField textFieldTipSim = new JTextField();
+        JTextField textFieldRezEcran = new JTextField();
+        JTextField textFieldRezCamere = new JTextField();
+        JTextField textFieldMemorieROM = new JTextField();
+        JTextField textFieldMemorieRAM = new JTextField();
+        JTextField textFieldNrCamere = new JTextField();
+        JTextField textFieldMarimeBat = new JTextField();
+        JTextField textFieldDiagonalaEcran = new JTextField();
+
+        addLabelAndTextField(dialog, "Marca:", textFieldMarca);
+        addLabelAndTextField(dialog, "Model:", textFieldModel);
+        addLabelAndTextField(dialog, "Cantitate:", textFieldCantitate);
+        addLabelAndTextField(dialog, "An aparitie:", textFieldAnAparitie);
+        addLabelAndTextField(dialog, "Pret:", textFieldPret);
+        addLabelAndTextField(dialog, "Procesor:", textFieldProcesor);
+        addLabelAndTextField(dialog, "Tip ecran:", textFieldTipEcran);
+        addLabelAndTextField(dialog, "Culoare:", textFieldCuloare);
+        addLabelAndTextField(dialog, "Frecventa antena:", textFieldFrecventaAntena);
+        addLabelAndTextField(dialog, "Sistem de operare:", textFieldSisOpTab);
+        addLabelAndTextField(dialog, "Tip încărcare:", textFieldTipIncarcare);
+        addLabelAndTextField(dialog, "Tip SIM:", textFieldTipSim);
+        addLabelAndTextField(dialog, "Rezoluție ecran:", textFieldRezEcran);
+        addLabelAndTextField(dialog, "Rezoluție camere:", textFieldRezCamere);
+        addLabelAndTextField(dialog, "Memorie ROM:", textFieldMemorieROM);
+        addLabelAndTextField(dialog, "Memorie RAM:", textFieldMemorieRAM);
+        addLabelAndTextField(dialog, "Număr camere:", textFieldNrCamere);
+        addLabelAndTextField(dialog, "Mărime baterie:", textFieldMarimeBat);
+        addLabelAndTextField(dialog, "Diagonala ecran:", textFieldDiagonalaEcran);
+
+        StringBuilder resultBuilder = new StringBuilder();
+
+        JButton searchButton = new JButton("Cauta");
+        searchButton.addActionListener(event -> {
+            String marca = textFieldMarca.getText().trim();
+            String model = textFieldModel.getText().trim();
+            String cantitateText = textFieldCantitate.getText().trim();
+            String anAparitieText = textFieldAnAparitie.getText().trim();
+            String pretText = textFieldPret.getText().trim();
+            String procesor = textFieldProcesor.getText().trim();
+            String tipEcran = textFieldTipEcran.getText().trim();
+            String culoare = textFieldCuloare.getText().trim();
+            String frecventaAntena = textFieldFrecventaAntena.getText().trim();
+            String sisOpTab = textFieldSisOpTab.getText().trim();
+            String tipIncarcare = textFieldTipIncarcare.getText().trim();
+            String tipSim = textFieldTipSim.getText().trim();
+            String rezEcran = textFieldRezEcran.getText().trim();
+            String rezCamere = textFieldRezCamere.getText().trim();
+            String memorieROM = textFieldMemorieROM.getText().trim();
+            String memorieRAM = textFieldMemorieRAM.getText().trim();
+            String nrCamere = textFieldNrCamere.getText().trim();
+            String marimeBat = textFieldMarimeBat.getText().trim();
+            String diagonalaEcran = textFieldDiagonalaEcran.getText().trim();
+
+            java.util.List<Tableta> foundDevices = new ArrayList<>();
+            boolean emptyTextFields = false;
+
+            if (marca.isEmpty() && model.isEmpty()
+                    && cantitateText.isEmpty() && anAparitieText.isEmpty()
+                    && pretText.isEmpty() && procesor.isEmpty()
+                    && tipEcran.isEmpty() && culoare.isEmpty()
+                    && frecventaAntena.isEmpty() && sisOpTab.isEmpty()
+                    && tipIncarcare.isEmpty() && tipSim.isEmpty()
+                    && memorieROM.isEmpty() && rezEcran.isEmpty()
+                    && rezCamere.isEmpty() && memorieRAM.isEmpty()
+                    && nrCamere.isEmpty() && marimeBat.isEmpty()
+                    && diagonalaEcran.isEmpty()) {
+                emptyTextFields = true;
+            }
+
+            if (emptyTextFields) {
+                foundDevices.addAll(Arrays.asList(tablete));
+            } else {
+                for (Tableta instance : tablete) {
+                    boolean match = true;
+
+                    if (!marca.isEmpty() && !instance.getMarca().equals(marca)
+                            || !model.isEmpty() && !instance.getModel().equals(model)
+                            || !cantitateText.isEmpty() && instance.getCantitate() != Integer.parseInt(cantitateText)
+                            || !anAparitieText.isEmpty() && instance.getAnAparitie() != Integer.parseInt(anAparitieText)
+                            || !pretText.isEmpty() && instance.getPret() != Float.parseFloat(pretText)
+                            || !procesor.isEmpty() && !instance.getProcesor().equals(procesor)
+                            || !tipEcran.isEmpty() && !instance.getTipEcran().equals(tipEcran)
+                            || !culoare.isEmpty() && !instance.getCuloare().equals(culoare)
+                            || !frecventaAntena.isEmpty() && !instance.getFrecventaAntena().equals(frecventaAntena)
+                            || !sisOpTab.isEmpty() && !instance.getSisOpTab().equals(sisOpTab)
+                            || !tipIncarcare.isEmpty() && !instance.getTipIncarcare().equals(tipIncarcare)
+                            || !tipSim.isEmpty() && !instance.getTipSim().equals(tipSim)
+                            || !rezEcran.isEmpty() && !instance.getRezEcran().equals(rezEcran)
+                            || !rezCamere.isEmpty() && instance.getRezCamere().equals(rezCamere)
+                            || !memorieROM.isEmpty() && instance.getMemorieROM() != Integer.parseInt(memorieROM)
+                            || !memorieRAM.isEmpty() && instance.getMemorieRAM() != Integer.parseInt(memorieRAM)
+                            || !nrCamere.isEmpty() && instance.getNrCamere() != Integer.parseInt(nrCamere)
+                            || !marimeBat.isEmpty() && instance.getMarimeBat() != Integer.parseInt(marimeBat)
+                            || !diagonalaEcran.isEmpty() && instance.getDiagonalaEcran() != Float.parseFloat(diagonalaEcran)) {
+                        match = false;
+                    }
+
+                    if (match) {
+                        foundDevices.add(instance);
+                    }
+                }
+            }
+
+            if (foundDevices.isEmpty()) {
+                if (!emptyTextFields) {
+                    jTextArea1.setText("NU S-A GASIT NICIUN PRODUS");
+                    dialog.dispose();
+                }
+            } else {
+                for (Tableta tableta : foundDevices) {
+                    resultBuilder.append(tableta).append("\n\n");
+                }
+
+                jTextArea1.setText(resultBuilder.toString());
+                dialog.dispose();
+            }
+        });
+
+        dialog.add(searchButton);
+        dialog.setSize(600, 800);
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+    
+    private void addLabelAndTextField(JDialog panel, String labelText, JTextField textField) {
+        JLabel label = new JLabel(labelText);
+        panel.add(label);
+        panel.add(textField);
+    }
     
     private void addLabelAndTextField(JPanel panel, String labelText, JTextField textField) {
         JLabel label = new JLabel(labelText);
@@ -335,6 +496,7 @@ public class tabletaint extends javax.swing.JFrame {
     private java.awt.Button back;
     private javax.swing.JMenuItem home;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;

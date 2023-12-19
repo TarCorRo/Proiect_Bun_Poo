@@ -1,34 +1,33 @@
 package interfete;
-/**
- *
- * @author Razvan
- */
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.mycompany.magazinelectronice.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import newpackage.*;
 
 public class telefoaneint extends javax.swing.JFrame {
+
     Instances inst = new Instances();
-    
+
     Device[] tel = inst.getInstancesArray("telefoane");
     Telefon[] telefoane = (Telefon[]) tel;
 
     /**
      * Creates new form telefoaneint
      */
-       
     public telefoaneint() {
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
         initializareComboBox(); // Inițializează combobox-ul
         adaugaActionListenerComboBox();
-        editBut.setVisible(false);
+
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,6 +43,7 @@ public class telefoaneint extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         editBut = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu = new javax.swing.JMenu();
         home = new javax.swing.JMenuItem();
@@ -83,6 +83,13 @@ public class telefoaneint extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Cautare");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         menu.setText("Home");
         menu.setToolTipText("");
 
@@ -113,7 +120,9 @@ public class telefoaneint extends javax.swing.JFrame {
                     .addComponent(jComboBox1, 0, 300, Short.MAX_VALUE)
                     .addComponent(editBut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
@@ -126,10 +135,13 @@ public class telefoaneint extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 459, Short.MAX_VALUE)
-                        .addComponent(editBut))
-                    .addComponent(jScrollPane1))
-                .addGap(74, 74, 74))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(editBut)
+                    .addComponent(jButton1))
+                .addGap(14, 14, 14))
         );
 
         pack();
@@ -137,14 +149,14 @@ public class telefoaneint extends javax.swing.JFrame {
 
     private void backtestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backtestActionPerformed
         this.setVisible(false);
-   
+
         InterfataGraficaMagazinElectronice home = new InterfataGraficaMagazinElectronice();
         home.setVisible(true);
     }//GEN-LAST:event_backtestActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         this.setVisible(false);
-   
+
         InterfataGraficaMagazinElectronice home = new InterfataGraficaMagazinElectronice();
         home.setVisible(true);
     }//GEN-LAST:event_homeActionPerformed
@@ -152,135 +164,281 @@ public class telefoaneint extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
 
     }//GEN-LAST:event_jComboBox1ActionPerformed
- 
+
     private void updateTextAreaWithSelectedPhone(Telefon selectedPhone) {
         jTextArea1.setText(selectedPhone.toString());
     }
-    
+
     private void ActionListener(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionListener
         // TODO add your handling code here:
     }//GEN-LAST:event_ActionListener
 
     private void ActionEvent(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionEvent
-       
+
     }//GEN-LAST:event_ActionEvent
 
     private void editButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButActionPerformed
-       int selectedIndex = jComboBox1.getSelectedIndex();
+        int selectedIndex = jComboBox1.getSelectedIndex();
         if (selectedIndex >= 0) {
-        Telefon selectedPhone = telefoane[selectedIndex];
-        JFrame popup = new JFrame("Detalii Telefon");
-    popup.setSize(1000, 900);
-    popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            Telefon selectedPhone = telefoane[selectedIndex];
+            JFrame popup = new JFrame("Detalii Telefon");
+            popup.setSize(1000, 900);
+            popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-    JPanel panel = new JPanel();
-    panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
-       
-    if (selectedIndex >= 0 && selectedIndex < telefoane.length) {
-        JTextField textFieldMarca = new JTextField(selectedPhone.getMarca());
-        JTextField textFieldModel = new JTextField(selectedPhone.getModel());
-        JTextField textFieldCantitate = new JTextField(String.valueOf(selectedPhone.getCantitate()));
-        JTextField textFieldAnAparitie = new JTextField(String.valueOf(selectedPhone.getAnAparitie()));
-        JTextField textFieldPret = new JTextField(String.valueOf(selectedPhone.getPret()));
-        JTextField textFieldProcesor = new JTextField(selectedPhone.getProcesor());
-        JTextField textFieldTipEcran = new JTextField(selectedPhone.getTipEcran());
-        JTextField textFieldCuloare = new JTextField(selectedPhone.getCuloare());
-        JTextField textFieldFrecventaAntena = new JTextField(selectedPhone.getFrecventaAntena());
-        JTextField textFieldSisOpTel = new JTextField(selectedPhone.getSisOpTel());
-        JTextField textFieldTipIncarcare = new JTextField(selectedPhone.getTipIncarcare());
-        JTextField textFieldTipSim = new JTextField(selectedPhone.getTipSim());
-        JTextField textFieldRezEcran = new JTextField(selectedPhone.getRezEcran());
-        JTextField textFieldRezCamere = new JTextField(selectedPhone.getRezCamere());
-        JTextField textFieldMemorieROM = new JTextField(String.valueOf(selectedPhone.getMemorieROM()));
-        JTextField textFieldMemorieRAM = new JTextField(String.valueOf(selectedPhone.getMemorieRAM()));
-        JTextField textFieldNrCamere = new JTextField(String.valueOf(selectedPhone.getNrCamere()));
-        JTextField textFieldMarimeBat = new JTextField(String.valueOf(selectedPhone.getMarimeBat()));
-        JTextField textFieldDiagonalaEcran = new JTextField(String.valueOf(selectedPhone.getDiagonalaEcran()));
-    
-        addLabelAndTextField(panel, "Marca:", textFieldMarca);
-        addLabelAndTextField(panel, "Model:", textFieldModel);
-        addLabelAndTextField(panel, "Cantitate:", textFieldCantitate);
-        addLabelAndTextField(panel, "An aparitie:", textFieldAnAparitie);
-        addLabelAndTextField(panel, "Pret:", textFieldPret);
-        addLabelAndTextField(panel, "Procesor:", textFieldProcesor);
-        addLabelAndTextField(panel, "Tip ecran:", textFieldTipEcran);
-        addLabelAndTextField(panel, "Culoare:", textFieldCuloare);
-        addLabelAndTextField(panel, "Frecventa antena:", textFieldFrecventaAntena);
-        addLabelAndTextField(panel, "Sistem de operare:", textFieldSisOpTel);
-        addLabelAndTextField(panel, "Tip încărcare:", textFieldTipIncarcare);
-        addLabelAndTextField(panel, "Tip SIM:", textFieldTipSim);
-        addLabelAndTextField(panel, "Rezoluție ecran:", textFieldRezEcran);
-        addLabelAndTextField(panel, "Rezoluție camere:", textFieldRezCamere);
-        addLabelAndTextField(panel, "Memorie ROM:", textFieldMemorieROM);
-        addLabelAndTextField(panel, "Memorie RAM:", textFieldMemorieRAM);
-        addLabelAndTextField(panel, "Număr camere:", textFieldNrCamere);
-        addLabelAndTextField(panel, "Mărime baterie:", textFieldMarimeBat);
-        addLabelAndTextField(panel, "Diagonala ecran:", textFieldDiagonalaEcran);    
-        JButton saveButton = new JButton("Salvează");
+            JPanel panel = new JPanel();
+            panel.setLayout(new GridLayout(0, 2)); // Layout pentru a afișa perechi etichetă-câmp text
 
-        saveButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-              String valoareMarca = textFieldMarca.getText();
-              String valoareModel = textFieldModel.getText();
-              int valoareCantitate =Integer.parseInt (textFieldCantitate.getText());
-              int valoareAnAparitie = Integer.parseInt (textFieldAnAparitie.getText());
-              float valoarePret = Float.parseFloat(textFieldPret.getText());
-              String valoareProcesor = textFieldProcesor.getText();
-              String valoareTipEcran = textFieldTipEcran.getText();
-              String valoareCuloare = textFieldCuloare.getText();
-              String valoareFrecventaAntena = textFieldFrecventaAntena.getText();
-              String valoareSisOpTel = textFieldSisOpTel.getText();
-              String valoareTipIncarcare = textFieldTipIncarcare.getText();
-              String valoareTipSim = textFieldTipSim.getText();
-              String valoareRezEcran = textFieldRezEcran.getText();
-              String valoareRezCamere = textFieldRezCamere.getText();
-              int valoareMemorieROM = Integer.parseInt(textFieldMemorieROM.getText());
-              int valoareMemorieRAM = Integer.parseInt(textFieldMemorieRAM.getText());
-              int valoareNrCamere = Integer.parseInt(textFieldNrCamere.getText());
-              int valoareMarimeBat = Integer.parseInt(textFieldMarimeBat.getText());
-              float valoareDiagonalaEcran = Float.parseFloat(textFieldDiagonalaEcran.getText());
-              
-              selectedPhone.setMarca(valoareMarca);
-              selectedPhone.setModel(valoareModel);
-              selectedPhone.setCantitate(valoareCantitate);
-              selectedPhone.setAnAparitie(valoareAnAparitie);
-              selectedPhone.setPret(valoarePret);              
-              selectedPhone.setProcesor(valoareProcesor);
-              selectedPhone.setTipEcran(valoareTipEcran);
-              selectedPhone.setCuloare(valoareCuloare);
-              selectedPhone.setFrecventaAntena(valoareFrecventaAntena);
-              selectedPhone.setSisOpTel(valoareSisOpTel);
-              selectedPhone.setTipIncarcare(valoareTipIncarcare);
-              selectedPhone.setTipSim(valoareTipSim);
-              selectedPhone.setRezCamere(valoareRezCamere);
-              selectedPhone.setMemorieROM(valoareMemorieROM);
-              selectedPhone.setRezEcran(valoareRezEcran);
-              selectedPhone.setmemorieRAM(valoareMemorieRAM);
-              selectedPhone.setNrCamere(valoareNrCamere);
-              selectedPhone.setMarimeBat(valoareMarimeBat);
-              selectedPhone.setDiagonalaEcran(Float.parseFloat(textFieldDiagonalaEcran.getText()));
-              telefoane[selectedIndex].setMarca(selectedPhone.getMarca());
-              JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(saveButton);
-              frame.dispose();
-              updateTextAreaWithSelectedPhone(selectedPhone);
+            if (selectedIndex >= 0 && selectedIndex < telefoane.length) {
+                JTextField textFieldMarca = new JTextField(selectedPhone.getMarca());
+                JTextField textFieldModel = new JTextField(selectedPhone.getModel());
+                JTextField textFieldCantitate = new JTextField(String.valueOf(selectedPhone.getCantitate()));
+                JTextField textFieldAnAparitie = new JTextField(String.valueOf(selectedPhone.getAnAparitie()));
+                JTextField textFieldPret = new JTextField(String.valueOf(selectedPhone.getPret()));
+                JTextField textFieldProcesor = new JTextField(selectedPhone.getProcesor());
+                JTextField textFieldTipEcran = new JTextField(selectedPhone.getTipEcran());
+                JTextField textFieldCuloare = new JTextField(selectedPhone.getCuloare());
+                JTextField textFieldFrecventaAntena = new JTextField(selectedPhone.getFrecventaAntena());
+                JTextField textFieldSisOpTel = new JTextField(selectedPhone.getSisOpTel());
+                JTextField textFieldTipIncarcare = new JTextField(selectedPhone.getTipIncarcare());
+                JTextField textFieldTipSim = new JTextField(selectedPhone.getTipSim());
+                JTextField textFieldRezEcran = new JTextField(selectedPhone.getRezEcran());
+                JTextField textFieldRezCamere = new JTextField(selectedPhone.getRezCamere());
+                JTextField textFieldMemorieROM = new JTextField(String.valueOf(selectedPhone.getMemorieROM()));
+                JTextField textFieldMemorieRAM = new JTextField(String.valueOf(selectedPhone.getMemorieRAM()));
+                JTextField textFieldNrCamere = new JTextField(String.valueOf(selectedPhone.getNrCamere()));
+                JTextField textFieldMarimeBat = new JTextField(String.valueOf(selectedPhone.getMarimeBat()));
+                JTextField textFieldDiagonalaEcran = new JTextField(String.valueOf(selectedPhone.getDiagonalaEcran()));
+
+                addLabelAndTextField(panel, "Marca:", textFieldMarca);
+                addLabelAndTextField(panel, "Model:", textFieldModel);
+                addLabelAndTextField(panel, "Cantitate:", textFieldCantitate);
+                addLabelAndTextField(panel, "An aparitie:", textFieldAnAparitie);
+                addLabelAndTextField(panel, "Pret:", textFieldPret);
+                addLabelAndTextField(panel, "Procesor:", textFieldProcesor);
+                addLabelAndTextField(panel, "Tip ecran:", textFieldTipEcran);
+                addLabelAndTextField(panel, "Culoare:", textFieldCuloare);
+                addLabelAndTextField(panel, "Frecventa antena:", textFieldFrecventaAntena);
+                addLabelAndTextField(panel, "Sistem de operare:", textFieldSisOpTel);
+                addLabelAndTextField(panel, "Tip încărcare:", textFieldTipIncarcare);
+                addLabelAndTextField(panel, "Tip SIM:", textFieldTipSim);
+                addLabelAndTextField(panel, "Rezoluție ecran:", textFieldRezEcran);
+                addLabelAndTextField(panel, "Rezoluție camere:", textFieldRezCamere);
+                addLabelAndTextField(panel, "Memorie ROM:", textFieldMemorieROM);
+                addLabelAndTextField(panel, "Memorie RAM:", textFieldMemorieRAM);
+                addLabelAndTextField(panel, "Număr camere:", textFieldNrCamere);
+                addLabelAndTextField(panel, "Mărime baterie:", textFieldMarimeBat);
+                addLabelAndTextField(panel, "Diagonala ecran:", textFieldDiagonalaEcran);
+                JButton saveButton = new JButton("Salvează");
+
+                saveButton.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        String valoareMarca = textFieldMarca.getText();
+                        String valoareModel = textFieldModel.getText();
+                        int valoareCantitate = Integer.parseInt(textFieldCantitate.getText());
+                        int valoareAnAparitie = Integer.parseInt(textFieldAnAparitie.getText());
+                        float valoarePret = Float.parseFloat(textFieldPret.getText());
+                        String valoareProcesor = textFieldProcesor.getText();
+                        String valoareTipEcran = textFieldTipEcran.getText();
+                        String valoareCuloare = textFieldCuloare.getText();
+                        String valoareFrecventaAntena = textFieldFrecventaAntena.getText();
+                        String valoareSisOpTel = textFieldSisOpTel.getText();
+                        String valoareTipIncarcare = textFieldTipIncarcare.getText();
+                        String valoareTipSim = textFieldTipSim.getText();
+                        String valoareRezEcran = textFieldRezEcran.getText();
+                        String valoareRezCamere = textFieldRezCamere.getText();
+                        int valoareMemorieROM = Integer.parseInt(textFieldMemorieROM.getText());
+                        int valoareMemorieRAM = Integer.parseInt(textFieldMemorieRAM.getText());
+                        int valoareNrCamere = Integer.parseInt(textFieldNrCamere.getText());
+                        int valoareMarimeBat = Integer.parseInt(textFieldMarimeBat.getText());
+                        float valoareDiagonalaEcran = Float.parseFloat(textFieldDiagonalaEcran.getText());
+
+                        selectedPhone.setMarca(valoareMarca);
+                        selectedPhone.setModel(valoareModel);
+                        selectedPhone.setCantitate(valoareCantitate);
+                        selectedPhone.setAnAparitie(valoareAnAparitie);
+                        selectedPhone.setPret(valoarePret);
+                        selectedPhone.setProcesor(valoareProcesor);
+                        selectedPhone.setTipEcran(valoareTipEcran);
+                        selectedPhone.setCuloare(valoareCuloare);
+                        selectedPhone.setFrecventaAntena(valoareFrecventaAntena);
+                        selectedPhone.setSisOpTel(valoareSisOpTel);
+                        selectedPhone.setTipIncarcare(valoareTipIncarcare);
+                        selectedPhone.setTipSim(valoareTipSim);
+                        selectedPhone.setRezCamere(valoareRezCamere);
+                        selectedPhone.setMemorieROM(valoareMemorieROM);
+                        selectedPhone.setRezEcran(valoareRezEcran);
+                        selectedPhone.setmemorieRAM(valoareMemorieRAM);
+                        selectedPhone.setNrCamere(valoareNrCamere);
+                        selectedPhone.setMarimeBat(valoareMarimeBat);
+                        selectedPhone.setDiagonalaEcran(Float.parseFloat(textFieldDiagonalaEcran.getText()));
+                        telefoane[selectedIndex].setMarca(selectedPhone.getMarca());
+                        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(saveButton);
+                        frame.dispose();
+                        updateTextAreaWithSelectedPhone(selectedPhone);
+                    }
+                });
+                panel.add(saveButton);
             }
-        });
-        panel.add(saveButton);
-    }
-        
-        popup.add(panel);
-        popup.setVisible(true);
+
+            popup.add(panel);
+            popup.setVisible(true);
     }//GEN-LAST:event_editButActionPerformed
     }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JDialog dialog = new JDialog(this, "Cautare", true);
+        dialog.setLayout(new GridLayout(25, 0, 30, 5));
+        jComboBox1.setSelectedIndex(0);
+
+        JTextField textFieldMarca = new JTextField();
+        JTextField textFieldModel = new JTextField();
+        JTextField textFieldCantitate = new JTextField();
+        JTextField textFieldAnAparitie = new JTextField();
+        JTextField textFieldPret = new JTextField();
+        JTextField textFieldProcesor = new JTextField();
+        JTextField textFieldTipEcran = new JTextField();
+        JTextField textFieldCuloare = new JTextField();
+        JTextField textFieldFrecventaAntena = new JTextField();
+        JTextField textFieldSisOpTel = new JTextField();
+        JTextField textFieldTipIncarcare = new JTextField();
+        JTextField textFieldTipSim = new JTextField();
+        JTextField textFieldRezEcran = new JTextField();
+        JTextField textFieldRezCamere = new JTextField();
+        JTextField textFieldMemorieROM = new JTextField();
+        JTextField textFieldMemorieRAM = new JTextField();
+        JTextField textFieldNrCamere = new JTextField();
+        JTextField textFieldMarimeBat = new JTextField();
+        JTextField textFieldDiagonalaEcran = new JTextField();
+
+        addLabelAndTextField(dialog, "Marca:", textFieldMarca);
+        addLabelAndTextField(dialog, "Model:", textFieldModel);
+        addLabelAndTextField(dialog, "Cantitate:", textFieldCantitate);
+        addLabelAndTextField(dialog, "An aparitie:", textFieldAnAparitie);
+        addLabelAndTextField(dialog, "Pret:", textFieldPret);
+        addLabelAndTextField(dialog, "Procesor:", textFieldProcesor);
+        addLabelAndTextField(dialog, "Tip ecran:", textFieldTipEcran);
+        addLabelAndTextField(dialog, "Culoare:", textFieldCuloare);
+        addLabelAndTextField(dialog, "Frecventa antena:", textFieldFrecventaAntena);
+        addLabelAndTextField(dialog, "Sistem de operare:", textFieldSisOpTel);
+        addLabelAndTextField(dialog, "Tip încărcare:", textFieldTipIncarcare);
+        addLabelAndTextField(dialog, "Tip SIM:", textFieldTipSim);
+        addLabelAndTextField(dialog, "Rezoluție ecran:", textFieldRezEcran);
+        addLabelAndTextField(dialog, "Rezoluție camere:", textFieldRezCamere);
+        addLabelAndTextField(dialog, "Memorie ROM:", textFieldMemorieROM);
+        addLabelAndTextField(dialog, "Memorie RAM:", textFieldMemorieRAM);
+        addLabelAndTextField(dialog, "Număr camere:", textFieldNrCamere);
+        addLabelAndTextField(dialog, "Mărime baterie:", textFieldMarimeBat);
+        addLabelAndTextField(dialog, "Diagonala ecran:", textFieldDiagonalaEcran);
+
+        StringBuilder resultBuilder = new StringBuilder();
+
+        JButton searchButton = new JButton("Cauta");
+        searchButton.addActionListener(event -> {
+            String marca = textFieldMarca.getText().trim();
+            String model = textFieldModel.getText().trim();
+            String cantitateText = textFieldCantitate.getText().trim();
+            String anAparitieText = textFieldAnAparitie.getText().trim();
+            String pretText = textFieldPret.getText().trim();
+            String procesor = textFieldProcesor.getText().trim();
+            String tipEcran = textFieldTipEcran.getText().trim();
+            String culoare = textFieldCuloare.getText().trim();
+            String frecventaAntena = textFieldFrecventaAntena.getText().trim();
+            String sisOpTel = textFieldSisOpTel.getText().trim();
+            String tipIncarcare = textFieldTipIncarcare.getText().trim();
+            String tipSim = textFieldTipSim.getText().trim();
+            String rezEcran = textFieldRezEcran.getText().trim();
+            String rezCamere = textFieldRezCamere.getText().trim();
+            String memorieROM = textFieldMemorieROM.getText().trim();
+            String memorieRAM = textFieldMemorieRAM.getText().trim();
+            String nrCamere = textFieldNrCamere.getText().trim();
+            String marimeBat = textFieldMarimeBat.getText().trim();
+            String diagonalaEcran = textFieldDiagonalaEcran.getText().trim();
+
+            java.util.List<Telefon> foundDevices = new ArrayList<>();
+            boolean emptyTextFields = false;
+
+            if (marca.isEmpty() && model.isEmpty()
+                    && cantitateText.isEmpty() && anAparitieText.isEmpty()
+                    && pretText.isEmpty() && procesor.isEmpty()
+                    && tipEcran.isEmpty() && culoare.isEmpty()
+                    && frecventaAntena.isEmpty() && sisOpTel.isEmpty()
+                    && tipIncarcare.isEmpty() && tipSim.isEmpty()
+                    && memorieROM.isEmpty() && rezEcran.isEmpty()
+                    && rezCamere.isEmpty() && memorieRAM.isEmpty()
+                    && nrCamere.isEmpty() && marimeBat.isEmpty()
+                    && diagonalaEcran.isEmpty()) {
+                emptyTextFields = true;
+            }
+
+            if (emptyTextFields) {
+                foundDevices.addAll(Arrays.asList(telefoane));
+            } else {
+                for (Telefon instance : telefoane) {
+                    boolean match = true;
+
+                    if (!marca.isEmpty() && !instance.getMarca().equals(marca)
+                            || !model.isEmpty() && !instance.getModel().equals(model)
+                            || !cantitateText.isEmpty() && instance.getCantitate() != Integer.parseInt(cantitateText)
+                            || !anAparitieText.isEmpty() && instance.getAnAparitie() != Integer.parseInt(anAparitieText)
+                            || !pretText.isEmpty() && instance.getPret() != Float.parseFloat(pretText)
+                            || !procesor.isEmpty() && !instance.getProcesor().equals(procesor)
+                            || !tipEcran.isEmpty() && !instance.getTipEcran().equals(tipEcran)
+                            || !culoare.isEmpty() && !instance.getCuloare().equals(culoare)
+                            || !frecventaAntena.isEmpty() && !instance.getFrecventaAntena().equals(frecventaAntena)
+                            || !sisOpTel.isEmpty() && !instance.getSisOpTel().equals(sisOpTel)
+                            || !tipIncarcare.isEmpty() && !instance.getTipIncarcare().equals(tipIncarcare)
+                            || !tipSim.isEmpty() && !instance.getTipSim().equals(tipSim)
+                            || !rezEcran.isEmpty() && !instance.getRezEcran().equals(rezEcran)
+                            || !rezCamere.isEmpty() && instance.getRezCamere().equals(rezCamere)
+                            || !memorieROM.isEmpty() && instance.getMemorieROM() != Integer.parseInt(memorieROM)
+                            || !memorieRAM.isEmpty() && instance.getMemorieRAM() != Integer.parseInt(memorieRAM)
+                            || !nrCamere.isEmpty() && instance.getNrCamere() != Integer.parseInt(nrCamere)
+                            || !marimeBat.isEmpty() && instance.getMarimeBat() != Integer.parseInt(marimeBat)
+                            || !diagonalaEcran.isEmpty() && instance.getDiagonalaEcran() != Float.parseFloat(diagonalaEcran)) {
+                        match = false;
+                    }
+
+                    if (match) {
+                        foundDevices.add(instance);
+                    }
+                }
+            }
+
+            if (foundDevices.isEmpty()) {
+                if (!emptyTextFields) {
+                    jTextArea1.setText("NU S-A GASIT NICIUN PRODUS");
+                    dialog.dispose();
+                }
+            } else {
+                for (Telefon telefon : foundDevices) {
+                    resultBuilder.append(telefon).append("\n\n");
+                }
+
+                jTextArea1.setText(resultBuilder.toString());
+                dialog.dispose();
+            }
+        });
+
+        dialog.add(searchButton);
+        dialog.setSize(600, 800);
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     private void addLabelAndTextField(JPanel panel, String labelText, JTextField textField) {
         JLabel label = new JLabel(labelText);
         panel.add(label);
         panel.add(textField);
     }
-    
+
+    private void addLabelAndTextField(JDialog panel, String labelText, JTextField textField) {
+        JLabel label = new JLabel(labelText);
+        panel.add(label);
+        panel.add(textField);
+    }
+
     private void initializareComboBox() {
         String[] numeTel = new String[telefoane.length];
-        for(int i = 0; i < telefoane.length; i++) {
+        for (int i = 0; i < telefoane.length; i++) {
             String marca = telefoane[i].getMarca();
             String model = telefoane[i].getModel();
             numeTel[i] = marca + " " + model;
@@ -288,22 +446,22 @@ public class telefoaneint extends javax.swing.JFrame {
         jComboBox1.setModel(new DefaultComboBoxModel<>(numeTel));
         jTextArea1.setText(telefoane[0].toString());
     }
-    
+
     // Metoda pentru a adăuga ActionListener la combobox
     private void adaugaActionListenerComboBox() {
         jComboBox1.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent e) {
-            int selectedIndex = jComboBox1.getSelectedIndex();
-            if (selectedIndex >= 0) {
-                Object obiectSelectat = telefoane[selectedIndex];
-                String textAfisat = obiectSelectat.toString();
-                jTextArea1.setText(textAfisat);
-                editBut.setVisible(true); // Facem butonul de editare vizibil
+            public void actionPerformed(ActionEvent e) {
+                int selectedIndex = jComboBox1.getSelectedIndex();
+                if (selectedIndex >= 0) {
+                    Object obiectSelectat = telefoane[selectedIndex];
+                    String textAfisat = obiectSelectat.toString();
+                    jTextArea1.setText(textAfisat);
+                    editBut.setVisible(true); // Facem butonul de editare vizibil
+                }
             }
-        }
-    });
+        });
     }
-     
+
     /**
      * @param args the command line arguments
      */
@@ -343,6 +501,7 @@ public class telefoaneint extends javax.swing.JFrame {
     private java.awt.Button backtest;
     private javax.swing.JButton editBut;
     private javax.swing.JMenuItem home;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;

@@ -4,14 +4,14 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.mycompany.magazinelectronice.*;
-import java.awt.*;
+import java.awt.GridLayout;
 import newpackage.*;
 
 public class desktopint extends javax.swing.JFrame {
     Instances inst = new Instances();
     
     Device[] desk = inst.getInstancesArray("desktopuri");
-    Desktops[] desktopuri = (Desktops[]) desk;
+    Desktopuri[] desktopuri = (Desktopuri[]) desk;
 
     public desktopint() {
         initComponents();
@@ -136,7 +136,7 @@ public class desktopint extends javax.swing.JFrame {
 
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(0, 2));
-        Desktops selectedDesktop = desktopuri[selectedIndex];
+        Desktopuri selectedDesktop = desktopuri[selectedIndex];
     
     if (selectedIndex >= 0 && selectedIndex < desktopuri.length) {
         JTextField textFieldMarca = new JTextField(selectedDesktop.getMarca());
@@ -253,7 +253,7 @@ public class desktopint extends javax.swing.JFrame {
         });
     }
     
-    private void updateTextAreaWithSelectedLaptop(Desktops selectedDesktop) {
+    private void updateTextAreaWithSelectedLaptop(Desktopuri selectedDesktop) {
         jTextArea1.setText(selectedDesktop.toString());
     }
 

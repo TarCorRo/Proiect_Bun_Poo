@@ -50,18 +50,18 @@ public class Instances {
         Laptop l11 = new Laptop();
         Laptop l12 = new Laptop(l1);
         
-        Desktops d1 = new Desktops("HP", "Pavilion", "Intel i5", "Black", "2666 MHz", "Windows 10", "Integrated", "N/A", "USB, HDMI", 2020, 30, 8, 4, 900.0f, 7.5f);
-        Desktops d2 = new Desktops("Dell", "Inspiron", "AMD Ryzen 7", "Silver", "3200 MHz", "Windows 11", "NVIDIA GeForce GTX 1650", "4GB GDDR5", "USB-C, HDMI", 2021, 25, 16, 6, 1200.0f, 8.2f);
-        Desktops d3 = new Desktops("Lenovo", "IdeaCentre", "Intel i7", "White", "2933 MHz",  "Windows 10", "AMD Radeon RX 550", "2GB GDDR5", "USB, HDMI", 2019, 20, 12, 5, 800.0f, 6.8f);
-        Desktops d4 = new Desktops("Acer", "Aspire", "Intel i3", "Black", "2400 MHz",  "Windows 10", "Integrated", "N/A", "USB, VGA", 2022, 35, 4, 3, 500.0f, 5.0f);
-        Desktops d5 = new Desktops("Asus", "ROG Strix", "AMD Ryzen 9", "Gray", "3600 MHz", "Windows 10", "NVIDIA GeForce RTX 3080", "10GB GDDR6X", "USB-C, HDMI", 2022, 15, 32, 8, 2500.0f, 10.5f);
-        Desktops d6 = new Desktops("Apple", "Mac mini", "Apple M1", "Silver", "4266 MHz", "macOS Monterey", "Integrated", "N/A", "Thunderbolt 4, HDMI", 2021, 18, 16, 4, 1500.0f, 3.0f);
-        Desktops d7 = new Desktops("CyberPowerPC", "Gamer Xtreme VR", "Intel i9", "Black", "3200 MHz", "Windows 10", "NVIDIA GeForce RTX 3060", "12GB GDDR6", "USB, HDMI", 2021, 10, 64, 6, 1800.0f, 15.0f);
-        Desktops d8 = new Desktops("Alienware", "Aurora R12", "Intel i7", "Dark Side of the Moon", "3200 MHz", "Windows 11", "NVIDIA GeForce RTX 3070", "8GB GDDR6", "USB-C, HDMI", 2020, 22, 32, 5, 2000.0f, 12.8f);
-        Desktops d9 = new Desktops("MSI", "Infinite X", "Intel i5", "Black", "2666 MHz", "Windows 10", "NVIDIA GeForce GTX 1660 Ti", "6GB GDDR5", "USB, HDMI", 2021, 28, 8, 4, 1100.0f, 9.3f);
-        Desktops d10 = new Desktops("Custom", "Build", "AMD Ryzen 5", "RGB", "3200 MHz", "Windows 10", "N/A", "N/A", "USB, HDMI", 2022, 15, 16, 6, 1500.0f, 8.0f);
-        Desktops d11 = new Desktops();
-        Desktops d12 = new Desktops(d1);
+        Desktopuri d1 = new Desktopuri("HP", "Pavilion", "Intel i5", "Black", "2666 MHz", "Windows 10", "Integrated", "N/A", "USB, HDMI", 2020, 30, 8, 4, 900.0f, 7.5f);
+        Desktopuri d2 = new Desktopuri("Dell", "Inspiron", "AMD Ryzen 7", "Silver", "3200 MHz", "Windows 11", "NVIDIA GeForce GTX 1650", "4GB GDDR5", "USB-C, HDMI", 2021, 25, 16, 6, 1200.0f, 8.2f);
+        Desktopuri d3 = new Desktopuri("Lenovo", "IdeaCentre", "Intel i7", "White", "2933 MHz",  "Windows 10", "AMD Radeon RX 550", "2GB GDDR5", "USB, HDMI", 2019, 20, 12, 5, 800.0f, 6.8f);
+        Desktopuri d4 = new Desktopuri("Acer", "Aspire", "Intel i3", "Black", "2400 MHz",  "Windows 10", "Integrated", "N/A", "USB, VGA", 2022, 35, 4, 3, 500.0f, 5.0f);
+        Desktopuri d5 = new Desktopuri("Asus", "ROG Strix", "AMD Ryzen 9", "Gray", "3600 MHz", "Windows 10", "NVIDIA GeForce RTX 3080", "10GB GDDR6X", "USB-C, HDMI", 2022, 15, 32, 8, 2500.0f, 10.5f);
+        Desktopuri d6 = new Desktopuri("Apple", "Mac mini", "Apple M1", "Silver", "4266 MHz", "macOS Monterey", "Integrated", "N/A", "Thunderbolt 4, HDMI", 2021, 18, 16, 4, 1500.0f, 3.0f);
+        Desktopuri d7 = new Desktopuri("CyberPowerPC", "Gamer Xtreme VR", "Intel i9", "Black", "3200 MHz", "Windows 10", "NVIDIA GeForce RTX 3060", "12GB GDDR6", "USB, HDMI", 2021, 10, 64, 6, 1800.0f, 15.0f);
+        Desktopuri d8 = new Desktopuri("Alienware", "Aurora R12", "Intel i7", "Dark Side of the Moon", "3200 MHz", "Windows 11", "NVIDIA GeForce RTX 3070", "8GB GDDR6", "USB-C, HDMI", 2020, 22, 32, 5, 2000.0f, 12.8f);
+        Desktopuri d9 = new Desktopuri("MSI", "Infinite X", "Intel i5", "Black", "2666 MHz", "Windows 10", "NVIDIA GeForce GTX 1660 Ti", "6GB GDDR5", "USB, HDMI", 2021, 28, 8, 4, 1100.0f, 9.3f);
+        Desktopuri d10 = new Desktopuri("Custom", "Build", "AMD Ryzen 5", "RGB", "3200 MHz", "Windows 10", "N/A", "N/A", "USB, HDMI", 2022, 15, 16, 6, 1500.0f, 8.0f);
+        Desktopuri d11 = new Desktopuri();
+        Desktopuri d12 = new Desktopuri(d1);
 
         BoxaPortabila boxa1 = new BoxaPortabila("Sony", "XB20", "Alb", "Bluetooth", "Litiu-ion", 199.99f, 4.0f, 60.0f, 100, 2018, 8, 85, 1200, 10, 15, 5);
         BoxaPortabila boxa2 = new BoxaPortabila("JBL", "Flip 4", "Negru", "Bluetooth", "Litiu-polimer", 149.99f, 4.2f, 50.0f, 150, 2017, 6, 80, 3000, 12, 20, 8);
@@ -118,7 +118,7 @@ public class Instances {
         Telefon[] telefoane = {tel2, tel3, tel4, tel5, tel6, tel7, tel8, tel9, tel10, tel11};
         Tableta[] teblete = {tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11};
         Laptop[] laptopuri = {l1, l2, l3, l4, l5, l6, l7, l8, l9, l10};
-        Desktops[] desktopuri = {d1, d2, d3, d4, d5, d6, d7, d8, d9,  d10};
+        Desktopuri[] desktopuri = {d1, d2, d3, d4, d5, d6, d7, d8, d9,  d10};
         Casti[] casti = {casti1, casti2, casti3, casti4, casti5, casti6, casti7, casti8, casti9, casti10};
         BoxaPortabila[] boxe = {boxa1, boxa2, boxa3, boxa4, boxa5, boxa6, boxa7, boxa8, boxa9, boxa10};
         Smartwatch[] smartwatchuri = {smartwatch1, smartwatch2, smartwatch3, smartwatch4, smartwatch5, smartwatch6, smartwatch7, smartwatch8, smartwatch9, smartwatch10};
