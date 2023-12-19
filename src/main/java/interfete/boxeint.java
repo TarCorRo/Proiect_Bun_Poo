@@ -10,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.mycompany.magazinelectronice.*;
 import java.awt.*;
+import java.util.*;
+import java.util.List;
 import newpackage.*;
 
 public class boxeint extends javax.swing.JFrame {
@@ -23,7 +25,8 @@ public class boxeint extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
         initializareComboBox(); 
-        adaugaActionListenerComboBox();    
+        adaugaActionListenerComboBox();  
+        jButton1.setVisible(false);
     }
 
     /**
@@ -41,6 +44,7 @@ public class boxeint extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         intclienti = new javax.swing.JMenu();
         home = new javax.swing.JMenuItem();
@@ -77,6 +81,13 @@ public class boxeint extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Search");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         intclienti.setText("Home");
 
         home.setText("Home");
@@ -107,7 +118,9 @@ public class boxeint extends javax.swing.JFrame {
                             .addComponent(jComboBox1, 0, 300, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(40, 40, 40)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(40, 40, 40))))
         );
         layout.setVerticalGroup(
@@ -122,10 +135,13 @@ public class boxeint extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 450, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addComponent(jScrollPane1))
-                .addGap(74, 74, 74))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addGap(15, 15, 15))
         );
 
         pack();
@@ -249,26 +265,157 @@ public class boxeint extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        JDialog dialog = new JDialog(this, "Cautare", true);
+        dialog.setLayout(new GridLayout(25, 0, 25, 10));
+        jComboBox1.setSelectedIndex(0);
+        JTextField textFieldMarca = new JTextField();
+        JTextField textFieldModel = new JTextField();
+        JTextField textFieldCantitate = new JTextField();
+        JTextField textFieldAnAparitie = new JTextField();
+        JTextField textFieldPret = new JTextField();
+        JTextField textFieldCuloare= new JTextField();
+        JTextField textFieldTipConectivitate= new JTextField();
+        JTextField textFieldTipBaterie= new JTextField();
+        JTextField textFieldVariantaBluetooth= new JTextField();
+        JTextField textFieldRaspunsInFrecventa= new JTextField();
+        JTextField textFieldImpedantaNominala= new JTextField();
+        JTextField textFieldSpl= new JTextField();
+        JTextField textFieldCapacitateaBaterie= new JTextField();
+        JTextField textFieldLatime= new JTextField();
+        JTextField textFieldLungime= new JTextField();
+        JTextField textFieldAdancime= new JTextField(); 
+
+        addLabelAndTextField1(dialog, "Marca:", textFieldMarca);
+        addLabelAndTextField1(dialog, "Model:", textFieldModel);
+        addLabelAndTextField1(dialog, "Cantitate:", textFieldCantitate);
+        addLabelAndTextField1(dialog, "An aparitie:", textFieldAnAparitie);
+        addLabelAndTextField1(dialog, "Pret:", textFieldPret);
+        addLabelAndTextField1(dialog, "Culoare:", textFieldCuloare);
+        addLabelAndTextField1(dialog, "Tip conectivitate:", textFieldTipConectivitate); 
+        addLabelAndTextField1(dialog, "Tip baterie:", textFieldTipBaterie);
+        addLabelAndTextField1(dialog, "Varianta Bluetooth:", textFieldVariantaBluetooth);
+        addLabelAndTextField1(dialog, "raspuns in frecventa:", textFieldRaspunsInFrecventa);
+        addLabelAndTextField1(dialog, "Impedanta nominala:", textFieldImpedantaNominala);
+        addLabelAndTextField1(dialog, "Spl:", textFieldSpl);
+        addLabelAndTextField1(dialog, "Capacitate baterie:", textFieldCapacitateaBaterie);
+        addLabelAndTextField1(dialog, "Latime:", textFieldLatime);
+        addLabelAndTextField1(dialog, "Lungime:", textFieldLungime);
+        addLabelAndTextField1(dialog, "Adancime:", textFieldAdancime);
+        
+        StringBuilder resultBuilder = new StringBuilder();
+
+        JButton searchButton = new JButton("Cauta");
+        searchButton.addActionListener(event -> { 
+            String marca = textFieldMarca.getText().trim();
+            String model = textFieldModel.getText().trim();
+            String cantitateText = textFieldCantitate.getText().trim();
+            String anAparitieText = textFieldAnAparitie.getText().trim();
+            String pretText = textFieldPret.getText().trim();
+            String culoare = textFieldCuloare.getText().trim();
+            String tipConectivitate = textFieldTipConectivitate.getText().trim();
+            String tipBaterie = textFieldTipBaterie.getText().trim();
+            String variantaBluetooth = textFieldVariantaBluetooth.getText().trim();
+            String raspunsInFrecventa = textFieldRaspunsInFrecventa.getText().trim();
+            String impedantaNominala = textFieldImpedantaNominala.getText().trim(); 
+            String spl = textFieldSpl.getText().trim();
+            String capacitateBaterie = textFieldCapacitateaBaterie.getText().trim();
+            String latime = textFieldLatime.getText().trim();
+            String lungime = textFieldLungime.getText().trim();
+            String adancime = textFieldAdancime.getText().trim(); 
+            
+            List<BoxaPortabila> foundDevices = new ArrayList<>();
+            boolean emptyTextFields = false;
+            
+            if (marca.isEmpty() && model.isEmpty() 
+                && cantitateText.isEmpty() && anAparitieText.isEmpty() 
+                && pretText.isEmpty() && culoare.isEmpty()
+                && tipConectivitate.isEmpty() && tipBaterie.isEmpty()
+                && variantaBluetooth.isEmpty() && raspunsInFrecventa.isEmpty()
+                && impedantaNominala.isEmpty() && spl.isEmpty()
+                && capacitateBaterie.isEmpty() && latime.isEmpty()
+                && lungime.isEmpty() && adancime.isEmpty() )  {
+                    emptyTextFields = true;
+            }
+             if(emptyTextFields) {
+                foundDevices.addAll(Arrays.asList(boxe));
+            } else {
+                for (BoxaPortabila instance :boxe) {
+                    boolean match = true;
+                    
+                    if (!marca.isEmpty() && !instance.getMarca().equals(marca)
+                        || !model.isEmpty() && !instance.getModel().equals(model)
+                        || !cantitateText.isEmpty() && instance.getCantitate() != Integer.parseInt(cantitateText)
+                        || !anAparitieText.isEmpty() && instance.getAnAparitie() != Integer.parseInt(anAparitieText)
+                        || !pretText.isEmpty() && instance.getPret() != Float.parseFloat(pretText)
+                        || !culoare.isEmpty()  && instance.getCuloare().equals(culoare)
+                        || !tipConectivitate.isEmpty() && !instance.getTipConectivitate().equals(tipConectivitate)
+                        || !tipBaterie.isEmpty() && !instance.getTipBaterie().equals(tipBaterie)
+                        || !variantaBluetooth.isEmpty() && instance.getVariantaBluetooth() != Float.parseFloat(variantaBluetooth)
+                        || !raspunsInFrecventa.isEmpty() && instance.getRaspunsInFrecventa() != Float.parseFloat(raspunsInFrecventa)
+                        || !impedantaNominala.isEmpty() && instance.getImpedantaNominala() != Integer.parseInt(impedantaNominala)
+                        || !spl.isEmpty() && instance.getSpl() != Integer.parseInt(spl)
+                        || !capacitateBaterie.isEmpty() && instance.getCapacitateBaterie() != Integer.parseInt(capacitateBaterie)
+                       // || !lungime.isEmpty() && instance.getLungime() != Integer.parseInt(lungime)
+                        || !latime.isEmpty() && instance.getLatime() != Integer.parseInt(latime)   
+                        || !adancime.isEmpty() && instance.getAdancime() != Integer.parseInt(adancime)){
+                        match = false;
+                    }
+                    
+                if (match) foundDevices.add(instance);
+                }
+            }
+
+            if (foundDevices.isEmpty()) {
+                if(!emptyTextFields) {
+                    jTextArea1.setText("NU S-A GASIT NICIUN PRODUS");
+                    dialog.dispose();
+                }
+            }
+            else {
+                for (BoxaPortabila boxe : foundDevices) {
+                    resultBuilder.append(boxe).append("\n\n");
+                }
+                
+                jTextArea1.setText(resultBuilder.toString());
+                dialog.dispose();
+            }
+        });
+
+        dialog.add(searchButton);
+        dialog.setSize(600, 800);
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
+                                   
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     private void updateTextAreaWithSelectedBoxa(BoxaPortabila selectedBoxa) {
         jTextArea1.setText(selectedBoxa.toString());
     }
                                       
-      private void addLabelAndTextField(JPanel panel, String labelText, JTextField textField) {
+     private void addLabelAndTextField(JPanel panel, String labelText, JTextField textField) {
         JLabel label = new JLabel(labelText);
         panel.add(label);
         panel.add(textField);
     }
 
+     private void addLabelAndTextField1(JDialog panel, String labelText, JTextField textField) {
+        JLabel label = new JLabel(labelText);
+        panel.add(label);
+        panel.add(textField);
+        
+    }
 
  private void initializareComboBox() {
-        String[] numeBoxa = new String[boxe.length];
+        String[] numeBoxa = new String[boxe.length + 1];
+        numeBoxa[0] = "Alege Boxa";
+        
         for(int i = 0; i < boxe.length; i++) {
             String marca = boxe[i].getMarca();
             String model = boxe[i].getModel();
-            numeBoxa[i] = marca + " " + model;
+            numeBoxa[i + 1] = marca + " " + model;
         }
         jComboBox1.setModel(new DefaultComboBoxModel<>(numeBoxa));
-        jTextArea1.setText(boxe[0].toString());
     }
 
 
@@ -277,8 +424,8 @@ public class boxeint extends javax.swing.JFrame {
         jComboBox1.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
             int selectedIndex = jComboBox1.getSelectedIndex();
-            if (selectedIndex >= 0) {
-                Object obiectSelectat = boxe[selectedIndex];
+            if (selectedIndex >= 1 && selectedIndex - 1 < boxe.length) {
+                Object obiectSelectat = boxe[selectedIndex - 1];
                 String textAfisat = obiectSelectat.toString();
                 jTextArea1.setText(textAfisat);
                 jButton1.setVisible(true);
@@ -328,6 +475,7 @@ public class boxeint extends javax.swing.JFrame {
     private javax.swing.JMenuItem home;
     private javax.swing.JMenu intclienti;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
