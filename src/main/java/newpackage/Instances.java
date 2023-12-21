@@ -5,6 +5,7 @@
 package newpackage;
 
 import com.mycompany.magazinelectronice.*;
+import fileactions.*;
 
 /**
  *
@@ -132,7 +133,7 @@ public class Instances {
            fitnessBand1, fitnessBand2, fitnessBand3, fitnessBand4, fitnessBand5, fitnessBand6, fitnessBand7, fitnessBand8, fitnessBand9, fitnessBand10,
         };
         
-       Device[] testClase = {
+        Device[] testClase = {
            tab1, tab2, tab12,
            tel1, tel2, tel12,
            l1, l11, l12,
@@ -141,7 +142,12 @@ public class Instances {
            casti1, casti11, casti12,
            smartwatch1, smartwatch11, smartwatch12,
            fitnessBand1, fitnessBand11, fitnessBand12
-       };
+        };
+       
+        LaptopFileActions laptopFileActions = new LaptopFileActions();
+        DesktopFileActions desktopFileActions = new DesktopFileActions();
+        Laptop[] laptops = laptopFileActions.readFile("Assets/Laptops.txt");
+        Desktopuri[] desktops = desktopFileActions.readFile("Assets/Desktops.txt");
        
        public Device[] getInstancesArray(String type) {
            switch (type) {
@@ -154,9 +160,9 @@ public class Instances {
             case "teblete":
                 return teblete;
             case "laptopuri":
-                return laptopuri;
+                return laptops;
             case "desktopuri":
-                return desktopuri;
+                return desktops;
             case "casti":
                 return casti;
             case "boxe":

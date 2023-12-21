@@ -1,0 +1,159 @@
+marca: HP
+model: Pavilion
+cantitate: 30
+anAparitie: 2020
+pret: 900.0
+procesor: Intel i5
+culoare: Black
+frecventaRam: 2666 MHz
+sistemDeOperare: Windows 10
+tipPlacaVideo: Integrated
+modelPlacaVideo: N/A
+tipPorturi: USB, HDMI
+memorieRam: 8
+nrPorturi: 4
+greutate: 7.5
+
+marca: Dell
+model: Inspiron
+cantitate: 25
+anAparitie: 2021
+pret: 1200.0
+procesor: AMD Ryzen 7
+culoare: Silver
+frecventaRam: 3200 MHz
+sistemDeOperare: Windows 11
+tipPlacaVideo: NVIDIA GeForce GTX 1650
+modelPlacaVideo: 4GB GDDR5
+tipPorturi: USB-C, HDMI
+memorieRam: 16
+nrPorturi: 6
+greutate: 8.2
+
+marca: Lenovo
+model: IdeaCentre
+cantitate: 20
+anAparitie: 2019
+pret: 800.0
+procesor: Intel i7
+culoare: White
+frecventaRam: 2933 MHz
+sistemDeOperare: Windows 10
+tipPlacaVideo: AMD Radeon RX 550
+modelPlacaVideo: 2GB GDDR5
+tipPorturi: USB, HDMI
+memorieRam: 12
+nrPorturi: 5
+greutate: 6.8
+
+marca: Acer
+model: Aspire
+cantitate: 35
+anAparitie: 2022
+pret: 500.0
+procesor: Intel i3
+culoare :Black
+frecventaRam: 2400 MHz
+sistemDeOperare: Windows 10
+tipPlacaVideo: Integrated
+modelPlacaVideo: N/A
+tipPorturi: USB, VGA
+memorieRam: 4
+nrPorturi: 3
+greutate: 5.0
+
+marca: Asus
+model: ROG Strix
+cantitate: 15
+anAparitie: 2022
+pret: 2500.0 
+procesor: AMD Ryzen 9
+culoare: Gray
+frecventaRam: 3600 MHz
+sistemDeOperare: Windows 10
+tipPlacaVideo: NVIDIA GeForce RTX 3080
+modelPlacaVideo: 10GB GDDR6X
+tipPorturi: USB-C, HDMI
+memorieRam: 32
+nrPorturi: 8
+greutate: 10.5
+
+marca: Apple
+model: Mac mini
+cantitate: 18
+anAparitie: 2021
+pret: 1500.0 
+procesor: Apple M1
+culoare: Silver
+frecventaRam: 4266 MHz
+sistemDeOperare: macOS Monterey
+tipPlacaVideo: Integrated
+modelPlacaVideo: N/A
+tipPorturi: Thunderbolt 4, HDMI
+memorieRam: 16
+nrPorturi: 4
+greutate: 3.0
+
+marca: CyberPowerPC
+model: Gamer Xtreme VR
+cantitate: 10
+anAparitie: 2021
+pret: 1800.0 
+procesor: Intel i9
+culoare: Black
+frecventaRam: 3200 MHz
+sistemDeOperare: Windows 10
+tipPlacaVideo: NVIDIA GeForce RTX 3060
+modelPlacaVideo: 12GB GDDR6
+tipPorturi: USB, HDMI
+memorieRam: 64
+nrPorturi: 6
+greutate: 15.0
+
+marca: Alienware
+model: Aurora R12
+cantitate: 22
+anAparitie: 2020
+pret: 2000.0 
+procesor: Intel i7
+culoare: Dark Side of the Moon
+frecventaRam: 3200 MHz
+sistemDeOperare: Windows 11
+tipPlacaVideo: NVIDIA GeForce RTX 3070
+modelPlacaVideo: 8GB GDDR6
+tipPorturi: USB-C, HDMI
+memorieRam: 32
+nrPorturi: 5
+greutate: 12.8
+
+marca: MSI
+model: Infinite X
+cantitate: 28
+anAparitie: 2021
+pret: 1100.0 
+procesor: Intel i5
+culoare: Black
+frecventaRam: 2666 MHz
+sistemDeOperare: Windows 10
+tipPlacaVideo: NVIDIA GeForce GTX 1660 Ti
+modelPlacaVideo: 6GB GDDR5
+tipPorturi: USB, HDMI
+memorieRam: 8
+nrPorturi: 4
+greutate: 9.3
+
+marca: Custom
+model: Build
+cantitate: 15
+anAparitie: 2022
+pret: 1500.0 
+procesor: AMD Ryzen 5
+culoare: RGB
+frecventaRam: 3200 MHz
+sistemDeOperare: Windows 10
+tipPlacaVideo: N/A
+modelPlacaVideo: N/A
+tipPorturi: USB, HDMI
+memorieRam: 16
+nrPorturi: 6
+greutate: 8.0
