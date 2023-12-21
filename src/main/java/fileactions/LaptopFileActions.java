@@ -6,6 +6,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import com.mycompany.magazinelectronice.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 
 public class LaptopFileActions {
     Laptop[] laptopArray = new Laptop[10];
@@ -112,5 +115,83 @@ public class LaptopFileActions {
         }
         
         return laptopArray;
+    }
+    
+    public void writeToFile(String filePath, Laptop[] laptopArray) {
+        try {
+            File file = new File(filePath);
+
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+                for (Laptop laptop : laptopArray) {
+                    writer.write("marca: " + laptop.getMarca());
+                    writer.newLine();
+
+                    writer.write("model: " + laptop.getModel());
+                    writer.newLine();
+                    
+                    writer.write("cantitate: " + laptop.getCantitate());
+                    writer.newLine();
+                    
+                    writer.write("anAparitie: " + laptop.getAnAparitie());
+                    writer.newLine();
+                    
+                    writer.write("pret: " + laptop.getPret());
+                    writer.newLine();
+
+                    writer.write("procesor: " + laptop.getProcesor());
+                    writer.newLine();
+                    
+                    writer.write("tipEcran: " + laptop.getTipEcran());
+                    writer.newLine();
+
+                    writer.write("culoare: " + laptop.getCuloare());
+                    writer.newLine();
+
+                    writer.write("frecventaRam: " + laptop.getFrecventaRam());
+                    writer.newLine();
+
+                    writer.write("sistemDeOperare: " + laptop.getSistemDeOperare());
+                    writer.newLine();
+
+                    writer.write("tipPlacaVideo: " + laptop.getTipPlacaVideo());
+                    writer.newLine();
+
+                    writer.write("modelPlacaVideo: " + laptop.getModelPlacaVideo());
+                    writer.newLine();
+
+                    writer.write("tipPorturi: " + laptop.getTipPorturi());
+                    writer.newLine();
+                    
+                    writer.write("autonomieBat: " + laptop.getAutonomieBat());
+                    writer.newLine();
+
+                    writer.write("memorieRam: " + laptop.getMemorieRam());
+                    writer.newLine();
+                    
+                    writer.write("nrCamere: " + laptop.getNrCamere());
+                    writer.newLine();
+                    
+                    writer.write("rezCamere: " + laptop.getRezCamere());
+                    writer.newLine();
+                    
+                    writer.write("marimeBat: " + laptop.getMarimeBat());
+                    writer.newLine();
+
+                    writer.write("nrPorturi: " + laptop.getNrPorturi());
+                    writer.newLine();
+
+                    writer.write("greutate: " + laptop.getGreutate());
+                    writer.newLine();
+                    
+                    writer.write("diagonalaEcran: " + laptop.getDiagonalaEcran());
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
