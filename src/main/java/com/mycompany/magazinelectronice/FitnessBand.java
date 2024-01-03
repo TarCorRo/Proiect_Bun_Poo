@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 public class FitnessBand extends Device {
   
-    public String Procesor, TipEcran, Culoare, SistemDeOperareSmtWtc, Capabilities, TipIncarcare, TipSim, Senzori, MatCurea, MatCarcasa;
+    public String Procesor, TipEcran, Culoare, SistemDeOperareFB, Capabilities, TipIncarcare, TipSim, Senzori, MatCurea, MatCarcasa;
     public float DiagonalaEcran, DimCarcasa;
     public int RezEcran, MemorieROM, MemorieRAM, MarimeBat;
     
@@ -22,7 +22,7 @@ public class FitnessBand extends Device {
         this.Procesor = null;
         this.TipEcran = null;
         this.Culoare = null;
-        this.SistemDeOperareSmtWtc = null;
+        this.SistemDeOperareFB = null;
         this.Capabilities = null;
         this.TipIncarcare = null;
         this.TipSim = null;
@@ -38,7 +38,7 @@ public class FitnessBand extends Device {
     }
    
     //Constructor cu parametri
-    public FitnessBand(String Marca, String Model, String Procesor, String TipEcran, String Culoare, String SistemDeOperareSmtWtc, String Capabilities, 
+    public FitnessBand(String Marca, String Model, String Procesor, String TipEcran, String Culoare, String SistemDeOperareFB, String Capabilities, 
             String TipIncarcare, String TipSim, String Senzori, String MatCurea, String MatCarcasa,
             float Pret, float DiagonalaEcran, float DimCarcasa, int Cantitate, int RezEcran, int MemorieROM,
             int MemorieRAM, int AnAparitie, int MarimeBat ){
@@ -47,7 +47,7 @@ public class FitnessBand extends Device {
         this.TipEcran=TipEcran;
         this.TipIncarcare=TipIncarcare;
         this.Culoare=Culoare;
-        this.SistemDeOperareSmtWtc=SistemDeOperareSmtWtc;
+        this.SistemDeOperareFB=SistemDeOperareFB;
         this.Capabilities = Capabilities;
         this.TipSim= TipSim;
         this.Senzori= Senzori;
@@ -67,7 +67,7 @@ public class FitnessBand extends Device {
         this.Procesor = other.Procesor;
         this.TipEcran = other.TipEcran;
         this.Culoare = other.Culoare;
-        this.SistemDeOperareSmtWtc = other.SistemDeOperareSmtWtc;
+        this.SistemDeOperareFB = other.SistemDeOperareFB;
         this.Capabilities = other.Capabilities;
         this.TipIncarcare = other.TipIncarcare;
         this.TipSim = other.TipSim;
@@ -103,12 +103,12 @@ public class FitnessBand extends Device {
       //culoare = SmtWtc.nextLine();
       this.Culoare = culoare;
     }
-     public String getSistemDeOperareSmtWtc(){
-        return SistemDeOperareSmtWtc;
+     public String getSistemDeOperareFB(){
+        return SistemDeOperareFB;
     }
-    public void setSistemDeOperareSmtWtc(String sistemDeOpSmtWtc){
+    public void setSistemDeOperareFB(String sistemDeOpFB){
       //sistemDeOpSmtWtc = SmtWtc.nextLine();
-      this.SistemDeOperareSmtWtc = sistemDeOpSmtWtc;
+      this.SistemDeOperareFB = sistemDeOpFB;
     }
     public String getCapabilities(){
         return Capabilities;
@@ -212,7 +212,7 @@ public class FitnessBand extends Device {
             "\nProcesor: " + Procesor +
             "\nTipEcran: " + TipEcran +
             "\nCuloare: " + Culoare +
-            "\nSistem de Operare: " + SistemDeOperareSmtWtc +
+            "\nSistem de Operare: " + SistemDeOperareFB +
             "\nCapabilities: " + Capabilities +
             "\nTip Incarcare: " + TipIncarcare +
             "\nTip Sim: " + TipSim +

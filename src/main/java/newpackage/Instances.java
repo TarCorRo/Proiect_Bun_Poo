@@ -148,6 +148,10 @@ public class Instances {
         DesktopFileActions desktopFileActions = new DesktopFileActions();
         Laptop[] laptops = laptopFileActions.readFile("Assets/Laptops.txt");
         Desktopuri[] desktops = desktopFileActions.readFile("Assets/Desktops.txt");
+        SmartwatchFileActions smartwatchFileActions = new SmartwatchFileActions();
+        FitnessBandFileActions fitnessBandFileActions = new FitnessBandFileActions();
+        Smartwatch[] smartwatch = smartwatchFileActions.readFile("Assets/Smartwatch.txt");
+        FitnessBand[] fitnesBand = fitnessBandFileActions.readFile("Assets/FitnesBand.txt");
        
        public Device[] getInstancesArray(String type) {
            switch (type) {
