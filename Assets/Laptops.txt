@@ -1,0 +1,229 @@
+marca: Dell
+model: XPS 13
+cantitate: 50
+anAparitie: 2021
+pret: 1200.0
+rezEcran: 1920x1080
+procesor: Intel i7
+tipEcran: LED
+culoare: Silver
+frecventaRam: 2666 MHz
+sistemDeOperare: Windows 10
+tipPlacaVideo: Integrated
+modelPlacaVideo: N/A
+tipPorturi: USB-C, Thunderbolt 3
+autonomieBat: 10 ore
+memorieRam: 16
+nrCamere: 1
+rezCamere: 8
+marimeBat: 5000
+nrPorturi: 3
+diagonalaEcran: 13.0
+greutate: 2.7
+
+marca: HP
+model: Spectre x360
+cantitate: 30
+anAparitie: 2022
+pret: 1500.0
+rezEcran: 2560x1440
+procesor: Intel i5
+tipEcran: OLED
+culoare: Dark Ash
+frecventaRam: 2400 MHz
+sistemDeOperare: Windows 11
+tipPlacaVideo: Integrated
+modelPlacaVideo: N/A
+tipPorturi: USB-C, HDMI
+autonomieBat: 12 ore
+memorieRam: 8
+nrCamere: 2
+rezCamere: 12
+marimeBat: 6000
+nrPorturi: 4
+diagonalaEcran: 2.8
+greutate: 15.6
+
+marca: Lenovo
+model: ThinkPad X1 Carbon
+cantitate: 40
+anAparitie: 2021
+pret: 1400.0
+rezEcran: 2560x1440
+procesor: Intel i7
+tipEcran: IPS
+culoare: Black
+frecventaRam: 3200 MHz
+sistemDeOperare: Windows 10 Pro
+tipPlacaVideo: Integrated
+modelPlacaVideo: N/A
+tipPorturi: USB-C, HDMI
+autonomieBat: 15 ore
+memorieRam: 16
+nrCamere: 1
+rezCamere: 8
+marimeBat: 5500
+nrPorturi: 3
+diagonalaEcran: 2.5
+greutate: 1.4
+
+marca: Asus
+model: ROG Zephyrus G14
+cantitate: 20
+anAparitie: 2020
+pret: 2000.0
+rezEcran: 1920x1080
+procesor: AMD Ryzen 9
+tipEcran: IPS
+culoare: Moonlight White
+frecventaRam: 3200 MHz
+sistemDeOperare: Windows 10
+tipPlacaVideo: NVIDIA GeForce RTX 3060
+modelPlacaVideo: 6GB GDDR6
+tipPorturi: USB-C, HDMI
+autonomieBat: 10 ore
+memorieRam: 32
+nrCamere: 0
+rezCamere: 0
+marimeBat: 4800
+nrPorturi: 2
+diagonalaEcran: 3.5
+greutate: 1.7
+
+marca: Apple
+model: MacBook Air
+cantitate: 25
+anAparitie: 2020
+pret: 1300.0
+rezEcran: 2560x1600
+procesor: Apple M1
+tipEcran: Retina
+culoare: Gold
+frecventaRam: 4266 MHz
+sistemDeOperare: macOS Monterey
+tipPlacaVideo: Integrated
+modelPlacaVideo: N/A
+tipPorturi: Thunderbolt 3, USB-C
+autonomieBat: 15 ore
+memorieRam: 8
+nrCamere: 1
+rezCamere: 8
+marimeBat: 4000
+nrPorturi: 2
+diagonalaEcran: 2.8
+greutate: 13.3
+
+marca: Acer
+model: Swift 3
+cantitate: 35
+anAparitie: 2022
+pret: 900.0
+rezEcran: 1920x1080
+procesor: AMD Ryzen 5
+tipEcran: IPS
+culoare: Silver
+frecventaRam: 3200 MHz
+sistemDeOperare: Windows 10
+tipPlacaVideo: Integrated
+modelPlacaVideo: N/A
+tipPorturi: USB-C, HDMI
+autonomieBat: 12 ore
+memorieRam: 16
+nrCamere: 1
+rezCamere: 8
+marimeBat: 4500
+nrPorturi: 3
+diagonalaEcran: 2.6
+greutate: 1.5
+
+marca: MSI
+model: GS66 Stealth
+cantitate: 15
+anAparitie: 2021
+pret: 2500.0
+rezEcran: 1920x1080
+procesor: Intel i9
+tipEcran: IPS
+culoare: Black
+frecventaRam: 3200 MHz
+sistemDeOperare: Windows 10
+tipPlacaVideo: NVIDIA GeForce RTX 3080
+modelPlacaVideo: 8GB GDDR6
+tipPorturi: Thunderbolt 3, HDMI
+autonomieBat: 8 ore
+memorieRam: 64
+nrCamere: 1
+rezCamere: 8
+marimeBat: 5200
+nrPorturi: 4
+diagonalaEcran: 4.6
+greutate: 15.2
+
+marca: Razer
+model: Blade 15
+cantitate: 18
+anAparitie: 2021
+pret: 2200.0
+rezEcran: 1920x1080
+procesor: Intel i7
+tipEcran: IPS
+culoare: Black
+frecventaRam: 2933 MHz
+sistemDeOperare: Windows 10
+tipPlacaVideo: NVIDIA GeForce RTX 3070
+modelPlacaVideo: 8GB GDDR6
+tipPorturi: USB-C, HDMI
+autonomieBat: 6 ore
+memorieRam: 16
+nrCamere: 1
+rezCamere: 8
+marimeBat: 4000
+nrPorturi: 3
+diagonalaEcran: 4.7
+greutate: 10.2
+
+marca: Samsung
+model: Galaxy Book Pro
+cantitate: 28
+anAparitie: 2021
+pret: 1100.0
+rezEcran: 1920x1080
+procesor: Intel i5
+tipEcran: AMOLED
+culoare: Mystic Silver
+frecventaRam: 3200 MHz
+sistemDeOperare: Windows 10
+tipPlacaVideo: Integrated
+modelPlacaVideo: N/A
+tipPorturi: USB-C, HDMI
+autonomieBat: 20 ore
+memorieRam: 8
+nrCamere: 1
+rezCamere: 8
+marimeBat: 6000
+nrPorturi: 2
+diagonalaEcran: 2.9
+greutate: 7.3
+
+marca: Dell
+model: Inspiron 14
+cantitate: 22
+anAparitie: 2020
+pret: 800.0
+rezEcran: 1366x768
+procesor: AMD Ryzen 7
+tipEcran: LED
+culoare: Platinum Silver
+frecventaRam: 2400 MHz
+sistemDeOperare: Windows 10
+tipPlacaVideo: Integrated
+modelPlacaVideo: N/A
+tipPorturi: USB-C, HDMI
+autonomieBat: 8 ore
+memorieRam: 16
+nrCamere: 1
+rezCamere: 8
+marimeBat: 3500
+nrPorturi: 3
+diagonalaEcran: 3.0
+greutate: 1.3
