@@ -1,0 +1,201 @@
+marca: Xiaomi
+model: Pad 6
+cantitate: 2
+anAparitie: 2023
+pret: 1827.0
+procesor: Qualcomm SM8250-AC Snapdragon 870 5G
+tipEcran: IPS LCD
+culoare: Blue
+frecventaAntena: 4G
+sisOpTab: Android 13, MIUI Pad 14
+tipIncarcare: Usb C
+tipSim: NONE
+rezEcran: 1800 x 2880
+rezCamere: 13 MP Main, 8 MP Front
+memorieROM: 8
+memorieRAM: 256
+nrCamere: 8
+marimeBat: 8840
+diagonalaEcran: 11.0
+
+marca: Samsung
+model: Galaxy Tab A8
+cantitate: 2
+anAparitie: 2021
+pret: 999.0
+procesor: Unisoc Tiger T618
+tipEcran: TFT LCD
+culoare: Pink Gold
+frecventaAntena: NONE
+sisOpTab: Android 13, One UI 5
+tipIncarcare: Usb C
+tipSim: NONE
+rezEcran: 1200 x 1920
+rezCamere: 8 MP Main, 5 MP Front
+memorieROM: 0
+memorieRAM: 32
+nrCamere: 2
+marimeBat: 7040
+diagonalaEcran: 10.5
+
+marca: Apple
+model: iPad (2022)
+cantitate: 2
+anAparitie: 2022
+pret: 2900.0
+procesor: Apple A14 Bionic
+tipEcran: Liquid Retina IPS LCD
+culoare: Yellow
+frecventaAntena: 4G
+sisOpTab: iPadOS 17.1.1
+tipIncarcare: Usb Lightning
+tipSim: NONE
+rezEcran: 1640 x 2360
+rezCamere: 12 MP Main, 12 MP Front
+memorieROM: 92
+memorieRAM: 256
+nrCamere: 4
+marimeBat: 7606
+diagonalaEcran: 10.9
+
+marca: Lenovo
+model: Tab P12 Pro
+cantitate: 2
+anAparitie: 2023
+pret: 2100.0
+procesor: Qualcomm Snapdragon 870
+tipEcran: AMOLED
+culoare: Silver
+frecventaAntena: 5G
+sisOpTab: Android 13, ZUI 14
+tipIncarcare: Usb C
+tipSim: NONE
+rezEcran: 1600 x 2560
+rezCamere: 13 MP Main, 8 MP Front
+memorieROM: 12
+memorieRAM: 512
+nrCamere: 8
+marimeBat: 8500
+diagonalaEcran: 12.6
+
+marca: Microsoft
+model: Surface Go 3
+cantitate: 2
+anAparitie: 2022
+pret: 1800.0
+procesor: Intel Pentium Gold 6500Y
+tipEcran: PixelSense Display
+culoare: Platinum
+frecventaAntena: 4G
+sisOpTab: Windows 11
+tipIncarcare: Usb C
+tipSim: NONE
+rezEcran: 1920 x 1280
+rezCamere: 8 MP Main, 5 MP Front
+memorieROM: 4
+memorieRAM: 128
+nrCamere: 8
+marimeBat: 6500
+diagonalaEcran: 10.5
+
+marca: Huawei
+model: MatePad Pro 12.6
+cantitate: 2
+anAparitie: 2023
+pret: 2500.0
+procesor: HiSilicon Kirin 9000
+tipEcran: OLED
+culoare: Green
+frecventaAntena: 5G
+sisOpTab: HarmonyOS 2.0
+tipIncarcare: Usb C
+tipSim: NONE
+rezEcran: 2560 x 1600
+rezCamere: 13 MP Main, 8 MP Front
+memorieROM: 16
+memorieRAM: 256
+nrCamere: 8
+marimeBat: 9000
+diagonalaEcran: 12.6
+
+
+marca: Amazon
+model: Fire HD 10
+cantitate: 5
+anAparitie: 2021
+pret: 1200.0
+procesor: MediaTek Helio P60T
+tipEcran: IPS LCD
+culoare: Black
+frecventaAntena: 4G
+sisOpTab: Fire OS 8
+tipIncarcare: Usb C
+tipSim: NONE
+rezEcran: 1920 x 1200
+rezCamere: 5 MP Main, 2 MP Front
+memorieROM: 64
+memorieRAM: 3
+nrCamere: 2
+marimeBat: 5500
+diagonalaEcran: 10.1
+
+marca: Google
+model: Pixel Slate
+cantitate: 8
+anAparitie: 2018
+pret: 1900.0
+procesor: Intel Core i5
+tipEcran: LCD
+culoare: Midnight Blue
+frecventaAntena: NONE
+sisOpTab: Chrome OS
+tipIncarcare: Usb C
+tipSim: NONE
+rezEcran: 3000 x 2000
+rezCamere: 8 MP Main, 8 MP Front
+memorieROM: 256
+memorieRAM: 8
+nrCamere: 2
+marimeBat: 7800
+diagonalaEcran: 12.3
+
+marca: Sony
+model: Xperia Z4 Tablet
+cantitate: 3
+anAparitie: 2015
+pret: 1670.0
+procesor: Qualcomm Snapdragon 810
+tipEcran: IPS LCD
+culoare: White
+frecventaAntena: 4G
+sisOpTab: Android 7.1.1
+tipIncarcare: Micro USB
+tipSim: NONE
+rezEcran: 2560 x 1600
+rezCamere: 8.1 MP Main, 5.1 MP Front
+memorieROM: 32
+memorieRAM: 3
+nrCamere: 2
+marimeBat: 6000
+diagonalaEcran: 10.1
+
+marca: Asus
+model: ZenPad 3S 10
+cantitate: 4
+anAparitie: 2016
+pret: 1500.0
+procesor: MediaTek MT8176
+tipEcran: IPS LCD
+culoare: Silver
+frecventaAntena: NONE
+sisOpTab: Android 7.0
+tipIncarcare: Usb C
+tipSim: NONE
+rezEcran: 2048 x 1536
+rezCamere: 8 MP Main, 5 MP Front
+memorieROM: 64
+memorieRAM: 4
+nrCamere: 2
+marimeBat: 5000
+diagonalaEcran: 9.7
+

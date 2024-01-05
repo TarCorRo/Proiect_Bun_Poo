@@ -1,0 +1,200 @@
+marca: Xiaomi
+model: 11T
+procesor: Mediatek MT6893 Dimensity 1200
+tipEcran: AMOLED
+culoare: Space Gray
+frecventaAntena: 4G,5G
+sisOpTel: Android 14
+tipIncarcare: Usb C
+tipSim: NanoSim
+rezEcran: 1080 x 2400
+rezCamere: 108 MP Wide, 8 MP Ultrawide, 5 MP Telephoto macro, 16 MP Front
+memorieROM: 5000
+memorieRAM: 1600
+nrCamere: 6
+marimeBat: 6.67
+diagonalaEcran: 1080 x 2400
+cantitate: 38
+anAparitie: 2021
+pret: 5000
+
+marca: Samsung
+model: Galaxy S23 Ultra
+procesor: Qualcomm SM8550-AC Snapdragon 8 Gen 2
+tipEcran: Dynamic AMOLED 2x
+culoare: Phantom Black
+frecventaAntena: 4G,5G
+sisOpTel: Android 14
+tipIncarcare: Usb C, Wireless, Reverse Wireless
+tipSim: NanoSim
+rezEcran: 1440 x 3088
+rezCamere: 200 MP Wide, 12 MP Ultrawide, 10 MP Telephoto, 10 MP periscope telephoto, 12 MP Front
+memorieROM: 5000
+memorieRAM: 7600
+nrCamere: 6
+marimeBat: 6.8
+diagonalaEcran: 1440 x 3088
+cantitate: 23
+anAparitie: 2023
+pret: 7600
+
+marca: Apple
+model: iPhone 14 Pro Max
+procesor: Apple 16 Bionic
+tipEcran: LTPO Super Retina XDR OLED
+culoare: Gold
+frecventaAntena: 4G,5G
+sisOpTel: iOS 17
+tipIncarcare: Lightning, Wireless
+tipSim: NanoSim
+rezEcran: 1290 x 2796
+rezCamere: 48 MP Wide, 12 MP Ultrawide, 12 MP Telephoto, 12 MP Front
+memorieROM: 4323
+memorieRAM: 5899
+nrCamere: 6
+marimeBat: 6.7
+diagonalaEcran: 1290 x 2796
+cantitate: 75
+anAparitie: 2022
+pret: 5899
+
+marca: Nokia
+model: G42
+procesor: Qualcomm SM4350-AC Snapdragon 480+ 5G
+tipEcran: IPS LCD
+culoare: Purple
+frecventaAntena: 4G,5G
+sisOpTel: Android 13
+tipIncarcare: Usb C
+tipSim: NanoSim
+rezEcran: 720 x 1612
+rezCamere: 50 MP Wide, 2 MP Ultrawide, 2 MP Telephoto macro, 8 MP Front
+memorieROM: 5000
+memorieRAM: 1399.99
+nrCamere: 6
+marimeBat: 6.56
+diagonalaEcran: 720 x 1612
+cantitate: 239
+anAparitie: 2023
+pret: 1399.99
+
+marca: Nokia
+model: C300
+procesor: Qualcomm SM6115 Snapdragon 662
+tipEcran: IPS LCD
+culoare: Blue
+frecventaAntena: 4G,5G
+sisOpTel: Android 13
+tipIncarcare: Usb C
+tipSim: NanoSim
+rezEcran: 720 x 1600
+rezCamere: 13 MP Wide, 2 MP Ultrawide, 2 MP Telephoto macro, 8 MP Front
+memorieROM: 4000
+memorieRAM: 832.78
+nrCamere: 6
+marimeBat: 6.52
+diagonalaEcran: 720 x 1600
+cantitate: 8
+anAparitie: 2023
+pret: 832.78
+
+marca: Apple
+model: iPhone 15 Pro Max
+procesor: Apple A17 Pro
+tipEcran: LTPO Super Retina XDR OLED
+culoare: White Titanium
+frecventaAntena: 4G,5G
+sisOpTel: iOS 17
+tipIncarcare: Usb C
+tipSim: NanoSim
+rezEcran: 1290 x 2796
+rezCamere: 48 MP Wide, 12 MP Ultrawide, 12 MP Telephoto macro, 12 MP Front
+memorieROM: 4441
+memorieRAM: 8978.64
+nrCamere: 8
+marimeBat: 6.7
+diagonalaEcran: 1290 x 2796
+cantitate: 2
+anAparitie: 2023
+pret: 8978.64
+
+marca: Apple
+model: iPhone 15 Plus
+procesor: Apple A16 Bionic
+tipEcran: Super Retina XDR OLED
+culoare: Green
+frecventaAntena: 4G,5G
+sisOpTel: iOS 17
+tipIncarcare: Usb C, Wireless
+tipSim: NanoSim
+rezEcran: 1290 x 2796
+rezCamere: 48 MP Wide, 12 MP Ultrawide, 12 MP Front
+memorieROM: 4383
+memorieRAM: 5763.90
+nrCamere: 8
+marimeBat: 6.7
+diagonalaEcran: 1290 x 2796
+cantitate: 96
+anAparitie: 2023
+pret: 5763.90
+
+marca: Xiaomi
+model: 14 Pro
+procesor: Qualcomm SM8650-AB Snapdragon 8 Gen 3
+tipEcran: LTPO AMOLED
+culoare: Titanium
+frecventaAntena: 4G,5G
+sisOpTel: Android 14, HyperOS
+tipIncarcare: Usb C, Wireless
+tipSim: NanoSim
+rezEcran: 1440 x 3200
+rezCamere: 50 MP Wide, 50 MP Ultrawide, 50 MP Telephoto macro, 32 MP Front
+memorieROM: 4880
+memorieRAM: 6547.32
+nrCamere: 16
+marimeBat: 6.73
+diagonalaEcran: 1440 x 3200
+cantitate: 1
+anAparitie: 2023
+pret: 6547.32
+
+marca: Samsung
+model: Galaxy A54
+procesor: Exynos 1380
+tipEcran: Super AMOLED
+culoare: Violet
+frecventaAntena: 4G,5G
+sisOpTel: Android 13
+tipIncarcare: Usb C
+tipSim: NanoSim
+rezEcran: 1080 x 2340
+rezCamere: 50 MP Wide, 12 MP Ultrawide, 5 MP Telephoto macro, 32 MP Front
+memorieROM: 5000
+memorieRAM: 2599.23
+nrCamere: 8
+marimeBat: 6.4
+diagonalaEcran: 1080 x 2340
+cantitate: 0
+anAparitie: 2023
+pret: 2599.23
+
+marca: Samsung
+model: Galaxy S23 FE
+procesor: Qualcomm SM8450 Snapdragon 8 Gen 1
+tipEcran: Dynamic AMOLED 2X
+culoare: Mint
+frecventaAntena: 4G,5G
+sisOpTel: Android 14
+tipIncarcare: Usb C
+tipSim: NanoSim
+rezEcran: 1080 x 2340
+rezCamere: 50 MP Wide, 8 MP Ultrawide, 12 MP Telephoto macro, 10 MP Front
+memorieROM: 4500
+memorieRAM: 4599.23
+nrCamere: 8
+marimeBat: 6.4
+diagonalaEcran: 1080 x 2340
+cantitate: 92
+anAparitie: 2023
+pret: 4599.23
+
