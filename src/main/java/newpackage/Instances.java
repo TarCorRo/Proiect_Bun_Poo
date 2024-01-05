@@ -152,7 +152,11 @@ public class Instances {
         FitnessBandFileActions fitnessBandFileActions = new FitnessBandFileActions();
         Smartwatch[] smartwatch = smartwatchFileActions.readFile("Assets/Smartwatch.txt");
         FitnessBand[] fitnesBand = fitnessBandFileActions.readFile("Assets/FitnesBand.txt");
-       
+        TabletaFileActions tabletaFileActions = new TabletaFileActions();
+        TelefonFileActions telefonFileActions = new TelefonFileActions();
+        Tableta[] tablets = tabletaFileActions.readFile("Assets/Tableta.txt");
+        Telefon[] telefons = telefonFileActions.readFile("Assets/Telefon.txt");
+        
        public Device[] getInstancesArray(String type) {
            switch (type) {
             case "instances":
@@ -160,9 +164,9 @@ public class Instances {
             case "testClase":
                 return testClase;
             case "telefoane":
-                return telefoane;
+                return telefons;
             case "teblete":
-                return teblete;
+                return tablets;
             case "laptopuri":
                 return laptops;
             case "desktopuri":

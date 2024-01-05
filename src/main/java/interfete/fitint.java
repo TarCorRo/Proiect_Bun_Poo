@@ -162,7 +162,7 @@ public class fitint extends javax.swing.JFrame {
         JTextField textFieldProcesor = new JTextField(selectedBand.getProcesor());
         JTextField textFieldTipEcran = new JTextField(selectedBand.getTipEcran());
         JTextField textFieldCuloare = new JTextField(selectedBand.getCuloare());
-        JTextField textFieldSisOpTel = new JTextField(selectedBand.getSistemDeOperareSmtWtc());
+        JTextField textFieldSisOpTel = new JTextField(selectedBand.getSistemDeOperareFB());
         JTextField textFieldCapabilities = new JTextField(selectedBand.getCapabilities());
         JTextField textFieldTipIncarcare = new JTextField(selectedBand.getTipIncarcare());
         JTextField textFieldTipSim = new JTextField(selectedBand.getTipSim());
@@ -219,7 +219,7 @@ public class fitint extends javax.swing.JFrame {
               selectedBand.setProcesor(valoareProcesor);
               selectedBand.setTipEcran(valoareTipEcran);
               selectedBand.setCuloare(valoareCuloare);
-              selectedBand.setSistemDeOperareSmtWtc(valoareSisOpTel);
+              selectedBand.setSistemDeOperareFB(valoareSisOpTel);
               selectedBand.setCapabilities(valoareCapabilities);
               selectedBand.setTipIncarcare(valoareTipIncarcare);
               selectedBand.setTipSim(valoareTipSim);
@@ -332,7 +332,7 @@ public class fitint extends javax.swing.JFrame {
                             || !procesor.isEmpty() && !instance.getProcesor().equals(procesor)
                             || !tipEcran.isEmpty() && !instance.getTipEcran().equals(tipEcran)
                             || !culoare.isEmpty() && !instance.getCuloare().equals(culoare)
-                            || !sisOpTel.isEmpty() && !instance.getSistemDeOperareSmtWtc().equals(sisOpTel)
+                            || !sisOpTel.isEmpty() && !instance.getSistemDeOperareFB().equals(sisOpTel)
                             || !capab.isEmpty() && !instance.getCapabilities().equals(capab)
                             || !tipIncarcare.isEmpty() && !instance.getTipIncarcare().equals(tipIncarcare)
                             || !tipSim.isEmpty() && !instance.getTipSim().equals(tipSim)

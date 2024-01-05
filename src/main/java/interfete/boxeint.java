@@ -267,7 +267,7 @@ public class boxeint extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         JDialog dialog = new JDialog(this, "Cautare", true);
-        dialog.setLayout(new GridLayout(25, 0, 25, 10));
+        dialog.setLayout(new GridLayout(25, 0, 25, 5));
         jComboBox1.setSelectedIndex(0);
         JTextField textFieldMarca = new JTextField();
         JTextField textFieldModel = new JTextField();

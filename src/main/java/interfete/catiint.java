@@ -240,7 +240,7 @@ public class catiint extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         JDialog dialog = new JDialog(this, "Cautare", true);
-        dialog.setLayout(new GridLayout(25, 0, 25, 10));
+        dialog.setLayout(new GridLayout(25, 0, 25, 5));
         jComboBox1.setSelectedIndex(0);
         JTextField textFieldMarca = new JTextField();
         JTextField textFieldModel = new JTextField();
@@ -392,7 +392,7 @@ public class catiint extends javax.swing.JFrame {
                     Object obiectSelectat = casti[selectedIndex - 1];
                     String textAfisat = obiectSelectat.toString();
                     jTextArea1.setText(textAfisat);
-                    jButton1.setVisible(true); // Facem butonul de editare vizibil
+                    jButton1.setVisible(true); 
                 } else {
                     jTextArea1.setText("");
                     jButton1.setVisible(false);
