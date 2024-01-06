@@ -193,7 +193,7 @@ public class boxeint extends javax.swing.JFrame {
          JTextField textFieldSpl = new JTextField(String.valueOf(selectedBoxa.getSpl()));
          JTextField textFieldCapacitateBaterie = new JTextField(String.valueOf(selectedBoxa.getCapacitateBaterie()));
          JTextField textFieldLatime = new JTextField(String.valueOf(selectedBoxa.getLatime()));
-         JTextField textFieldLungime = new JTextField(String.valueOf(selectedBoxa.gatLungime()));
+         JTextField textFieldLungime = new JTextField(String.valueOf(selectedBoxa.getLungime()));
          JTextField textFieldAdancime = new JTextField(String.valueOf(selectedBoxa.getAdancime()));
          
          addLabelAndTextField(panel, "Marca:", textFieldMarca);

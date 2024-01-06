@@ -132,7 +132,7 @@ public class BoxaPortabila extends Device{
     public int getCapacitateBaterie(){
      return this.capacitateBaterie;
     }
-    public int gatLungime(){
+    public int getLungime(){
      return this.lungime;
     }
     public int getLatime(){
