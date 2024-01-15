@@ -156,6 +156,10 @@ public class Instances {
         TelefonFileActions telefonFileActions = new TelefonFileActions();
         Tableta[] tablets = tabletaFileActions.readFile("Assets/Tableta.txt");
         Telefon[] telefons = telefonFileActions.readFile("Assets/Telefon.txt");
+        BoxaPortabilaFileActions boxeFileActions = new BoxaPortabilaFileActions();
+        CastiFileActions castiFileActions = new CastiFileActions();
+        Boxe[] boxe = boxeFileActions.readFile("Assets/Boxe.txt");
+        Casti[] castis = castiFileActions.readFile("Assets/Casti.txt");
         
        public Device[] getInstancesArray(String type) {
            switch (type) {
