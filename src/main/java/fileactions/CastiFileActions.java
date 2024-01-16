@@ -13,10 +13,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-/**
- *
- * @author gm387
- */
 public class CastiFileActions {
     Casti[] castiArray = new Casti[10];
     int index = 0;
