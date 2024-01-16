@@ -1,0 +1,219 @@
+Marca: Xiaomi
+Model: Mi Band 6
+Procesor: N/A
+TipEcran: AMOLED
+Culoare: Negru
+SistemDeOperareSmtWtc: Proprietary
+Capabilities: Monitorizare ritm cardiac, Monitorizare somn
+TipIncarcare: Incarcare USB
+TipSim: Nu suporta SIM
+Senzori: Accelerometru, Giroscop
+MatCurea: Silicon
+MatCarcasa: Plastic
+Pret: 44.99
+DiagonalaEcran: 1.56
+DimCarcasa: 12.4
+Cantitate: 500
+RezEcran: 152
+MemorieROM: 16
+MemorieRAM: 512
+AnAparitie: 2021
+MarimeBat: 125
+
+Marca: Fitbit
+Model: Charge 5
+Procesor: N/A
+TipEcran: AMOLED
+Culoare: Albastru
+SistemDeOperareSmtWtc: Fitbit OS
+Capabilities: Monitorizare ritm cardiac, Monitorizare somn
+TipIncarcare: Incarcare magnetica
+TipSim: Nu suporta SIM
+Senzori: Accelerometru, Giroscop
+MatCurea: Silicon
+MatCarcasa: Aluminiu
+Pret: 179.95
+DiagonalaEcran: 1.1
+DimCarcasa: 25.3
+Cantitate: 300
+RezEcran: 126
+MemorieROM: 8
+MemorieRAM: 512
+AnAparitie: 2021
+MarimeBat: 170
+
+Marca: Garmin
+Model: Vivosmart 4
+Procesor: N/A
+TipEcran: OLED
+Culoare: Roz
+SistemDeOperareSmtWtc: Garmin OS
+Capabilities: Monitorizare ritm cardiac, Monitorizare oxigen în sânge
+TipIncarcare: Incarcare USB
+TipSim: Nu suporta SIM
+Senzori: Accelerometru, Giroscop
+MatCurea: Silicon
+MatCarcasa: Metal
+Pret: 129.99
+DiagonalaEcran: 0.75
+DimCarcasa: 15.5
+Cantitate: 200
+RezEcran: 48
+MemorieROM: 4
+MemorieRAM: 128
+AnAparitie: 2018
+MarimeBat: 120
+
+Marca: Samsung
+Model: Galaxy Fit 2
+Procesor: N/A
+TipEcran: AMOLED
+Culoare: Rosu
+SistemDeOperareSmtWtc: Tizen
+Capabilities: Monitorizare ritm cardiac, Monitorizare somn
+TipIncarcare: Incarcare USB
+TipSim: Nu suporta SIM
+Senzori: Accelerometru, Giroscop
+MatCurea: Silicon
+MatCarcasa: Plastic
+Pret: 49.99
+DiagonalaEcran: 1.1
+DimCarcasa: 18.6
+Cantitate: 300
+RezEcran: 126
+MemorieROM: 32
+MemorieRAM: 512
+AnAparitie: 2020
+MarimeBat: 159
+
+Marca: Apple
+Model: Watch SE
+Procesor: N/A
+TipEcran: OLED
+Culoare: Alb
+SistemDeOperareSmtWtc: watchOS
+Capabilities: Monitorizare ritm cardiac, Monitorizare somn
+TipIncarcare: Incarcare magnetica
+TipSim: Nu suporta SIM
+Senzori: Accelerometru, Giroscop
+MatCurea: Silicon
+MatCarcasa: Aluminiu
+Pret: 279.99
+DiagonalaEcran: 1.78
+DimCarcasa: 10.4
+Cantitate: 150
+RezEcran: 448
+MemorieROM: 64
+MemorieRAM: 512
+AnAparitie: 2020
+MarimeBat: 270
+
+Marca: Sony
+Model: SmartBand 2
+Procesor: N/A
+TipEcran: OLED
+Culoare: Albastru
+SistemDeOperareSmtWtc: Proprietary
+Capabilities: Monitorizare ritm cardiac, Monitorizare somn
+TipIncarcare: Incarcare USB
+TipSim: Nu suporta SIM
+Senzori: Accelerometru, Giroscop
+MatCurea: Silicon
+MatCarcasa: Plastic
+Pret: 89.99
+DiagonalaEcran: 0.91
+DimCarcasa: 15.5
+Cantitate: 200
+RezEcran: 128
+MemorieROM: 16
+MemorieRAM: 256
+AnAparitie: 2015
+MarimeBat: 100
+
+Marca: Polar
+Model: A360
+Procesor: N/A
+TipEcran: IPS LCD
+Culoare: Negru
+SistemDeOperareSmtWtc: Proprietary
+Capabilities: Monitorizare ritm cardiac, Monitorizare somn
+TipIncarcare: Incarcare USB
+TipSim: Nu suporta SIM
+Senzori: Accelerometru, Giroscop
+MatCurea: Cauciuc
+MatCarcasa: Otel inoxidabil
+Pret: 129.99
+DiagonalaEcran: 1.3
+DimCarcasa: 19.5
+Cantitate: 150
+RezEcran: 80
+MemorieROM: 32
+MemorieRAM: 512
+AnAparitie: 2016
+MarimeBat: 180
+
+Marca: Amazfit
+Model: Bip U Pro
+Procesor: N/A
+TipEcran: TFT
+Culoare: Roz
+SistemDeOperareSmtWtc: Proprietary
+Capabilities: Monitorizare ritm cardiac, Monitorizare somn
+TipIncarcare: Incarcare magnetica
+TipSim: Nu suporta SIM
+Senzori: Accelerometru, Giroscop
+MatCurea: Silicon
+MatCarcasa: Plastic
+Pret: 59.99
+DiagonalaEcran: 1.43
+DimCarcasa: 35.3
+Cantitate: 300
+RezEcran: 320
+MemorieROM: 16
+MemorieRAM: 256
+AnAparitie: 2020
+MarimeBat: 210
+
+Marca: Fossil
+Model: Sport
+Procesor: Snapdragon Wear 3100
+TipEcran: AMOLED
+Culoare: Alb
+SistemDeOperareSmtWtc: Wear OS
+Capabilities: Monitorizare ritm cardiac, Monitorizare somn
+TipIncarcare: Incarcare magnetica
+TipSim: Nu suporta SIM
+Senzori: Accelerometru, Giroscop
+MatCurea: Silicon
+MatCarcasa: Aluminiu
+Pret: 249.99
+DiagonalaEcran: 1.2
+DimCarcasa: 41.0
+Cantitate: 100
+RezEcran: 390
+MemorieROM: 8
+MemorieRAM: 512
+AnAparitie: 2019
+MarimeBat: 350
+
+Marca: Garmin
+Model: Venu
+Procesor: N/A
+TipEcran: AMOLED
+Culoare: Verde
+SistemDeOperareSmtWtc: Garmin OS
+Capabilities: Monitorizare ritm cardiac, Monitorizare oxigen în sânge
+TipIncarcare: Incarcare USB
+TipSim: Nu suporta SIM
+Senzori: Accelerometru, Giroscop
+MatCurea: Cauciuc
+MatCarcasa: Metal
+Pret: 349.99
+DiagonalaEcran: 1.2
+DimCarcasa: 43.2
+Cantitate: 200
+RezEcran: 390
+MemorieROM: 16
+MemorieRAM: 512
+AnAparitie: 2019
+MarimeBat: 390
