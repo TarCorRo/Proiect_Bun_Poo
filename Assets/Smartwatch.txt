@@ -1,0 +1,219 @@
+Model: Galaxy Watch 4
+Procesor: Exynos W920
+TipEcran: AMOLED
+Culoare: Negru
+SistemDeOperareSmtWtc: Wear OS
+Capabilities: GPS, NFC, Bluetooth
+TipIncarcare: Incarcare wireless
+TipSim: Nano SIM
+Senzori: Accelerometru, Giroscop, Senzor de ritm cardiac
+MatCurea: Silicon
+MatCarcasa: Aluminiu
+Pret: 349.99
+DiagonalaEcran: 1.4
+DimCarcasa: 42.5
+Cantitate: 100
+RezEcran: 360
+MemorieROM: 16
+MemorieRAM: 2
+AnAparitie: 2021
+MarimeBat: 340
+
+Marca: Apple
+Model: Watch Series 7
+Procesor: S7
+TipEcran: Retina
+Culoare: Albastru
+SistemDeOperareSmtWtc: watchOS
+Capabilities: GPS, Glonass, Galileo, Compass
+TipIncarcare: MagSafe
+TipSim: eSIM
+Senzori: Accelerometru, ECG, SpO2
+MatCurea: Piele
+MatCarcasa: Aluminiu
+Pret: 399.99
+DiagonalaEcran: 1.78
+DimCarcasa: 41.3
+Cantitate: 75
+RezEcran: 428
+MemorieROM: 32
+MemorieRAM: 1
+AnAparitie: 2021
+MarimeBat: 458
+
+Marca: Huawei
+Model: Watch GT 3
+Procesor: Kirin A1
+TipEcran: AMOLED
+Culoare: Verde
+SistemDeOperareSmtWtc: Lite OS
+Capabilities: GPS, Glonass, Galileo, Barometru
+TipIncarcare: Magnetic
+TipSim: Nano SIM
+Senzori: Accelerometru, Giroscop, Senzor de ritm cardiac
+MatCurea: Cauciuc
+MatCarcasa: Otel inoxidabil
+Pret: 229.99
+DiagonalaEcran: 1.43
+DimCarcasa: 46.2
+Cantitate: 120
+RezEcran: 466
+MemorieROM: 16
+MemorieRAM: 2
+AnAparitie: 2021
+MarimeBat: 470
+
+Marca: Garmin
+Model: Forerunner 945
+Procesor: Garmin
+TipEcran: MIP
+Culoare: Gri
+SistemDeOperareSmtWtc: Garmin OS
+Capabilities: GPS, Glonass, Galileo, Barometru
+TipIncarcare: Cablu
+TipSim: Nu suporta SIM
+Senzori: Accelerometru, Giroscop, Senzor de altitudine
+MatCurea: Silicon
+MatCarcasa: Fibra de carbon
+Pret: 599.99
+DiagonalaEcran: 1.2
+DimCarcasa: 47.0
+Cantitate: 50
+RezEcran: 240
+MemorieROM: 16
+MemorieRAM: 1
+AnAparitie: 2019
+MarimeBat: 780
+
+Marca: Fitbit
+Model: Sense
+Procesor: N/A
+TipEcran: AMOLED
+Culoare: Alb
+SistemDeOperareSmtWtc: Fitbit OS
+Capabilities: GPS, GLONASS
+TipIncarcare: Incarcare wireless
+TipSim: Nu suporta SIM
+Senzori: Accelerometru, Giroscop, Senzor de ritm cardiac
+MatCurea: Silicon
+MatCarcasa: Aluminiu
+Pret: 299.99
+DiagonalaEcran: 1.58
+DimCarcasa: 40.5
+Cantitate: 90
+RezEcran: 336
+MemorieROM: 8
+MemorieRAM: 2
+AnAparitie: 2020
+MarimeBat: 345
+
+Marca: Sony
+Model: Smartwatch 4
+Procesor: Snapdragon Wear 5100
+TipEcran: OLED
+Culoare: Albastru
+SistemDeOperareSmtWtc: Wear OS
+Capabilities: GPS, NFC, Bluetooth
+TipIncarcare: Incarcare wireless
+TipSim: Nano SIM
+Senzori: Accelerometru, Giroscop, Senzor de ritm cardiac
+MatCurea: Silicon
+MatCarcasa: Metal
+Pret: 449.99
+DiagonalaEcran: 1.6
+DimCarcasa: 45.0
+Cantitate: 80
+RezEcran: 400
+MemorieROM: 32
+MemorieRAM: 3
+AnAparitie: 2022
+MarimeBat: 400
+
+Smartwatch smartwatch7:
+Marca: Amazfit
+Model: GTR 3
+Procesor: N/A
+TipEcran: AMOLED
+Culoare: Rosu
+SistemDeOperareSmtWtc: Zepp OS
+Capabilities: GPS, GLONASS
+TipIncarcare: Incarcare magnetica
+TipSim: Nu suporta SIM
+Senzori: Accelerometru, Giroscop, Senzor de ritm cardiac
+MatCurea: Silicon
+MatCarcasa: Aluminiu
+Pret: 179.99
+DiagonalaEcran: 1.39
+DimCarcasa: 42.7
+Cantitate: 150
+RezEcran: 454
+MemorieROM: 16
+MemorieRAM: 1
+AnAparitie: 2022
+MarimeBat: 350
+
+Marca: Fossil
+Model: Gen 6
+Procesor: Snapdragon Wear 4100+
+TipEcran: AMOLED
+Culoare: Cafeniu
+SistemDeOperareSmtWtc: Wear OS
+Capabilities: GPS, NFC, Bluetooth
+TipIncarcare: Incarcare wireless
+TipSim: Nano SIM
+Senzori: Accelerometru, Giroscop, Senzor de ritm cardiac
+MatCurea: Piele
+MatCarcasa: Metal
+Pret: 299.95
+DiagonalaEcran: 1.28
+DimCarcasa: 42.0
+Cantitate: 120
+RezEcran: 416
+MemorieROM: 8
+MemorieRAM: 1
+AnAparitie: 2022
+MarimeBat: 320
+
+Marca: OnePlus
+Model: Watch
+Procesor: STM32
+TipEcran: AMOLED
+Culoare: Argintiu
+SistemDeOperareSmtWtc: Wear OS
+Capabilities: GPS, NFC, Bluetooth
+TipIncarcare: Incarcare rapida
+TipSim: Nu suporta SIM
+Senzori: Accelerometru, Giroscop, Senzor de ritm cardiac
+MatCurea: Silicon
+MatCarcasa: Aluminiu
+Pret: 159.99
+DiagonalaEcran: 1.39
+DimCarcasa: 46.4
+Cantitate: 200
+RezEcran: 454
+MemorieROM: 4
+MemorieRAM: 1
+AnAparitie: 2021
+MarimeBat: 402
+
+Marca: Casio
+Model: Pro Trek Smart WSD-F30
+Procesor: N/A
+TipEcran: Dual-layer LCD
+Culoare: Portocaliu
+SistemDeOperareSmtWtc: Wear OS
+Capabilities: GPS, Glonass, Bluetooth
+TipIncarcare: Incarcare magnetica
+TipSim: Nu suporta SIM
+Senzori: Accelerometru, Giroscop, Barometru
+MatCurea: Rasina
+MatCarcasa: Metal
+Pret: 549.99
+DiagonalaEcran: 1.2
+DimCarcasa: 60.5
+Cantitate: 80
+RezEcran: 390
+MemorieROM: 16
+MemorieRAM: 1
+AnAparitie: 2019
+MarimeBat: 320
