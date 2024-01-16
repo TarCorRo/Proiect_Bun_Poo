@@ -31,9 +31,6 @@ capacitateBaterie: 7500
 latime: 220
 lungime: 95
 adancime: 93
-User
-continua pentru toate cele 10 instante
-ChatGPT
 
 marca: Bose
 model: SoundLink Revolve+
