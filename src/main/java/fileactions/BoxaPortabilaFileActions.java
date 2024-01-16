@@ -13,10 +13,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-/**
- *
- * @author gm387
- */
+
 public class BoxaPortabilaFileActions {
     BoxaPortabila[] BoxaArray = new BoxaPortabila[10];
     int index = 0;
