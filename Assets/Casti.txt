@@ -1,0 +1,161 @@
+marca: Sony
+model: WH-1000XM4
+culoare: Negru
+contactCuUrechea: Over-ear
+principiuDeFunctionare: Anulare de zgomot
+tipConectivitate: Bluetooth
+pret: 349.99
+lungimeCablu: 1.2
+raspunsInFrecventa: 5.0
+autonomie: 30
+impedanta: 32
+cantitate: 100
+anAparitie: 2020
+greutate: 254
+spl: 110
+
+marca: Bose
+model: QuietComfort 35 II
+culoare: Argintiu
+contactCuUrechea: Over-ear
+principiuDeFunctionare: Anulare de zgomot
+tipConectivitate: Bluetooth
+pret: 299.99
+lungimeCablu: 1.5
+raspunsInFrecventa: 5.0
+autonomie: 20
+impedanta: 32
+cantitate: 120
+anAparitie: 2018
+greutate: 240
+spl: 105
+
+marca: Apple
+model: AirPods Pro
+culoare: Alb
+contactCuUrechea: In-ear
+principiuDeFunctionare: Anulare de zgomot
+tipConectivitate: Bluetooth
+pret: 249.99
+lungimeCablu: 0.8
+raspunsInFrecventa: 6.0
+autonomie: 24
+impedanta: 16
+cantitate: 150
+anAparitie: 2019
+greutate: 46
+spl: 115
+
+marca: Sennheiser
+model: HD 660 S
+culoare: Negru
+contactCuUrechea: Over-ear
+principiuDeFunctionare: Deschis
+tipConectivitate: Cablu
+pret: 499.99
+lungimeCablu: 3.0
+raspunsInFrecventa: 10.0
+autonomie: 0
+impedanta: 150
+cantitate: 80
+anAparitie: 2017
+greutate: 260
+spl: 98
+
+marca: JBL
+model: Tune 220TWS
+culoare: Alb
+contactCuUrechea: In-ear
+principiuDeFunctionare: Inchis
+tipConectivitate: Bluetooth
+pret: 79.99
+lungimeCablu: 0.0
+raspunsInFrecventa: 8.0
+autonomie: 16
+impedanta: 32
+cantitate: 200
+anAparitie: 2021
+greutate: 60
+spl: 102
+
+marca: Sony
+model: WF-1000XM4
+culoare: Auriu
+contactCuUrechea: In-ear
+principiuDeFunctionare: Anulare de zgomot
+tipConectivitate: Bluetooth
+pret: 279.99
+lungimeCablu: 0.0
+raspunsInFrecventa: 5.0
+autonomie: 24
+impedanta: 16
+cantitate: 120
+anAparitie: 2020
+greutate: 41
+spl: 108
+
+marca: Beats
+model: Powerbeats Pro
+culoare: Verde
+contactCuUrechea: In-ear
+principiuDeFunctionare: Deschis
+tipConectivitate: Bluetooth
+pret: 199.99
+lungimeCablu: 0.0
+raspunsInFrecventa: 8.0
+autonomie: 9
+impedanta: 32
+cantitate: 80
+anAparitie: 2019
+greutate: 200
+spl: 100
+casti:
+
+marca: Audio-Technica
+model: ATH-M50x
+culoare: Negru
+contactCuUrechea: Over-ear
+principiuDeFunctionare: Inchis
+tipConectivitate: Cablu
+pret: 149.99
+lungimeCablu: 3.0
+raspunsInFrecventa: 15.0
+autonomie: 0
+impedanta: 38
+cantitate: 150
+anAparitie: 2014
+greutate: 285
+spl: 98
+casti:
+
+marca: Samsung
+model: Galaxy Buds Pro
+culoare: Violet
+contactCuUrechea: In-ear
+principiuDeFunctionare: Inchis
+tipConectivitate: Bluetooth
+pret: 199.99
+lungimeCablu: 0.0
+raspunsInFrecventa: 8.0
+autonomie: 18
+impedanta: 28
+cantitate: 100
+anAparitie: 2021
+greutate: 138
+spl: 105
+
+marca: Jabra
+model: Elite 75t
+culoare: Albastru
+contactCuUrechea: In-ear
+principiuDeFunctionare: Deschis
+tipConectivitate: Bluetooth
+pret: 179.99
+lungimeCablu: 0.0
+raspunsInFrecventa: 10.0
+autonomie: 28
+impedanta: 16
+cantitate: 120
+anAparitie: 2019
+greutate: 55
+spl: 102
