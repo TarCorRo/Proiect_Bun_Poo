@@ -3,6 +3,7 @@ package interfete;
 import javax.swing.*;
 import java.awt.event.*;
 import com.mycompany.magazinelectronice.*;
+import fileactions.LaptopFileActions;
 import java.awt.*;
 import java.util.*;
 import java.util.List;
@@ -10,6 +11,7 @@ import newpackage.*;
 
 public class laptopint extends javax.swing.JFrame {
     Instances inst = new Instances();
+    LaptopFileActions laptopFileActions = new LaptopFileActions();
     
     Device[] lapt = inst.getInstancesArray("laptopuri");
     Laptop[] laptopuri = (Laptop[]) lapt;
@@ -404,6 +406,7 @@ public class laptopint extends javax.swing.JFrame {
                     resultBuilder.append(laptop).append("\n\n");
                 }
                 
+                laptopFileActions.writeToFile("Assets/WriteLaptops", foundDevices);
                 jTextArea1.setText(resultBuilder.toString());
                 dialog.dispose();
             }

@@ -9,6 +9,7 @@ import com.mycompany.magazinelectronice.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.List;
 
 public class LaptopFileActions {
     Laptop[] laptopArray = new Laptop[10];
@@ -117,7 +118,7 @@ public class LaptopFileActions {
         return laptopArray;
     }
     
-    public void writeToFile(String filePath, Laptop[] laptopArray) {
+    public void writeToFile(String filePath,  List<Laptop> laptopArray) {
         try {
             File file = new File(filePath);
 

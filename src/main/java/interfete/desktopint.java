@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.mycompany.magazinelectronice.Device;
 import com.mycompany.magazinelectronice.Desktopuri;
+import fileactions.DesktopFileActions;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,6 +21,7 @@ import newpackage.*;
  */
 public class desktopint extends javax.swing.JFrame {
     Instances inst = new Instances();
+    DesktopFileActions desktopFileActions = new DesktopFileActions();
     
     Device[] desk = inst.getInstancesArray("desktopuri");
     Desktopuri[] desktopuri = (Desktopuri[]) desk;
@@ -362,6 +364,7 @@ public class desktopint extends javax.swing.JFrame {
                     resultBuilder.append(desktop).append("\n\n");
                 }
                 
+                desktopFileActions.writeToFile("Assets/WriteDesktops", foundDevices);
                 jTextArea1.setText(resultBuilder.toString());
                 dialog.dispose();
             }

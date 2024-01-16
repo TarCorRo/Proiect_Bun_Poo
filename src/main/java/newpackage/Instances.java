@@ -158,7 +158,7 @@ public class Instances {
         Telefon[] telefons = telefonFileActions.readFile("Assets/Telefon.txt");
         BoxaPortabilaFileActions boxeFileActions = new BoxaPortabilaFileActions();
         CastiFileActions castiFileActions = new CastiFileActions();
-        Boxe[] boxe = boxeFileActions.readFile("Assets/Boxe.txt");
+        BoxaPortabila[] boxee = boxeFileActions.readFile("Assets/Boxe.txt");
         Casti[] castis = castiFileActions.readFile("Assets/Casti.txt");
         
        public Device[] getInstancesArray(String type) {
@@ -176,13 +176,13 @@ public class Instances {
             case "desktopuri":
                 return desktops;
             case "casti":
-                return casti;
+                return castis;
             case "boxe":
-                return boxe;
+                return boxee;
             case "smartwatchuri":
-                return smartwatchuri;
+                return smartwatch;
             case "fitnessBands":
-                return fitnessBands;    
+                return fitnesBand;    
             default:
                 return testClase;
             }
