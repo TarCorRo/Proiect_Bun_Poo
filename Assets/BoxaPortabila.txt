@@ -1,0 +1,173 @@
+marca: Sony
+model: Xtreme 2
+culoare: Negru
+tipConectivitate: Bluetooth
+tipBaterie: Li-Ion
+pret: 299.99
+variantaBluetooth: 4.2
+raspunsInFrecventa: 55.0
+cantitate: 50
+anAparitie: 2018
+impedantaNominala: 4
+spl: 80
+capacitateBaterie: 10000
+latime: 288
+lungime: 132
+adancime: 280
+
+
+marca: JBL
+model: Charge 4
+culoare: Albastru
+tipConectivitate: Bluetooth
+tipBaterie: Li-Ion
+pret: 179.99
+variantaBluetooth: 4.2
+raspunsInFrecventa: 60.0
+cantitate: 70
+anAparitie: 2018
+impedantaNominala: 8
+spl: 85
+capacitateBaterie: 7500
+latime: 220
+lungime: 95
+adancime: 93
+User
+continua pentru toate cele 10 instante
+ChatGPT
+
+marca: Bose
+model: SoundLink Revolve+
+culoare: Argintiu
+tipConectivitate: Bluetooth
+tipBaterie: Li-Ion
+pret: 329.99
+variantaBluetooth: 4.2
+raspunsInFrecventa: 40.0
+cantitate: 40
+anAparitie: 2017
+impedantaNominala: 4
+spl: 90
+capacitateBaterie: 3000
+latime: 105
+lungime: 182
+adancime: 105
+
+marca: JBL
+model: Flip 5
+culoare: Verde
+tipConectivitate: Bluetooth
+tipBaterie: Li-Ion
+pret: 119.99
+variantaBluetooth: 4.2
+raspunsInFrecventa: 65.0
+cantitate: 60
+anAparitie: 2019
+impedantaNominala: 8
+spl: 80
+capacitateBaterie: 4800
+latime: 181
+lungime: 69
+adancime: 74
+
+marca: Sony
+model: SRS-XB43
+culoare: Rosu
+tipConectivitate: Bluetooth
+tipBaterie: Li-Ion
+pret: 249.99
+variantaBluetooth: 5.0
+raspunsInFrecventa: 20.0
+cantitate: 30
+anAparitie: 2020
+impedantaNominala: 4
+spl: 86
+capacitateBaterie: 10000
+latime: 340
+lungime: 161
+adancime: 123
+
+marca: Ultimate Ears
+model: BOOM 3
+culoare: Portocaliu
+tipConectivitate: Bluetooth
+tipBaterie: Li-Ion
+pret: 149.99
+variantaBluetooth: 4.2
+raspunsInFrecventa: 90.0
+cantitate: 45
+anAparitie: 2018
+impedantaNominala: N/A
+spl: 90
+capacitateBaterie: 3600
+latime: 73
+lungime: 184
+adancime: 73
+
+marca: Anker
+model: Soundcore Flare
+culoare: Negru
+tipConectivitate: Bluetooth
+tipBaterie: Li-Ion
+pret: 59.99
+variantaBluetooth: 4.2
+raspunsInFrecventa: 115.0
+cantitate: 55
+anAparitie: 2018
+impedantaNominala: N/A
+spl: 90
+capacitateBaterie: 4400
+latime: 90
+lungime: 90
+adancime: 190
+
+marca: Marshall
+model: Stockwell II
+culoare: Albastru
+tipConectivitate: Bluetooth
+tipBaterie: Li-Ion
+pret: 249.99
+variantaBluetooth: 5.0
+raspunsInFrecventa: 60.0
+cantitate: 25
+anAparitie: 2019
+impedantaNominala: 4
+spl: 80
+capacitateBaterie: 5200
+latime: 180
+lungime: 161
+adancime: 70
+
+marca: Tribit
+model: MaxSound Plus
+culoare: Negru
+tipConectivitate: Bluetooth
+tipBaterie: Li-Ion
+pret: 59.99
+variantaBluetooth: 4.2
+raspunsInFrecventa: 55.0
+cantitate: 35
+anAparitie: 2018
+impedantaNominala: 4
+spl: 100
+capacitateBaterie: 2000
+latime: 76
+lungime: 189
+adancime: 76
+
+marca: Xiaomi
+model: Mi Compact
+culoare: Alb
+tipConectivitate: Bluetooth
+tipBaterie: Li-Ion
+pret: 39.99
+variantaBluetooth: 5.0
+raspunsInFrecventa: 110.0
+cantitate: 40
+anAparitie: 2020
+impedantaNominala: N/A
+spl: 80
+capacitateBaterie: 2000
+latime: 86
+lungime: 86
+adancime: 45
