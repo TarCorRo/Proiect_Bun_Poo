@@ -15,7 +15,6 @@ latime: 288
 lungime: 132
 adancime: 280
 
-
 marca: JBL
 model: Charge 4
 culoare: Albastru
